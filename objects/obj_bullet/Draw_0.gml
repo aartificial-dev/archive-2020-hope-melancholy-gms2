@@ -15,7 +15,7 @@ if (checked == 0) {
 				hit_object_dmod = 3;
 				event_user(15);
 			}
-			//let splash = instance_create_layer(xc, yc, "L_Back_Objects", obj_splash);
+			//let splash = instance_create_layer(xc, yc, Layers.furniture, obj_splash);
 			//splash.dir = (dir + d) - 180;
 		}
 	}

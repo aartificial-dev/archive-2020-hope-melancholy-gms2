@@ -5,7 +5,7 @@ event_inherited();
 mspd = 1.5;
 
 
-cam = instance_create_layer(x, y, "L_System", obj_cam);
+cam = instance_create_layer(x, y, Layers.system, obj_cam);
 cam.target = id;
 
 interact = noone;

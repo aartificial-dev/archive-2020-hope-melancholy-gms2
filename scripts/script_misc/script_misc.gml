@@ -17,6 +17,34 @@ function audio_play_at(argument0, argument1, argument2, argument3, argument4, ar
 	return audio_play_sound_at(soundid, _x, _y, 0, falloff/2, falloff, factor, loop, priority);
 }
 
+/// @arg x
+/// @arg y
+/// @arg obj
+/// @arg prec
+/// @arg notme
+function collision_point_depth(_x, _y, _obj, _prec, _notme) {
+	let list = ds_list_create();
+	let col = collision_point_list(_x, _y, _obj, _prec, _notme, list, 0);
+	let dep = 100000;
+	let _id = noone;
+	for (let i = 0; i < col; i ++) {
+		let d = object_get_depth(list[| i]);
+		if (d < dep) {
+			dep = d;
+			_id = list[| i];
+		}
+	}
+	ds_list_destroy(list);
+	return _id;
+}
+
+/// @arg id
+function object_get_depth(_id) {
+	with (_id) {
+		return depth;
+	}
+}
+
 enum note_type {
 	book,
 	note,
@@ -26,13 +54,16 @@ enum note_type {
 /// @arg text
 /// @arg note_type
 function scr_note(_text, _type) {
-	let note = instance_create_layer(0, 0, "L_Hud", obj_note);
+	let note = instance_create_layer(0, 0, Layers.gui, obj_note);
 	note.text = _text;
 	note.type = _type;
 }
 
 /// @arg [text_keyboardkey_mousekey] 
 function scr_tutorial(arg) {
+	with (obj_tutorial) {
+		alarm[1] = 10;
+	}
 	let ins = instance_create_layer(0, 0, Layers.gui, obj_tutorial);
 	ins.text = arg[0];
 	ins.key = arg[1];

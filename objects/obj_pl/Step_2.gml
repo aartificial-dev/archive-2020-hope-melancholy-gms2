@@ -3,7 +3,7 @@
 
 event_inherited();
 
-let _obj = instance_position(mouse_x, mouse_y, par_interactive);
+let _obj = collision_point_depth(mouse_x, mouse_y, par_interactive, 0, 0);
 let _dist = (distance_to_object(_obj) < hand_length);
 interact = _dist ? _obj : noone;
 
