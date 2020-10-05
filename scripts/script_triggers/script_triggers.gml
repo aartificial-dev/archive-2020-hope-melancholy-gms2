@@ -36,6 +36,7 @@ function scr_door_init(_room, _id, _dest) {
 	marker.mid = _id; // id of this door's marker (marker id)
 }
 
+
 /// @arg number
 function scr_get_marker_id(_id) {
 	let _count = instance_number(obj_pl_marker);

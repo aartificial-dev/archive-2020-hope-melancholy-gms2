@@ -5,4 +5,5 @@ event_inherited();
 
 name = "Door";
 target = id;
+door_sound = snd_door_open;
 target_room = room_parent;

@@ -1,17 +1,20 @@
 {
   "spriteId": {
-    "name": "spr_lamp_ceil_dark",
-    "path": "sprites/spr_lamp_ceil_dark/spr_lamp_ceil_dark.yy",
+    "name": "spr_elevator",
+    "path": "sprites/spr_elevator/spr_elevator.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_door",
+    "path": "objects/obj_door/obj_door.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
-  "physicsGroup": 0,
+  "physicsGroup": 1,
   "physicsDensity": 0.5,
   "physicsRestitution": 0.1,
   "physicsLinearDamping": 0.1,
@@ -20,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_elevator","path":"objects/obj_elevator/obj_elevator.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -28,7 +33,7 @@
     "path": "folders/Objects/Furniture.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_lamp_ceil_dark",
+  "name": "obj_elevator",
   "tags": [],
   "resourceType": "GMObject",
 }

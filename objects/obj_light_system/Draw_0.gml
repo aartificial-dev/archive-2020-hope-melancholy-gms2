@@ -21,10 +21,20 @@ draw_surface(surface_light, camera_get_view_x(camera), camera_get_view_y(camera)
 draw_surface(surface_bloom, camera_get_view_x(camera), camera_get_view_y(camera));
 
 surface_set_target(surface_bloom);
-draw_clear_alpha(c_white,0);
+draw_clear_alpha(c_white, 0);
 surface_reset_target();
 
 
 surface_set_target(surface_light);
-draw_clear_alpha(c_black, alpha);
+draw_clear_alpha(c_black, 0);
+let a_num = instance_number(obj_light_alpha);
+for (let i = 0; i < a_num; i ++) {
+	let ins = instance_find(obj_light_alpha, i);
+	let _x = ins.x - view_x;
+	let _y = ins.y - view_y;
+	let _w = ins.image_xscale * 32;
+	let _h = ins.image_yscale * 32;
+	let _a = ins.alpha;
+	draw_rect_f(_x, _y, _x + _w, _y + _h, c_black, 0, _a);
+}
 surface_reset_target();

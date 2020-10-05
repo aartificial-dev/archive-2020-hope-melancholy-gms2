@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_lamp_ceil_dark_1",
-    "path": "sprites/spr_lamp_ceil_dark_1/spr_lamp_ceil_dark_1.yy",
+    "name": "spr_lamp_ceil_dark",
+    "path": "sprites/spr_lamp_ceil_dark/spr_lamp_ceil_dark.yy",
   },
   "solid": false,
   "visible": true,
