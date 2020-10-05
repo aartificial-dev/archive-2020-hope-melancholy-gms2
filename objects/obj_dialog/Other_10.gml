@@ -12,8 +12,3 @@ d_char_num = 0; // current number of character in line
 d_line_length = 0; // current line length
 d_cur_length = 0; // display text length
 alarm[1] = d_appear_spd;
-image_speed = 0.2;
-
-d_input_wait = 25; // how long wait before input
-
-d_script_exec = 0;

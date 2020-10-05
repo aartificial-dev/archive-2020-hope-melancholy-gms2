@@ -16,6 +16,6 @@ if (iteration == 1) {
 	scr_dialog(_dia);
 }
 if (iteration > 1) {
-	scr_dialog_f("Find something else to disturb", id, snd_dialog_lo, scr_dialog_camshake);
+	scr_dialog_oneline("Find something else to disturb", id, snd_dialog_lo, scr_dialog_camshake);
 }
 iteration ++;

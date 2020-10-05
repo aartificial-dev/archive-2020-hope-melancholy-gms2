@@ -14,5 +14,6 @@ global.__template_layers = {
 	entity: "L_Entity",
 	light: "L_Light",
 	gui: "L_Gui",
+	collision: "L_Collision",
 	system: "L_System"
 }

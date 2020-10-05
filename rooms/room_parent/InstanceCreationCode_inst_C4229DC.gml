@@ -1,0 +1,1 @@
+item = new inv_item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Keycard", item_type.quest, 0);

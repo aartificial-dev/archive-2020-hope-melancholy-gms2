@@ -1,1 +1,0 @@
-scr_trigger_init(scr_tutorial, ["Interact with RMB", noone, mb_right], 1)

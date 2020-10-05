@@ -47,6 +47,15 @@ function inv_drop(_item) {
 	audio_play_sound(snd_inv_drop, 0, 0);
 }
 
+/// @arg item
+/// @arg x
+/// @arg y
+function scr_item_summon(_item, _x, _y) {
+	let _obj = instance_create_layer(_x, _y, Layers.items, par_item);
+	_obj.item = _item;
+	audio_play_sound(snd_inv_drop, 0, 0);
+}
+
 /// @func inv_item
 /// @arg sprite
 /// @arg sprite_floor

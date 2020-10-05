@@ -1,1 +1,0 @@
-scr_door_init(room ,0, 1);

@@ -1,0 +1,1 @@
+scr_door_init(room, 330, 3300);

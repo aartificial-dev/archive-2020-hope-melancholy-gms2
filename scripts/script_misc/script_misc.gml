@@ -38,6 +38,8 @@ function collision_point_depth(_x, _y, _obj, _prec, _notme) {
 	return _id;
 }
 
+
+
 /// @arg id
 function object_get_depth(_id) {
 	with (_id) {
