@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2006bfec-12d4-4641-aec5-e8503db1e829","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Furniture",
+    "path": "folders/Sprites/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sign",

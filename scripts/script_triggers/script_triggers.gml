@@ -24,6 +24,8 @@ function scr_trigger_init(_func, _arg, _destroy) {
 	destroy = _destroy;
 }
 
+
+
 /// @arg room
 /// @arg door_id
 /// @arg dest_id

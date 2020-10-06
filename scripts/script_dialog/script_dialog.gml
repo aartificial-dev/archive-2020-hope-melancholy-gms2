@@ -1,12 +1,17 @@
 /// @desc Creates dialog object and passes Dialog struct into it
 /// @arg dialog_obj
 function scr_dialog(_obj) {
-	if (instanceof(_obj) != "Dialog") {
+	let _dia = _obj;
+	if (is_array(_obj)) {
+		_dia = _obj[0];
+	}
+	
+	if (instanceof(_dia) != "Dialog") {
 		show_debug_message("Cannot set dialog.")
 		exit;
 	}
 	let dbox = instance_create_layer(0, 0, Layers.gui, obj_dialog);
-	dbox.scene = _obj;
+	dbox.scene = _dia;
 }
 
 
@@ -52,6 +57,12 @@ function scr_dialog_add_answer3(_obj, _text1, _text2, _text3, _target, _sound, _
 	_obj.add([_text1, _text2, _text3], _target, _sound, [_newd1, _newd2, _newd3]);	
 }
 
+/// @arg dialog
+/// @arg script
+function scr_dialog_add_end_script(_obj, _script) {
+	_obj.endscript = _script;
+}
+
 /// @desc Makes dialog object that should be passed into scr_dialog
 function Dialog() constructor {
 	dialog = [];
@@ -59,6 +70,7 @@ function Dialog() constructor {
 	sound = [];
 	escript = [];
 	count = 0;
+	endscript = noone;
 	
 	add = function(_text, _target, _sound, _script) {
 		dialog[count] = _text;
@@ -66,5 +78,9 @@ function Dialog() constructor {
 		sound[count] = _sound;
 		escript[count] = _script;
 		count ++;
+	}
+	
+	addEndScript = function(_script) {
+		endscript = _script;
 	}
 }

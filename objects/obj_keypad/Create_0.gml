@@ -7,3 +7,4 @@ event_inherited();
 name = "Inactive Keypad";
 icon = spr_hud_gear;
 active = 0;
+signal = noone;

@@ -23,6 +23,7 @@ if (alarm[0] == -1) {
 			}
 			if (is_array(scene.dialog[d_current])) {
 				is_branch = 1;
+				alarm[2] = d_input_wait;
 			}
 			alarm[1] = d_appear_spd;
 			d_script_exec = 0;

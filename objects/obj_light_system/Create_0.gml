@@ -6,3 +6,6 @@ surface_bloom = surface_create(view_w, view_h);
 alpha = 0;
 x = 0;
 y = 0;
+
+v_width = view_w;
+v_height = view_h;

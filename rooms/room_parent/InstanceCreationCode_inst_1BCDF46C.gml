@@ -1,0 +1,1 @@
+item = new inv_item(spr_chip_inv_b, spr_chip_floor, 1, 1, "Clearance chip", item_type.chip, $FFE8CC);

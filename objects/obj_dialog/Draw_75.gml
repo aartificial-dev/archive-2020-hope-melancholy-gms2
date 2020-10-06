@@ -25,7 +25,7 @@ if (is_branch) {
 	for (let i = 0; i < size; i++) {
 		let xst = width * 0.1;
 		let _my = gui_mouse_y * 1.5;
-		if (point_in_rectangle(1, _my, 0, _yst + _dist * i, 2, _yst + _dist * i + lheight)) {
+		if (point_in_rectangle(1, _my, 0, _yst + _dist * i, 2, _yst + _dist * i + lheight) && alarm[2] == -1) {
 			draw_rect_f(0, _yst + _dist * i, width, _yst + _dist * i + lheight, c_gray, 0, alpha);
 			if (mouse_check_button_pressed(mb_left)) {
 				let _scenes = scene.escript[d_current];

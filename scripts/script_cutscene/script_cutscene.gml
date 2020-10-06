@@ -13,3 +13,6 @@ function scr_message(_text, _target) {
 	}
 }
 
+function scr_end_cutscene() {
+	scr_room_trans(room, 60, 999999);
+}

@@ -9,6 +9,8 @@ global.__template_layers = {
 	t_walls: "T_Walls",
 	t_decor: "T_Decoration",
 	
+	a_furniture: "A_Furniture",
+	
 	furniture: "L_Furniture",
 	items: "L_Item",
 	entity: "L_Entity",
