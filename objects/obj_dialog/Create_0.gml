@@ -17,3 +17,5 @@ image_speed = 0.2;
 d_input_wait = 25; // how long wait before input
 
 d_script_exec = 0;
+
+is_branch = 0;

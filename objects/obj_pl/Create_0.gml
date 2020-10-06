@@ -17,6 +17,7 @@ a_handler = new AnimHandler();
 a_handler.add(spr_hud_gear, 0.1);
 a_handler.add(spr_hud_hand, 0.1);
 a_handler.add(spr_hud_eye, 0.1);
+a_handler.add(spr_hud_mouth, 0.1);
 
 
 

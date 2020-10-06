@@ -9,36 +9,62 @@ function scr_dialog(_obj) {
 	dbox.scene = _obj;
 }
 
-/// @arg text
-/// @arg target
-/// @arg sound
-/// @arg script
-function scr_dialog_oneline(_dia, _tar, _snd, _scr) {
-	let _dialog = new Dialog([_dia], [_tar], [_snd], [_scr]);
-	scr_dialog(_dialog);
-}
 
 function scr_dialog_camshake() {
 	scr_camera_shake(cam_shake.both, 10, 120);
 }
 
+function scr_dialog_init() {
+	return new Dialog();	
+}
+
+/// @arg dialog
+/// @arg text
+/// @arg target
+/// @arg sound
+/// @arg script
+function scr_dialog_add_line(_obj, _text, _target, _sound, _script) {
+	///
+	_obj.add(_text, _target, _sound, _script);
+}
+
+/// @arg dialog
+/// @arg text1
+/// @arg text2
+/// @arg target
+/// @arg sound
+/// @arg next_dialog1
+/// @arg next_dialog2
+function scr_dialog_add_answer2(_obj, _text1, _text2, _target, _sound, _newd1, _newd2) {
+	_obj.add([_text1, _text2], _target, _sound, [_newd1, _newd2]);
+}
+
+/// @arg dialog
+/// @arg text1
+/// @arg text2
+/// @arg text3
+/// @arg target
+/// @arg sound
+/// @arg next_dialog1
+/// @arg next_dialog2
+/// @arg next_dialog3
+function scr_dialog_add_answer3(_obj, _text1, _text2, _text3, _target, _sound, _newd1, _newd2, _newd3) {
+	_obj.add([_text1, _text2, _text3], _target, _sound, [_newd1, _newd2, _newd3]);	
+}
+
 /// @desc Makes dialog object that should be passed into scr_dialog
-/// @arg dialog[i]
-/// @arg object[i]
-/// @arg sound[i]
-/// @arg script[i]
-function Dialog(_dia, _tar, _snd, _scr) constructor {
+function Dialog() constructor {
 	dialog = [];
 	target = [];
 	sound = [];
 	escript = [];
+	count = 0;
 	
-	size = min(array_length(_dia), array_length(_tar), array_length(_snd), array_length(_scr));
-	for (let i = 0; i < size; i ++) {
-		dialog[ i] = _dia[i];
-		target[ i] = _tar[i];
-		sound[ i] = _snd[i];
-		escript[ i] = _scr[i];
+	add = function(_text, _target, _sound, _script) {
+		dialog[count] = _text;
+		target[count] = _target;
+		sound[count] = _sound;
+		escript[count] = _script;
+		count ++;
 	}
-	
 }
