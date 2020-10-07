@@ -5,6 +5,8 @@
 global.__template_layers = {
 	b_back: "B_Back",
 	
+	o_back: "O_Back",
+	
 	t_back: "T_Back",
 	t_walls: "T_Walls",
 	t_decor: "T_Decoration",

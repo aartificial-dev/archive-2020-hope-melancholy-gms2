@@ -4,9 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-let _text = ["I look cool"];
-let _obj = [obj_pl];
-let _snd = [snd_dialog_hi];
-let _scr = [noone];
-let _dia = new Dialog(_text, _obj, _snd, _scr);
+let _dia = scr_dialog_init();
+scr_dialog_add_line(_dia, "I look cool", obj_pl, snd_dialog_hi, noone);
 scr_dialog(_dia);

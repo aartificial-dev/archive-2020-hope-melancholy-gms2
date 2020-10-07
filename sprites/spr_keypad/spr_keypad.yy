@@ -72,7 +72,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_keypad","path":"sprites/spr_keypad/spr_keypad.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_keypad",
     "tags": [],
     "resourceType": "GMSequence",
   },

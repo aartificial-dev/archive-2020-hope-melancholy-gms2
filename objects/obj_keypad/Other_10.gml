@@ -4,8 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (!active) {
-	scr_message("I need keycard", obj_pl);
-} else {
-	scr_message("It's already active", obj_pl);
-}
+let ins = instance_create_layer(0, 0, Layers.gui, obj_gui_keypad);
+ins.keypad_key = key;
+ins.keypad = id;
+ins.active = active;

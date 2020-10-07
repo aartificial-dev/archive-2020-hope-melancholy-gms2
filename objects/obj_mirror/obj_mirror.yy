@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Objects/Furniture.yy",
+    "name": "Interact",
+    "path": "folders/Objects/Interact.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_mirror",

@@ -32,3 +32,4 @@ camera_set_view_pos(camera, round(x - (view_w / 2)), round(y - (view_h / 2)));
 camera_set_view_size(camera, view_width / actual_scale, view_height / actual_scale);
 
 //window_mouse_set(clamp(window_mouse_get_x(),0,window_get_width()),clamp(window_mouse_get_y(),0,window_get_height()));
+

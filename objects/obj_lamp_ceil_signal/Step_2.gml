@@ -3,6 +3,7 @@
 
 if (signal_get(signal) == true && sprite_index != spr_lamp_ceil_dark && !instance_exists(light)) {
 	light = instance_create_layer(x, y, Layers.light, par_light_ceil);
+	light.width = 200;
 }
 if (signal_get(signal) == false) {
 	if (instance_exists(light)) {

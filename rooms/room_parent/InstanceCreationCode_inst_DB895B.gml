@@ -1,2 +1,2 @@
-signal = 451;
+signal = 555;
 error = "Doors stuck."

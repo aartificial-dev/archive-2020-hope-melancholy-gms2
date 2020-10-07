@@ -38,7 +38,36 @@ function scr_door_init(_room, _id, _dest) {
 	marker.mid = _id; // id of this door's marker (marker id)
 }
 
+/// @arg room
+/// @arg door_id
+/// @arg dest_id
+/// @arg signal
+function scr_door_signal_init(_room, _id, _dest, _signal) {
+	target_room = _room; // room ind to goto
+	target = _dest;	// id of pl_marker to goto
+	signal = _signal; // signal of door opens
+	
+	let _y = y + sprite_height - sprite_yoffset;
+	let marker = instance_create_layer(x, _y, Layers.system, obj_pl_marker);
+	marker.mid = _id; // id of this door's marker (marker id)
+}
 
+/// @arg signal
+/// @arg key_id
+function scr_keycard_lock_init(_signal, _key) {
+	signal = _signal;
+	key = _key;
+}
+
+/// @arg signal
+/// @arg 4digit_key
+function scr_keypad_init(_signal, _key) {
+	signal = _signal;
+	key = _key;
+}
+
+signal = noone;
+key = 0000;
 /// @arg number
 function scr_get_marker_id(_id) {
 	let _count = instance_number(obj_pl_marker);

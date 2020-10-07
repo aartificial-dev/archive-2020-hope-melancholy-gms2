@@ -12,6 +12,9 @@ puzzle.connections = connections;
 puzzle.p_power = p_power;
 puzzle.p_list = p_list;
 puzzle.p_overload = p_overload;
+puzzle.ext_connections = ext_connections;
+puzzle.grid_io = grid_io;
+puzzle.grid_active = grid_active;
 audio_play_sound(snd_wirebox_open, 0, 0);
 
 // write made puzzle

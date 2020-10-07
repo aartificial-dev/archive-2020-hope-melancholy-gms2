@@ -1,0 +1,1 @@
+note = "Ayami, I changed code to the storage room to 0 4 5 1, don't forget it!";

@@ -22,3 +22,6 @@ shake_amount = 0;
 shake_type = 0;
 
 show_debug = 0;
+
+
+b_back_st_x = 0;

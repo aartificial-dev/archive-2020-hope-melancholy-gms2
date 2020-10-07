@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Objects/Furniture.yy",
+    "name": "Light",
+    "path": "folders/Objects/Furniture/Light.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_lamp_ceil_signal",

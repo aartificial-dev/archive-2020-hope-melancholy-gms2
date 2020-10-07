@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 5,
-  "bbox_right": 47,
-  "bbox_top": 0,
-  "bbox_bottom": 51,
+  "bbox_left": 4,
+  "bbox_right": 55,
+  "bbox_top": 1,
+  "bbox_bottom": 55,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 48,
-  "height": 52,
+  "width": 56,
+  "height": 56,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -26,6 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"d0c0b446-09b0-4922-ac03-1f98b26abc19","path":"sprites/spr_elevator/spr_elevator.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d0c0b446-09b0-4922-ac03-1f98b26abc19","path":"sprites/spr_elevator/spr_elevator.yy",},"LayerId":{"name":"6747a2fc-6f06-406f-8fd4-398a4b227483","path":"sprites/spr_elevator/spr_elevator.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d0c0b446-09b0-4922-ac03-1f98b26abc19","path":"sprites/spr_elevator/spr_elevator.yy",},"LayerId":{"name":"3db51d7e-7a52-4060-b9b6-00247a5876b4","path":"sprites/spr_elevator/spr_elevator.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d0c0b446-09b0-4922-ac03-1f98b26abc19","path":"sprites/spr_elevator/spr_elevator.yy",},"LayerId":{"name":"3300d92b-7d3b-4dc3-bac9-9b5983383df8","path":"sprites/spr_elevator/spr_elevator.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_elevator","path":"sprites/spr_elevator/spr_elevator.yy",},"resourceVersion":"1.0","name":"d0c0b446-09b0-4922-ac03-1f98b26abc19","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -54,8 +56,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 24,
-    "yorigin": 36,
+    "xorigin": 28,
+    "yorigin": 24,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_elevator","path":"sprites/spr_elevator/spr_elevator.yy",},
@@ -65,7 +67,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6747a2fc-6f06-406f-8fd4-398a4b227483","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"3300d92b-7d3b-4dc3-bac9-9b5983383df8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Furniture",

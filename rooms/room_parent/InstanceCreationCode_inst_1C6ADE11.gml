@@ -1,1 +1,1 @@
-scr_door_init(room, 3280, 328);
+scr_door_signal_init(room, 3280, 328, 328);

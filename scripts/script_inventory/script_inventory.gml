@@ -6,6 +6,7 @@ enum item_type {
 	chip,
 	ammo,
 	medicine,
+	keycard,
 	notes
 }
 

@@ -4,5 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-item = new inv_item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Keycard", item_type.quest, 0);
+item = new inv_item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Keycard", item_type.keycard, 0);
 
