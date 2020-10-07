@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7223b872-2855-4203-9d00-c88e567f45d9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "player",
+    "path": "folders/Sprites/GUI/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_face_nervous",

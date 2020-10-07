@@ -91,8 +91,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"dbb8251c-97bb-4a24-9ab7-ed982bd6e4bd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "icons",
+    "path": "folders/Sprites/GUI/icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hud_hand",

@@ -93,8 +93,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"df9fa7f8-34f8-45b3-a82b-ee84577c9400","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "icons",
+    "path": "folders/Sprites/GUI/icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hud_eye",

@@ -37,7 +37,7 @@ function __inv_act_draw(inv, _x, _y) {
 }
 
 function __inv_draw_text(inv, inv_x, inv_y) {
-	if (inv_hand) return;
+	if (inv_hand || hud_offset != 0) return;
 	let scell = 11; // size of one cell w & h
 	let mousex = floor( (gui_mouse_x - inv_x) / scell + 0.0);
 	let mousey = floor( (gui_mouse_y - inv_y) / scell + 0.0);
@@ -75,7 +75,7 @@ function __inv_chip_draw() {
 }
 
 function __inv_chip_text() {
-	if (inv_hand) return;
+	if (inv_hand || hud_offset != 0) return;
 	let pass = [];
 	pass[0] = point_in_rectangle(gui_mouse_x, gui_mouse_y, 251, 2, 251 + 32, 2 + 16);		/// 251 2
 	pass[1] = point_in_rectangle(gui_mouse_x, gui_mouse_y, 285, 2, 285 + 32, 2 + 16);		/// 285 2

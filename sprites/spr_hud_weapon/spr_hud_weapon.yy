@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c9e65af8-6adb-4535-97b9-069920d159db","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "icons",
+    "path": "folders/Sprites/GUI/icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hud_weapon",

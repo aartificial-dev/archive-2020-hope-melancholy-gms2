@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b8a2f3ae-314b-40aa-8831-40c945cad30e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "player",
+    "path": "folders/Sprites/GUI/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_face_calm",

@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Objects/Meta.yy",
+    "name": "Interact",
+    "path": "folders/Objects/Interact.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_interactive",

@@ -86,7 +86,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_note_newspaper","path":"sprites/spr_note_newspaper/spr_note_newspaper.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_note_newspaper",
     "tags": [],
     "resourceType": "GMSequence",
   },

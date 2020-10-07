@@ -15,6 +15,9 @@ switch (type) {
 	case note_type.news:
 		sprite_index = spr_note_newspaper;
 	break;
+	case note_type.pc:
+		sprite_index = spr_note_pc;
+	break;
 	default:
 		sprite_index = spr_note;
 }

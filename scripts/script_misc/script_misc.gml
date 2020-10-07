@@ -35,7 +35,8 @@ function object_get_depth(_id) {
 enum note_type {
 	book,
 	note,
-	news
+	news,
+	pc
 }
 
 /// @arg text
@@ -46,6 +47,7 @@ function scr_note(_text, _type) {
 	note.type = _type;
 }
 
+
 /// @arg [text_keyboardkey_mousekey] 
 function scr_tutorial(arg) {
 	with (obj_tutorial) {
@@ -55,4 +57,34 @@ function scr_tutorial(arg) {
 	ins.text = arg[0];
 	ins.key = arg[1];
 	ins.mouse = arg[2];
+}
+
+function scr_pc_note_init() {
+	note = new NotePC();
+}
+
+/// @arg from
+/// @arg to
+/// @arg text
+function scr_pc_note_add(_from, _to, _text) {
+	note.add(_from, _to, _text);
+}
+
+function NotePC() constructor {
+	notes = [];
+	count = 0;
+	
+	add = function(from, to, text) {
+		notes[count] = new NotePCMail(from, to, text);
+		count ++;
+	}
+}
+
+/// @arg from
+/// @arg to
+/// @arg text
+function NotePCMail(_from, _to, _text) constructor {
+	from = _from;
+	to = _to;
+	text = _text;
 }

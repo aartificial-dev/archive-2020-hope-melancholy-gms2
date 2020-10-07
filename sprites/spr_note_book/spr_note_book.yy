@@ -86,7 +86,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_note_book","path":"sprites/spr_note_book/spr_note_book.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_note_book",
     "tags": [],
     "resourceType": "GMSequence",
   },

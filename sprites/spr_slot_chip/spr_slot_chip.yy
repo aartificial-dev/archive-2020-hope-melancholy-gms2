@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9b962288-f19c-40c1-bbd6-50e7171cf2bf","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "player",
+    "path": "folders/Sprites/GUI/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slot_chip",

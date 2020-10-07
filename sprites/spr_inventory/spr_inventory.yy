@@ -86,8 +86,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"e56faeef-906e-469b-b4f5-c9e96feef30a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "player",
+    "path": "folders/Sprites/GUI/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_inventory",

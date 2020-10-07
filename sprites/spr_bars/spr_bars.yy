@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3d3cba6e-60eb-44bb-9ea9-2838abf076df","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "player",
+    "path": "folders/Sprites/GUI/player.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bars",
