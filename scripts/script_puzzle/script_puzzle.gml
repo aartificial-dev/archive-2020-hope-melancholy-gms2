@@ -212,16 +212,16 @@ function scr_puzzle_draw_connections() {
 				let vec = connections[# _x, _y];
 				let _x1 = left + (_x * cell_size) + cell_size / 2;
 				let _y1 = up + (_y * cell_size) + cell_size / 2;
-				let _x2 = left + (vec.x * cell_size) + cell_size / 2
+				let _x2 = left + (vec.x * cell_size) + cell_size / 2;
 				let _y2 = up + (vec.y * cell_size) + cell_size / 2;
-				draw_line_width_color(_x1 - cell_size / 4, _y1, _x2 + cell_size / 4, _y2, cell_size / 7, c_blue, c_red);
+				draw_line_width_color(_x1 - cell_size / 4, _y1, _x2 + cell_size / 4, _y2, cell_size / 8, c_blue, c_red);
 			}
 		}
 	}
 	if (con_mouse != noone) {
 		let _x1 = left + (con_mouse.x * cell_size) + cell_size / 2;
 		let _y1 = up + (con_mouse.y * cell_size) + cell_size / 2;
-		draw_line_width_color(_x1 - cell_size / 4, _y1, gui_mouse_x, gui_mouse_y, cell_size / 7, c_blue, c_red);
+		draw_line_width_color(_x1 - cell_size / 4, _y1, gui_mouse_x, gui_mouse_y, cell_size / 8, c_blue, c_red);
 	}
 }
 
@@ -278,29 +278,29 @@ function scr_puzzle_power() {
 }
 
 /// @arg cell
-function scr_puzzle_color(cell) {
-	let col = c_gray;
+function scr_puzzle_sprite(cell) {
+	let col = spr_puzzle_block;
 	switch (cell) {
 		case puzzle_node.n_block:
-			col = c_dkgray;
+			col = spr_puzzle_block;
 		break;
 		case puzzle_node.n_input:
-			col = c_purple;
+			col = spr_puzzle_input;
 		break;
 		case puzzle_node.n_power:
-			col = c_yellow;
+			col = spr_puzzle_power;
 		break;
 		case puzzle_node.n_transit:
-			col = c_green;
+			col = spr_puzzle_transit;
 		break;
 		case puzzle_node.n_breaker:
-			col = c_red;
+			col = spr_puzzle_breaker;
 		break;
 		case puzzle_node.n_multiplier:
-			col = c_orange;
+			col = spr_puzzle_multiplier;
 		break;
 		case puzzle_node.n_divider:
-			col = c_blue;
+			col = spr_puzzle_divider;
 		break;
 	}
 	return col;

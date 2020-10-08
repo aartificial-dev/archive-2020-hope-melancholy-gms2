@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_right": 13,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 13,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 1,
-  "height": 1,
+  "width": 14,
+  "height": 14,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0e0c8d63-717a-496a-b5da-c3aaa2d0d649","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0e0c8d63-717a-496a-b5da-c3aaa2d0d649","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"LayerId":{"name":"5461bd71-b8ae-4a6e-a9cd-9f5483723496","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_puzzle_block","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","name":"0e0c8d63-717a-496a-b5da-c3aaa2d0d649","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8d77209a-71e7-4b44-8a06-b39e5882f479","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8d77209a-71e7-4b44-8a06-b39e5882f479","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"LayerId":{"name":"724465fa-973d-48ff-91b9-0497f7d72778","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_puzzle_block","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","name":"8d77209a-71e7-4b44-8a06-b39e5882f479","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_puzzle_block","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8b7fb9ed-e46e-478a-9d86-2519cf7b51a0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0e0c8d63-717a-496a-b5da-c3aaa2d0d649","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0b0c672f-e819-4e43-8c16-b5872df57dec","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8d77209a-71e7-4b44-8a06-b39e5882f479","path":"sprites/spr_puzzle_block/spr_puzzle_block.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,11 +65,11 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5461bd71-b8ae-4a6e-a9cd-9f5483723496","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"724465fa-973d-48ff-91b9-0497f7d72778","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "puzzle",
+    "path": "folders/Sprites/GUI/puzzle.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_puzzle_block",

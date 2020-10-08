@@ -38,7 +38,9 @@ if (alarm[0] == -1) {
 	
 	if (d_script_exec == 0 && alarm[0] == -1 && !is_branch) {
 		let _script = scene.escript[d_current];
-		if (script_exists(_script)) {
+		if (is_method(_script)) {
+			_script();
+		} else if (script_exists(_script)) {
 			script_execute(_script);
 		}
 		d_script_exec = 1;

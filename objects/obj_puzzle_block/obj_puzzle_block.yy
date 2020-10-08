@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_puzzle_block",
-    "path": "sprites/spr_puzzle_block/spr_puzzle_block.yy",
+    "name": "spr_puzzle_obj_block",
+    "path": "sprites/spr_puzzle_obj_block/spr_puzzle_obj_block.yy",
   },
   "solid": false,
   "visible": false,

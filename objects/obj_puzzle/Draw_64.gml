@@ -15,19 +15,7 @@ let cell_size = 140 / grid_size;
 let left = (gui_w / 2) - 70 - 1;
 let right = (gui_w / 2) + 70 - 1;
 let up = (gui_h / 2) - 70 - 1;
-let down = (gui_h / 2) + 70 - 1;
 
-for (let i = 0; i < grid_size; i ++) {
-	for (let j = 0; j < grid_size; j ++) {
-		let _l = left + (i * cell_size);
-		let _u = up + (j * cell_size);
-		if ( (i + j) % 2 == 0) {
-			draw_rect_f(_l + 1, _u + 1, _l + cell_size, _u + cell_size, c_dkgray, 0, 0.25);
-		}
-		//draw_line_color(left + (i * cell_size), up, left + (i * cell_size), down, c_black, c_black);
-		//draw_line_color(left, up + (i * cell_size), right, up +  + (i * cell_size), c_black, c_black);
-	}
-}
 
 if (puzzle_map != noone) {
 	if (keyboard_check_pressed(ord("R"))) {
@@ -36,25 +24,17 @@ if (puzzle_map != noone) {
 	scr_puzzle_check_connections();
 	for (let _y = 0; _y < grid_size; _y ++) {
 		for (let _x = 0; _x < grid_size; _x ++) {
+			let _l = left + (_x * cell_size);
+			let _u = up + (_y * cell_size);
+			if ( (_x + _y) % 2 == 0) {
+				draw_rect_f(_l + 1, _u + 1, _l + cell_size, _u + cell_size, c_dkgray, 0, 0.25);
+			}
 			let cell = puzzle_map[# _x, _y];
 			// drawing cells
 			if (cell != noone) {
-				let col = scr_puzzle_color(cell);
-				let _l = left + (_x * cell_size);
-				let _u = up + (_y * cell_size);
+				let _spr = scr_puzzle_sprite(cell);
 				let _alpha = grid_active[# _x, _y] ? 1: 0.5;
-				draw_rect_f(_l + 1, _u + 1, _l + cell_size, _u + cell_size, col, 0, _alpha);
-				draw_set_alpha(_alpha);
-				if (cell != puzzle_node.n_block) {
-					if (cell != puzzle_node.n_input) { // blue - output
-						draw_circle_color(_l + cell_size * 0.25, _u + cell_size / 2, cell_size / 7, c_blue, c_blue, 0);
-					}
-					if (cell != puzzle_node.n_power && cell != puzzle_node.n_breaker) { // red - input
-						draw_circle_color(_l + cell_size * 0.75, _u + cell_size / 2, cell_size / 7, c_red, c_red, 0);
-					}
-					//draw_text_color(_l, _u, p_power[# _x, _y], c_black, c_black, c_black, c_black, 1);
-				}
-				draw_set_alpha(1);
+				draw_sprite_ext(_spr, 0, _l + 1, _u + 1, 1, 1, 0, c_white, _alpha);
 				// connections make
 				if (point_in_rectangle(gui_mouse_x, gui_mouse_y, _l + 1, _u + 1, _l + cell_size, _u + cell_size)) {
 					if (mouse_check_button_pressed(mb_left) && cell != puzzle_node.n_block && grid_active[# _x, _y]) {

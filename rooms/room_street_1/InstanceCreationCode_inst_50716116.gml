@@ -1,0 +1,1 @@
+scr_audio_init(snd_rain, 150);

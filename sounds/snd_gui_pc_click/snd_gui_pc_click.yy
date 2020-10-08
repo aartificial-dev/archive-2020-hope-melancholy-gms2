@@ -13,8 +13,8 @@
   "soundFile": "snd_gui_pc_click.wav",
   "duration": 0.076111,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_gui_pc_click",

@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f27e404d-c83a-4ea8-9f7c-8fc6869ab30c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/GUI.yy",
+    "name": "puzzle",
+    "path": "folders/Sprites/GUI/puzzle.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_puzzle",

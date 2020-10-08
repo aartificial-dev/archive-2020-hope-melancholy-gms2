@@ -16,6 +16,7 @@ global.__template_layers = {
 	furniture: "L_Furniture",
 	items: "L_Item",
 	entity: "L_Entity",
+	effect: "L_Effect",
 	light: "L_Light",
 	gui: "L_Gui",
 	collision: "L_Collision",

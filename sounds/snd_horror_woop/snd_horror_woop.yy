@@ -13,8 +13,8 @@
   "soundFile": "snd_horror_woop.wav",
   "duration": 3.784546,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_horror_woop",
