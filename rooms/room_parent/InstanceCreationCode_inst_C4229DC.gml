@@ -1,1 +1,1 @@
-item = new inv_item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Manager's Keycard", item_type.keycard, 328);
+image_index = 0;

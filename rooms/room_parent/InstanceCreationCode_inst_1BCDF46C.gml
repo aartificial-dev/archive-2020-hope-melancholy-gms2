@@ -1,1 +1,1 @@
-item = new inv_item(spr_chip_inv_b, spr_chip_floor, 1, 1, "Clearance chip", item_type.chip, $FFE8CC);
+item = new Item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Manager's Keycard", item_type.keycard, 328);

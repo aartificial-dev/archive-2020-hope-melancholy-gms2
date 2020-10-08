@@ -24,50 +24,15 @@ function scr_trigger_init(_func, _arg, _destroy) {
 	destroy = _destroy;
 }
 
-
-
-/// @arg room
-/// @arg door_id
-/// @arg dest_id
-function scr_door_init(_room, _id, _dest) {
-	target_room = _room; // room ind to goto
-	target = _dest;	// id of pl_marker to goto
-	
-	let _y = y + sprite_height - sprite_yoffset;
-	let marker = instance_create_layer(x, _y, Layers.system, obj_pl_marker);
-	marker.mid = _id; // id of this door's marker (marker id)
+/// @arg function
+/// @arg timer
+function scr_set_timer(_func, _timer) {
+	let ins = instance_create_layer(0, 0, Layers.system, obj_timer);
+	ins.alarm[0] = _timer;
+	ins.func = _func;
 }
 
-/// @arg room
-/// @arg door_id
-/// @arg dest_id
-/// @arg signal
-function scr_door_signal_init(_room, _id, _dest, _signal) {
-	target_room = _room; // room ind to goto
-	target = _dest;	// id of pl_marker to goto
-	signal = _signal; // signal of door opens
-	
-	let _y = y + sprite_height - sprite_yoffset;
-	let marker = instance_create_layer(x, _y, Layers.system, obj_pl_marker);
-	marker.mid = _id; // id of this door's marker (marker id)
-}
 
-/// @arg signal
-/// @arg key_id
-function scr_keycard_lock_init(_signal, _key) {
-	signal = _signal;
-	key = _key;
-}
-
-/// @arg signal
-/// @arg 4digit_key
-function scr_keypad_init(_signal, _key) {
-	signal = _signal;
-	key = _key;
-}
-
-signal = noone;
-key = 0000;
 /// @arg number
 function scr_get_marker_id(_id) {
 	let _count = instance_number(obj_pl_marker);
@@ -79,13 +44,4 @@ function scr_get_marker_id(_id) {
 	}
 	
 	return noone;
-}
-
-function scr_trigger_end_game() {
-	game_end();
-}
-
-/// @arg room
-function scr_trigger_goto_room(room) {
-	room_goto(room);
 }

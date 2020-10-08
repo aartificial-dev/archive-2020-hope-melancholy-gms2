@@ -12,7 +12,7 @@ enum item_type {
 
 /// @func inv_create
 function inv_create() {
-	inv_items = ds_list_create(); // accepts inv_item
+	inv_items = ds_list_create(); // accepts Item
 	inv_weap1 = ds_list_create();
 	inv_weap2 = ds_list_create();
 	
@@ -57,7 +57,7 @@ function scr_item_summon(_item, _x, _y) {
 	audio_play_sound(snd_inv_drop, 0, 0);
 }
 
-/// @func inv_item
+/// @func Item
 /// @arg sprite
 /// @arg sprite_floor
 /// @arg width
@@ -65,7 +65,7 @@ function scr_item_summon(_item, _x, _y) {
 /// @arg name
 /// @arg type
 /// @arg modif
-function inv_item(_sprite, _fsprite, _w, _h, _name, _type, _modif) constructor {
+function Item(_sprite, _fsprite, _w, _h, _name, _type, _modif) constructor {
 	sprite = _sprite;
 	sprite_floor = _fsprite;
 	w = _w;
@@ -75,11 +75,11 @@ function inv_item(_sprite, _fsprite, _w, _h, _name, _type, _modif) constructor {
 	modif = _modif;
 }
 
-/// @func inv_cell
+/// @func ICell
 /// @arg x
 /// @arg y
 /// @arg item
-function inv_cell(_x, _y, _item) constructor {
+function ICell(_x, _y, _item) constructor {
 	x = _x;
 	y = _y;
 	w = _item.w;

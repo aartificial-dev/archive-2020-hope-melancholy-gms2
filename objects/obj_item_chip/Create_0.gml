@@ -22,5 +22,5 @@ if (col == $A7D1B2) {
 	tag = "Smart Chip";
 }
 
-item = new inv_item(spr, spr_chip_floor, 1, 1, tag, item_type.chip, col);
+item = new Item(spr, spr_chip_floor, 1, 1, tag, item_type.chip, col);
 

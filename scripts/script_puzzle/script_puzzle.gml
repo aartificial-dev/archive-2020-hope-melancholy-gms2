@@ -75,6 +75,7 @@ function scr_puzzle_add_connection(_x1, _y1, xto, yto) {
 function scr_puzzle_reset() {
 	ds_grid_clear(connections, noone);
 	ds_grid_copy(connections, ext_connections);
+	con_mouse = noone;
 }
 
 /// @func scr_puzzle_block
@@ -103,7 +104,10 @@ function scr_puzzle_connect(xto, yto) {
 	if (con_mouse.x == xto && con_mouse.y == yto) {
 		connections[# con_mouse.x, con_mouse.y] = noone;
 		audio_play_sound(snd_puzzle_unplug, 0, 0);
-	} else {
+	} else if (puzzle_map[# xto, yto] == puzzle_node.n_power || puzzle_map[# xto, yto] == puzzle_node.n_breaker) {
+		connections[# con_mouse.x, con_mouse.y] = noone;
+		audio_play_sound(snd_puzzle_unplug, 0, 0);
+	} else { 
 		let left = (gui_w / 2) - 70 - 1;
 		let up = (gui_h / 2) - 70 - 1;
 		let cell_size = 140 / grid_size;

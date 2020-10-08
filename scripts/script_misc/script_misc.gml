@@ -1,29 +1,4 @@
-/// @arg sprite
-/// @arg image_speed
-/// @arg direction
-function scr_npc_init(_spr, _spd, _dir) {
-	sprite_index = _spr;
-	image_speed = random_range(_spd - (_spd / 2), _spd + (_spd / 2));
-	image_xscale = _dir; 
-}
 
-/// @arg sprite
-/// @arg image_speed
-/// @arg direction
-/// @arg name
-/// @arg dialiog
-function scr_npc_speak_init(_spr, _spd, _dir, _name, _dialog) {
-	sprite_index = _spr;
-	image_speed = random_range(_spd - (_spd / 2), _spd + (_spd / 2));
-	image_xscale = _dir; 
-	name = _name;
-	dialog = _dialog;
-}
-
-enum npc_dir {
-	left = -1,
-	right = 1
-}
 
 /// @arg id
 function object_get_depth(_id) {
@@ -32,20 +7,6 @@ function object_get_depth(_id) {
 	}
 }
 
-enum note_type {
-	book,
-	note,
-	news,
-	pc
-}
-
-/// @arg text
-/// @arg note_type
-function scr_note(_text, _type) {
-	let note = instance_create_layer(0, 0, Layers.gui, obj_note);
-	note.text = _text;
-	note.type = _type;
-}
 
 
 /// @arg [text_keyboardkey_mousekey] 
@@ -59,32 +20,21 @@ function scr_tutorial(arg) {
 	ins.mouse = arg[2];
 }
 
-function scr_pc_note_init() {
-	note = new NotePC();
-}
+/// @desc Small ingame message
+/// @arg message
+/// @arg target
+function scr_message(_text, _target) {
+	let mbox = instance_create_layer(0, 0, Layers.gui, obj_message);
+	mbox.text = _text;
+	mbox.target = _target;
 
-/// @arg from
-/// @arg to
-/// @arg text
-function scr_pc_note_add(_from, _to, _text) {
-	note.add(_from, _to, _text);
-}
-
-function NotePC() constructor {
-	notes = [];
-	count = 0;
-	
-	add = function(from, to, text) {
-		notes[count] = new NotePCMail(from, to, text);
-		count ++;
+	with (obj_message) {
+		if (self.id != mbox && alarm[1] == -1) {
+			alarm[1] = 1;
+		}
 	}
 }
 
-/// @arg from
-/// @arg to
-/// @arg text
-function NotePCMail(_from, _to, _text) constructor {
-	from = _from;
-	to = _to;
-	text = _text;
+function scr_end_cutscene() {
+	scr_room_trans(room, 60, 999999);
 }

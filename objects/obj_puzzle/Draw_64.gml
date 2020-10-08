@@ -17,9 +17,16 @@ let right = (gui_w / 2) + 70 - 1;
 let up = (gui_h / 2) - 70 - 1;
 let down = (gui_h / 2) + 70 - 1;
 
-for (let i = 0; i <= grid_size; i ++) {
-	draw_line_color(left + (i * cell_size), up, left + (i * cell_size), down, c_black, c_black);
-	draw_line_color(left, up + (i * cell_size), right, up +  + (i * cell_size), c_black, c_black);
+for (let i = 0; i < grid_size; i ++) {
+	for (let j = 0; j < grid_size; j ++) {
+		let _l = left + (i * cell_size);
+		let _u = up + (j * cell_size);
+		if ( (i + j) % 2 == 0) {
+			draw_rect_f(_l + 1, _u + 1, _l + cell_size, _u + cell_size, c_dkgray, 0, 0.25);
+		}
+		//draw_line_color(left + (i * cell_size), up, left + (i * cell_size), down, c_black, c_black);
+		//draw_line_color(left, up + (i * cell_size), right, up +  + (i * cell_size), c_black, c_black);
+	}
 }
 
 if (puzzle_map != noone) {
@@ -55,9 +62,18 @@ if (puzzle_map != noone) {
 							con_mouse = new vec2(_x, _y);
 							connections[# _x, _y] = noone;
 							audio_play_sound(snd_puzzle_take, 0, 0);
-						} else if (con_mouse != noone && cell != puzzle_node.n_power && cell != puzzle_node.n_breaker) {
+						} else if (con_mouse != noone) {
 							scr_puzzle_connect(_x, _y);
 						}
+					}
+				}
+			} else {
+				let _l = left + (_x * cell_size);
+				let _u = up + (_y * cell_size);
+				if (point_in_rectangle(gui_mouse_x, gui_mouse_y, _l + 1, _u + 1, _l + cell_size, _u + cell_size)) {
+					if (mouse_check_button_pressed(mb_left) && con_mouse != noone) {
+						audio_play_sound(snd_puzzle_unplug, 0, 0);
+						con_mouse = noone;
 					}
 				}
 			}

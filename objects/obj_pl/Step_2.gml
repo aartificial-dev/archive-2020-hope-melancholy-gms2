@@ -10,7 +10,7 @@ interact = _dist ? _obj : noone;
 a_handler.step();
 
 // can move if NOT a dialog or note or transition
-can_move = !( instances_exists([obj_dialog, obj_note, obj_puzzle, obj_gui_keypad, obj_gui_note_pc], false) || global.r_trans_state > 0);
+can_move = !( instances_exists([obj_dialog, obj_note, obj_puzzle, obj_gui_keypad, obj_gui_note_pc, obj_horror], false) || global.r_trans_state > 0);
 
 
 let _item_held = weap_select ? inv_weap2 : inv_weap1;

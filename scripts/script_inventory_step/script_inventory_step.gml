@@ -47,7 +47,7 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 			// swap items
 			let temp = inv[| item_col];
 			let new_item = temp.item;
-			let new_cell = new inv_cell(mousex, mousey, inv_hand);
+			let new_cell = new ICell(mousex, mousey, inv_hand);
 			inv_hand = new_item;
 			ds_list_add(inv, new_cell);
 			ds_list_delete(inv, item_col);
@@ -65,7 +65,7 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 		}
 		if (item_col == -1 && inv_hand && _take) {
 			// place item
-			let new_cell = new inv_cell(mousex, mousey, inv_hand);
+			let new_cell = new ICell(mousex, mousey, inv_hand);
 			ds_list_add(inv, new_cell);
 			inv_hand = noone;
 			audio_play_sound(snd_inv_pickup, 0, 0);

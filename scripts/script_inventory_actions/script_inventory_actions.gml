@@ -44,7 +44,7 @@ function scr_items_combine(item1, item2) {
 		if (item1.name == "Broken Tape Player" || item2.name == "Broken Tape Player") {
 			let sound = (item1.name == "Broken Tape Player") ? item1.modif : item2.modif;
 			audio_play_sound(snd_inv_combine, 0, 0);
-			let item = new inv_item(spr_tplayer_inv, spr_tplayer_floor, 2, 1, "Tape Player", item_type.notes, sound);
+			let item = new Item(spr_tplayer_inv, spr_tplayer_floor, 2, 1, "Tape Player", item_type.notes, sound);
 			return item;
 		}
 	}

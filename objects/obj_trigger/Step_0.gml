@@ -3,7 +3,9 @@
 
 if (place_meeting(x, y, obj_pl) && is_active == 0) {
 	is_active = 1;
-	if (script_exists(trigger)) {
+	if (is_method(trigger)) {
+		trigger();
+	} else if (script_exists(trigger)) {
 		if (arg == noone) {
 			script_execute(trigger);
 		} else {

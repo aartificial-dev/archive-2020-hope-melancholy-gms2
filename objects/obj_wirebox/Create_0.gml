@@ -16,3 +16,6 @@ p_power = noone;
 p_list = noone;
 p_signal = noone;
 p_overload = noone;
+
+__sound = snd_wirebox_bzz;
+__sound_id = noone;

@@ -1,0 +1,1 @@
+scr_trigger_init(scr_tutorial, ["People can give you hint", vk_anykey, mb_any], 1);

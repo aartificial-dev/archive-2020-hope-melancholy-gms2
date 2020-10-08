@@ -1,0 +1,1 @@
+scr_trigger_init(scr_tutorial, ["You can use items on mechanisms", noone, mb_right], 1);

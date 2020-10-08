@@ -79,8 +79,4 @@ function Dialog() constructor {
 		escript[count] = _script;
 		count ++;
 	}
-	
-	addEndScript = function(_script) {
-		endscript = _script;
-	}
 }

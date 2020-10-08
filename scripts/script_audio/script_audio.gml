@@ -16,3 +16,10 @@ function audio_play_at(argument0, argument1, argument2, argument3, argument4, ar
 	audio_falloff_set_model(audio_falloff_exponent_distance);
 	return audio_play_sound_at(soundid, _x, _y, 0, falloff/2, falloff, factor, loop, priority);
 }
+
+/// @arg soundid
+/// @arg falloff=150
+function scr_audio_init(_a, _f) {
+	audio = _a;
+	faloff = _f;
+}
