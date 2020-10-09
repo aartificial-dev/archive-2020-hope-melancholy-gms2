@@ -1,14 +1,30 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!ds_exists(p_signal, ds_type_list)) exit;
+if (!ds_exists(puzzle_map, ds_type_grid)) {
+	exit;
+}
+if (!ds_exists(puzzle_input, ds_type_list)) {
+	puzzle_input = ds_list_create();
+	for (let _y = 0; _y < 10; _y ++) {
+		for (let _x = 0; _x < 10; _x ++) {
+			let cell = puzzle_map[# _x, _y];
+			if (cell != noone) {
+				if (cell.type = puzzle_node.n_input) {
+					ds_list_add(puzzle_input, new vec2(_x, _y));
+				}
+			}
+		}
+	}
+}
 
 let play = 0;
 
-let s = ds_list_size(p_signal);
+let s = ds_list_size(puzzle_input);
 for (let i = 0; i < s; i ++) {
-	let vec = p_signal[| i];
-	if (p_power[# vec.x, vec.y] == grid_io[# vec.x, vec.y]) {
-		signal_send(vec.z);
+	let vec = puzzle_input[| i];
+	let cell = puzzle_map[# vec.x, vec.y];
+	if (cell.cur_power == cell.max_power) {
+		signal_send(cell.signal);
 		play = 1;
 	}
 }

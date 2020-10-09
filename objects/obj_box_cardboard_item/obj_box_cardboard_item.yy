@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_box_cardboard",
-    "path": "sprites/spr_box_cardboard/spr_box_cardboard.yy",
+    "name": "spr_box_cardboard_closed",
+    "path": "sprites/spr_box_cardboard_closed/spr_box_cardboard_closed.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,7 +26,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

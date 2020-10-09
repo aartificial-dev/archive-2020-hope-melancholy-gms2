@@ -1,2 +1,2 @@
-/// @description Insert description here
+/// @description empty
 // You can write your code in this editor

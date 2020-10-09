@@ -7,3 +7,5 @@ name = "Door";
 target = id;
 door_sound = snd_door_open;
 target_room = room_parent;
+
+image_speed = 0;

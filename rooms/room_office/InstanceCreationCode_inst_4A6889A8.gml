@@ -1,6 +1,6 @@
 /// 330
 
-scr_puzzle_init(10);
+scr_puzzle_init();
 
 scr_puzzle_add_input(8, 1, 1, 555, noone);
 

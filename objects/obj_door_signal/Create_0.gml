@@ -10,3 +10,5 @@ target_room = room_parent;
 
 signal = noone;
 error = "It's locked.";
+
+image_speed = 0;
