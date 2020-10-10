@@ -3,23 +3,37 @@
 
 
 if (checked == 0) {
+	let list = ds_list_create();
 	for (let i = 0; i < dist; i ++) {
 		let xc = x + lendir_x(i, 0, dir + d);
 		let yc  = y + lendir_y(i, 0, dir + d);
-		let obj = collision_point(xc, yc, par_collision, 0, 1);
-		if (instance_exists(obj)) {
-			dist = i;
-			with (obj) {
-				hit_object_x = xc; 
-				hit_object_y = yc;
-				hit_object_dmod = 3;
-				event_user(15);
+		let num = collision_point_list(xc, yc, par_collision, 0, 1, list, 0);
+		
+		for (let j = 0; j < num; j ++) {
+			if (instance_exists(list[| j]) && !obj_is_ancestor(list[| j], par_obsticle)) {
+				dist = i;
+				if (obj_is_ancestor(list[| j], par_unwalk)) {
+					type = 0;
+				}
+				if (obj_is_ancestor(list[| j], par_entity)) {
+					type = 1;
+				}
+				if (obj_is_ancestor(list[| j], par_monster)) {
+					type = 2;
+				}
+				with (list[| j]) {
+					hit_object_x = xc; 
+					hit_object_y = yc;
+					hit_object_dmod = 3;
+					event_user(15);
+				}
+				//let splash = instance_create_layer(xc, yc, Layers.effect, obj_splash);
 			}
-			//let splash = instance_create_layer(xc, yc, Layers.furniture, obj_splash);
-			//splash.dir = (dir + d) - 180;
 		}
+		ds_list_clear(list);
 	}
 	checked = 1;
+	ds_list_destroy(list);
 }
 
 draw_set_alpha(0.3);

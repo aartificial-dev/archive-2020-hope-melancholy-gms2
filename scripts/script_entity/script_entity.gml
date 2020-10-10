@@ -41,14 +41,17 @@ function scr_attack_shoot() {
 	let _y = y - 7 - 24;
 	let dir = weap_ang;
 	let _flip; if (dir > 90 && dir < 270) {_flip = 3;} else {_flip = -3;}
-	let len_x = _x + lendir_x(22, _flip, dir);
-	let len_y = _y + lendir_y(22, _flip, dir);
+	let len_x = _x + lendir_x(20, _flip, dir);
+	let len_y = _y + lendir_y(20, _flip, dir);
 
 	let sleeve = instance_create_layer(len_x, len_y, Layers.furniture, obj_sleeve);
 	sleeve.dir = -spr_dir;
 
 	let bullet = instance_create_layer(len_x, len_y, Layers.furniture, obj_bullet);
 	bullet.dir = dir;
+	
+	let flash = instance_create_layer(len_x, len_y, Layers.furniture, obj_muzzleflash);
+	flash.dir = dir;
 
 	let sound = choose(snd_pistol_shot_1, snd_pistol_shot_2, snd_pistol_shot_3);
 	audio_play_sound(sound, 0, 0);

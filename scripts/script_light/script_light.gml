@@ -24,3 +24,7 @@ function draw_sprite_bloom_ext(argument0, argument1, argument2, argument3, argum
 		gpu_set_blendmode(bm_normal);
 	//surface_reset_target();
 }
+
+function draw_sprite_bloom_self() {
+	draw_sprite_bloom_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+}

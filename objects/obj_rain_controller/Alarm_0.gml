@@ -8,4 +8,4 @@ for (let i = 0; i < amount; i ++) {
 	instance_create_layer(_x, y + 1 + irandom(4), Layers.effect, obj_raindrop);
 }
 
-alarm[0] = 10;
+alarm[0] = 8;

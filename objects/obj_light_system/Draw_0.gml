@@ -18,9 +18,9 @@ with (par_light) {
 	var w = width / sprite_get_width(light);
 	var h = height / sprite_get_height(light);
 	gpu_set_blendmode(bm_subtract);
-	draw_sprite_ext(light, image_index, _x, _y, w, h, 0, c_white, alpha_sub);
+	draw_sprite_ext(light, image_index, _x, _y, w, h, angle, c_white, alpha_sub);
 	gpu_set_blendmode(bm_add);
-	draw_sprite_ext(light, image_index, _x, _y, w, h, 0, c_white, alpha_add);
+	draw_sprite_ext(light, image_index, _x, _y, w, h, angle, c_white, alpha_add);
 }
 gpu_set_blendmode(bm_normal);
 surface_reset_target();

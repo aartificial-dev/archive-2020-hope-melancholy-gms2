@@ -6,3 +6,4 @@ width = 100;
 height = 180;
 alpha_sub = 1;
 alpha_add = 0;
+angle = 0;

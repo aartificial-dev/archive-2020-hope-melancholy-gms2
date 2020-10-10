@@ -5,3 +5,5 @@ alarm[0] = 4;
 d = irandom_range(-3, 3);
 dist = 320;
 checked = 0;
+
+type = -1;

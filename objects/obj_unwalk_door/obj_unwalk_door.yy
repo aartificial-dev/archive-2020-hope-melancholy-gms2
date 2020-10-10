@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_unwalk",
-    "path": "objects/par_unwalk/par_unwalk.yy",
+    "name": "par_wall",
+    "path": "objects/par_wall/par_wall.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

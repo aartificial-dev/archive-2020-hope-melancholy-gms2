@@ -25,3 +25,8 @@ show_debug = 0;
 
 
 b_back_st_x = 0;
+
+if (!gpu_get_alphatestenable()) {
+	//gpu_set_alphatestenable(true);
+	//gpu_set_alphatestref(128);
+}

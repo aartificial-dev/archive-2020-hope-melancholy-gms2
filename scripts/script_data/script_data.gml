@@ -19,6 +19,9 @@ global.__template_layers = {
 	entity: "L_Entity",
 	effect: "L_Effect",
 	light: "L_Light",
+	
+	t_front: "T_Front",
+	
 	gui: "L_Gui",
 	collision: "L_Collision",
 	system: "L_System"
