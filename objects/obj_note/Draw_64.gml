@@ -15,9 +15,6 @@ switch (type) {
 	case note_type.news:
 		sprite_index = spr_note_newspaper;
 	break;
-	case note_type.pc:
-		sprite_index = spr_note_pc;
-	break;
 	default:
 		sprite_index = spr_note;
 }
@@ -52,7 +49,9 @@ if (page_current > 0) {
 	}
 }
 //draw_set_font_ext(font_pixel, fa_left, fa_top);
-draw_text_ext_color(gui_w / 2 - 57, 18 + _fmod, pages[page_current], 9, 117, c_black, c_black, c_black, c_black, 1);
+let _h = string_height("QWERTY");
+let _text = pages[page_current];
+draw_text_ext_color(gui_w / 2 - 57, 18 + _fmod, _text, _h, 117, c_black, c_black, c_black, c_black, 1);
 //draw_text(10, 10, string_height_ext(pages[page_current], 9, 117));
 ///120 max height
 //show_debug_message(string_height_ext(pages[page_current], 9, 177));

@@ -28,7 +28,7 @@ function scr_item_use(item) {
 		break;
 		default: {
 			if (obj_pl.alarm[10] == -1) {
-				scr_message("I can't use this");
+				scr_message("cant_use");
 				obj_pl.alarm[10] = 15;
 			}
 			return false;
@@ -49,7 +49,7 @@ function scr_items_combine(item1, item2) {
 		}
 	}
 	if (obj_pl.alarm[10] == -1) {
-		scr_message("Can't combine these");
+		scr_message("cant_combine");
 		obj_pl.alarm[10] = 15;
 	}
 	return noone;

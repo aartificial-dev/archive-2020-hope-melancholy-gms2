@@ -6,12 +6,15 @@
 if (checked = 0) {
 	pages = [];
 	page_current = 0;
-	text = note.notes[mail_current].text;
+	let _pref = note.notes[mail_current].pref;
+	let _section = note.notes[mail_current].section;
+	let _key = note.notes[mail_current].key;
+	text = ini_open_read(_pref, _section, _key);
 	from = note.notes[mail_current].from;
 	to = note.notes[mail_current].to;
 	
-	let m_symbols = 30;
-	let m_lines = 10;
+	let m_symbols = global.locale == LOCALE_JAPANESE ? 16 : 30;
+	let m_lines = 7;//global.locale == LOCALE_JAPANESE ? 7 : 10;
 	let word = "";
 	let lines = [""];
 	for (let j = 0; j < m_lines; j ++) {
@@ -28,8 +31,12 @@ if (checked = 0) {
 		
 		let eow = (char == " " || char == "\n");
 		let eof = (i == string_length(text));
+		let eowjap = 0;
+		if (global.locale == LOCALE_JAPANESE) {
+			eowjap = string_length(lines[cline] + word) > m_symbols - 1;
+		}
 		
-		if (eow || eof) {
+		if (eow || eof || eowjap) {
 			let enl = (char == "\n");
 			if (enl) {
 				word = string_copy(word, 1, string_length(word) - 1);

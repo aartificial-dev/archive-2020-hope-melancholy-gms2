@@ -25,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"7ae48e87-54af-430b-a981-27621c1b0a97","path":"sprites/spr_blood_black/spr_blood_black.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7ae48e87-54af-430b-a981-27621c1b0a97","path":"sprites/spr_blood_black/spr_blood_black.yy",},"LayerId":{"name":"023bc5ef-56ad-4a6a-a3db-74ea99173f44","path":"sprites/spr_blood_black/spr_blood_black.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7ae48e87-54af-430b-a981-27621c1b0a97","path":"sprites/spr_blood_black/spr_blood_black.yy",},"LayerId":{"name":"spr_blood_black","path":"sprites/spr_blood_black/spr_blood_black.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"7ae48e87-54af-430b-a981-27621c1b0a97","path":"sprites/spr_blood_black/spr_blood_black.yy",},"LayerId":{"name":"bd77e7c2-aa71-4eb0-b4d9-fd9f189781bf","path":"sprites/spr_blood_black/spr_blood_black.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_blood_black","path":"sprites/spr_blood_black/spr_blood_black.yy",},"resourceVersion":"1.0","name":"7ae48e87-54af-430b-a981-27621c1b0a97","tags":[],"resourceType":"GMSpriteFrame",},
   ],

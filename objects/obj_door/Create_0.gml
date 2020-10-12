@@ -3,7 +3,7 @@
 
 event_inherited();
 
-name = "Door";
+ini_name = "door";
 target = id;
 door_sound = snd_door_open;
 target_room = room_parent;

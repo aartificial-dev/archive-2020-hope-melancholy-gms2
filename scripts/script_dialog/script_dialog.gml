@@ -19,12 +19,14 @@ function scr_dialog_camshake() {
 	scr_camera_shake(cam_shake.both, 10, 120);
 }
 
-function scr_dialog_init() {
-	return new Dialog();	
+/// @arg file_prefix
+/// @arg section
+function scr_dialog_init(_pref, _section) {
+	return new Dialog(_pref, _section);	
 }
 
 /// @arg dialog
-/// @arg text
+/// @arg key
 /// @arg target
 /// @arg sound
 /// @arg script
@@ -34,8 +36,8 @@ function scr_dialog_add_line(_obj, _text, _target, _sound, _script) {
 }
 
 /// @arg dialog
-/// @arg text1
-/// @arg text2
+/// @arg key1
+/// @arg key2
 /// @arg target
 /// @arg sound
 /// @arg next_dialog1
@@ -45,9 +47,9 @@ function scr_dialog_add_answer2(_obj, _text1, _text2, _target, _sound, _newd1, _
 }
 
 /// @arg dialog
-/// @arg text1
-/// @arg text2
-/// @arg text3
+/// @arg key1
+/// @arg key2
+/// @arg key3
 /// @arg target
 /// @arg sound
 /// @arg next_dialog1
@@ -64,16 +66,20 @@ function scr_dialog_add_end_script(_obj, _script) {
 }
 
 /// @desc Makes dialog object that should be passed into scr_dialog
-function Dialog() constructor {
+/// @arg file_prefix
+/// @arg section
+function Dialog(_pref, _section) constructor {
 	dialog = [];
+	pref = _pref;
+	section = _section;
 	target = [];
 	sound = [];
 	escript = [];
 	count = 0;
 	endscript = noone;
 	
-	add = function(_text, _target, _sound, _script) {
-		dialog[count] = _text;
+	add = function(_key, _target, _sound, _script) {
+		dialog[count] = _key;
 		target[count] = _target;
 		sound[count] = _sound;
 		escript[count] = _script;

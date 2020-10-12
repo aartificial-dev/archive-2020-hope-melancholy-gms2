@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Keypad";
+ini_name = "keypad";
 icon = spr_hud_gear;
 active = 0;
 signal = noone;

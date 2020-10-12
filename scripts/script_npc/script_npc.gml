@@ -18,7 +18,7 @@ function scr_npc_speak_init(_spr, _spd, _dir, _name, _dialog) {
 	sprite_index = _spr;
 	image_speed = random_range(_spd - (_spd / 2), _spd + (_spd / 2));
 	image_xscale = _dir; 
-	name = _name;
+	ini_name = _name;
 	dialog = _dialog;
 }
 

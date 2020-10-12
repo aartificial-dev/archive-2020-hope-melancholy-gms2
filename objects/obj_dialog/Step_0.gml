@@ -5,10 +5,24 @@ if (is_branch) {
 	exit;	
 }
 
-d_line_length = string_length(scene.dialog[d_current]);
+let _pref = scene.pref;
+let _section = scene.section;
+let _key = scene.dialog[d_current];
+_text = "";
+if (is_array(_key)) {
+	for (let i = 0; i < array_length(_key); i ++) {
+		_text[i] = ini_open_read(_pref, _section, _key[i]);
+	}
+	is_branch = 1;
+	alarm[2] = d_input_wait;
+	exit;
+} else {
+	_text = ini_open_read(_pref, _section, _key);
+}
+
+d_line_length = string_length(_text);
 d_cur_length = string_length(current_text);
 
-let _text = scene.dialog[d_current];
 let _sound = scene.sound[d_current];
 let _target = scene.target[d_current];
 
@@ -20,10 +34,6 @@ if (alarm[0] == -1) {
 				alarm[0] = 30;
 				d_current --;
 				exit;
-			}
-			if (is_array(scene.dialog[d_current])) {
-				is_branch = 1;
-				alarm[2] = d_input_wait;
 			}
 			alarm[1] = d_appear_spd;
 			d_script_exec = 0;

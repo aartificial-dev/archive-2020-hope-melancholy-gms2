@@ -1,1 +1,1 @@
-scr_trigger_init(scr_tutorial, ["Open inventory on Tab", vk_tab, noone], 1);
+scr_trigger_init(scr_tutorial, ["inventory", vk_tab, noone], 1);

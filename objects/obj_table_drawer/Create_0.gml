@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Table";
+ini_name = "table";
 icon = spr_hud_hand;
 
 item = noone;

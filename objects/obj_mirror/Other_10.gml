@@ -4,6 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-let _dia = scr_dialog_init();
-scr_dialog_add_line(_dia, "I look cool", obj_pl, snd_dialog_hi, noone);
+let _dia = scr_dialog_init("dialog", "GENERAL");
+scr_dialog_add_line(_dia, "mirror", obj_pl, snd_dialog_hi, noone);
 scr_dialog(_dia);

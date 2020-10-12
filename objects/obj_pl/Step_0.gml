@@ -77,7 +77,7 @@ if (can_move) {
 			let _y = y - 7 - 20;
 			instance_create_layer(_x, _y, Layers.effect, obj_empmag);
 		} else {
-			scr_message("Not enough ammo to reload");
+			scr_message("not_enough_ammo");
 		}
 	}
 }

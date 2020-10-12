@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Electric Lock";
+ini_name = "electric_lock";
 icon = spr_hud_eye;
 active = 0;
 signal = noone;

@@ -46,6 +46,8 @@ if (puzzle_map != noone) {
 					if (mouse_check_button_pressed(mb_left) && con_mouse != noone) {
 						audio_play_sound(snd_puzzle_unplug, 0, 0);
 						con_mouse = noone;
+						scr_puzzle_check_connections();
+						scr_puzzle_power();
 					}
 				}
 			}
@@ -65,9 +67,9 @@ if (label_x != -1 && label_y != -1) {
 		if (cell.type == puzzle_node.n_input) { _text = string(cell.cur_power) + "/" + string(cell.max_power); }
 		draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 		let _w = string_width(_text) + 4;
-		let _h = string_height(_text);
-		draw_rect_f(gui_mouse_x + 10, gui_mouse_y , gui_mouse_x + 10 + _w, gui_mouse_y  + _h, c_black, 0, 0.6);
-		draw_text(gui_mouse_x + 10 + 2, gui_mouse_y + 4, _text);
+		let _h = string_height(_text) / 2;
+		draw_rect_f(gui_mouse_x + 10, gui_mouse_y , gui_mouse_x + 10 + _w, gui_mouse_y  + _h + 6, c_black, 0, 0.6);
+		draw_text(gui_mouse_x + 10 + 2, gui_mouse_y + 4 - _h + 2, _text);
 	}
 }
 	

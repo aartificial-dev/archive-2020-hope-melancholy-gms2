@@ -63,14 +63,16 @@ function scr_item_summon(_item, _x, _y) {
 /// @arg width
 /// @arg height
 /// @arg name
+/// @arg ini_name
 /// @arg type
 /// @arg modif
-function Item(_sprite, _fsprite, _w, _h, _name, _type, _modif) constructor {
+function Item(_sprite, _fsprite, _w, _h, _name, _ini, _type, _modif) constructor {
 	sprite = _sprite;
 	sprite_floor = _fsprite;
 	w = _w;
 	h = _h;
 	name = _name;
+	ini = _ini;
 	type = _type;
 	modif = _modif;
 }

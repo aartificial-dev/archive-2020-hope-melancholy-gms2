@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Cardboard box";
+ini_name = "card_box";
 icon = spr_hud_hand;
 
 item = noone;

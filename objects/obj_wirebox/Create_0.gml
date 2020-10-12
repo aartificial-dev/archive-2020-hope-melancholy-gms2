@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "WireBox";
+ini_name = "wirebox";
 icon = spr_hud_gear;
 
 /// puzzle things

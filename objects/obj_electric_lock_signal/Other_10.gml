@@ -5,7 +5,7 @@
 event_inherited();
 
 if (active) {
-	scr_message("It's active");
+	scr_message("mech_active");
 } else {
-	scr_message("I need to fix it");
+	scr_message("mech_broken");
 }

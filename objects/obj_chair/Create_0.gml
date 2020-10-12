@@ -5,7 +5,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Chair";
+ini_name = "chair";
 icon = spr_hud_gear;
 
 vel = 0;

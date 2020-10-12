@@ -21,4 +21,3 @@ if (!ds_list_empty(_item_held)) {
 } else {
 	weap_current = noone;
 }
-

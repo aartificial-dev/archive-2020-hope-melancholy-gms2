@@ -4,4 +4,5 @@
 //draw_self();
 
 draw_set_font_ext(fnt_sign, fa_center, fa_middle);
-draw_text_color(x, y, tag, c_black, c_black, c_black, c_black, 1);
+let _h = string_height("QWERTY") / 2;
+draw_text_color(x, y - _h, tag, c_black, c_black, c_black, c_black, 1);

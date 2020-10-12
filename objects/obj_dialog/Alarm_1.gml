@@ -1,6 +1,6 @@
 /// @description Add to dialog
 
-let _text = scene.dialog[d_current];
+
 let _sound = scene.sound[d_current];
 
 if (!(d_cur_length == d_line_length)) {

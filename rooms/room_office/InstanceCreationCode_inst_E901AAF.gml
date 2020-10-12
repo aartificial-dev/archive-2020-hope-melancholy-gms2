@@ -1,1 +1,1 @@
-scr_trigger_init(scr_tutorial, ["The more you explore the more you get", vk_anykey, mb_any], 1);
+scr_trigger_init(scr_tutorial, ["explore", vk_anykey, mb_any], 1);

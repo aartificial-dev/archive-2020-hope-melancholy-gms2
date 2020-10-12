@@ -12,8 +12,6 @@ if (!can_move) {
 if (can_move) {
 	inv_step();
 }
-draw_set_font_ext(fnt_pixel_j, fa_left, fa_top);
-draw_text(10, 10, "馬鹿馬鹿しい");
 
 if (interact && can_move) {
 	draw_set_font_ext(fnt_pixel, fa_left, fa_top);
@@ -24,15 +22,15 @@ if (interact && can_move) {
 	let _x = interact.x - view_x + dcos(_dir) * _dis;
 	let _y = interact.y - view_y - dsin(_dir) * _dis;
 	let _w = string_width(_text) + 10;
-	let _h = string_height(_text);
+	let _h = string_height(_text) / 2;
 	_x = clamp(_x, 0, room_width - _w);
 	_y = clamp(_y, 0, room_height - _h);
 	
 	let subimg = a_handler.get(interact.icon);
 	
-	draw_rect_f(_x, _y, _x + _w, _y + _h, c_black, 0, 0.6);
+	draw_rect_f(_x, _y, _x + _w, _y + _h + 6, c_black, 0, 0.6);
 	draw_sprite(interact.icon, subimg, _x + 1, _y + 2);
-	draw_text(_x + 11, _y + 4, _text);
+	draw_text(_x + 11, _y + 4 - _h + 2, _text);
 	if (mouse_check_button_pressed(mb_right)) {
 		with (interact) {
 			event_user(obj_pl.inv_hand ? 1 : 0);

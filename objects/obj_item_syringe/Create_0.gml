@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-item = new Item(spr_syringe_inv, spr_syringe_floor, 2, 1, "Syringe", item_type.medicine, 0);
+item = new Item(spr_syringe_inv, spr_syringe_floor, 2, 1, "Syringe", "syringe", item_type.medicine, 0);

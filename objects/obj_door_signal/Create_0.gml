@@ -3,12 +3,12 @@
 
 event_inherited();
 
-name = "Door";
+ini_name = "door";
 target = id;
 door_sound = snd_door_open;
 target_room = room_parent;
 
 signal = noone;
-error = "It's locked";
+error = "locked";
 
 image_speed = 0;

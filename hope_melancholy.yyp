@@ -1,7 +1,6 @@
 {
   "resources": [
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":0,},
-    {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"order":4,},
     {"id":{"name":"spr_muzzleflash","path":"sprites/spr_muzzleflash/spr_muzzleflash.yy",},"order":0,},
     {"id":{"name":"spr_gui_pc_mail","path":"sprites/spr_gui_pc_mail/spr_gui_pc_mail.yy",},"order":20,},
     {"id":{"name":"spr_rain_splash","path":"sprites/spr_rain_splash/spr_rain_splash.yy",},"order":2,},
@@ -64,11 +63,10 @@
     {"id":{"name":"obj_wall_note","path":"objects/obj_wall_note/obj_wall_note.yy",},"order":0,},
     {"id":{"name":"obj_wirebox","path":"objects/obj_wirebox/obj_wirebox.yy",},"order":1,},
     {"id":{"name":"par_collision","path":"objects/par_collision/par_collision.yy",},"order":0,},
-    {"id":{"name":"fnt_pixel_j","path":"fonts/fnt_pixel_j/fnt_pixel_j.yy",},"order":3,},
     {"id":{"name":"par_entity","path":"objects/par_entity/par_entity.yy",},"order":4,},
     {"id":{"name":"spr_lamp_ceil_long","path":"sprites/spr_lamp_ceil_long/spr_lamp_ceil_long.yy",},"order":18,},
     {"id":{"name":"par_interactive","path":"objects/par_interactive/par_interactive.yy",},"order":14,},
-    {"id":{"name":"par_item","path":"objects/par_item/par_item.yy",},"order":4,},
+    {"id":{"name":"par_item","path":"objects/par_item/par_item.yy",},"order":8,},
     {"id":{"name":"par_light","path":"objects/par_light/par_light.yy",},"order":0,},
     {"id":{"name":"par_light_ceil","path":"objects/par_light_ceil/par_light_ceil.yy",},"order":1,},
     {"id":{"name":"obj_npc_speakable","path":"objects/obj_npc_speakable/obj_npc_speakable.yy",},"order":2,},
@@ -141,6 +139,7 @@
     {"id":{"name":"script_animation_handler","path":"scripts/script_animation_handler/script_animation_handler.yy",},"order":0,},
     {"id":{"name":"spr_hud_gear","path":"sprites/spr_hud_gear/spr_hud_gear.yy",},"order":2,},
     {"id":{"name":"spr_hud_hand","path":"sprites/spr_hud_hand/spr_hud_hand.yy",},"order":3,},
+    {"id":{"name":"script_string","path":"scripts/script_string/script_string.yy",},"order":9,},
     {"id":{"name":"seq_sparks","path":"sequences/seq_sparks/seq_sparks.yy",},"order":0,},
     {"id":{"name":"obj_chair","path":"objects/obj_chair/obj_chair.yy",},"order":18,},
     {"id":{"name":"spr_hud_weapon","path":"sprites/spr_hud_weapon/spr_hud_weapon.yy",},"order":5,},
@@ -356,8 +355,8 @@
     "children": [],
   },
   "RoomOrder": [
-    {"name":"room_test","path":"rooms/room_test/room_test.yy",},
     {"name":"room_office","path":"rooms/room_office/room_office.yy",},
+    {"name":"room_test","path":"rooms/room_test/room_test.yy",},
     {"name":"room_street_1","path":"rooms/room_street_1/room_street_1.yy",},
     {"name":"room_parent","path":"rooms/room_parent/room_parent.yy",},
     {"name":"room_parent","path":"rooms/room_parent/room_parent.yy",},
@@ -422,7 +421,18 @@
   "TextureGroups": [
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"targets":461609314234257646,"resourceVersion":"1.0","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"CopyToMask":153157610357391598,"filePath":"datafiles","resourceVersion":"1.0","name":"dialog_eng.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"notes_eng.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"notes_jap.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":153157610357391598,"filePath":"datafiles","resourceVersion":"1.0","name":"items_jap.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"items_eng.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"dialog_jap.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"messages_eng.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"messages_jap.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"furniture_eng.ini","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"furniture_jap.ini","resourceType":"GMIncludedFile",},
+  ],
   "MetaData": {
     "IDEVersion": "2.3.0.529",
   },

@@ -1,1 +1,1 @@
-scr_trigger_init(scr_tutorial, ["You can interact with RMB", noone, mb_right], 1);
+scr_trigger_init(scr_tutorial, ["interact", noone, mb_right], 1);

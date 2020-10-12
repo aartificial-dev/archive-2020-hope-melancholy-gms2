@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if (instance_exists(obj_cam) && instance_number(obj_cam) > 1) {instance_destroy();}
 a_ratio = 16/9;
 
 view_width = 320;

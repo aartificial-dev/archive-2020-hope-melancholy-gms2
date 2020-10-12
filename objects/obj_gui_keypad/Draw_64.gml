@@ -14,7 +14,7 @@ if (active) {
 }
 draw_set_font_ext(fnt_pixel, fa_left, fa_middle);
 let _col = $726E72;
-draw_text_color(st_x + 10, st_y + 43, current_code, _col, _col, _col, _col, 1);
+draw_text_color(st_x + 10, st_y + 43 - 3, current_code, _col, _col, _col, _col, 1);
 
 let _mb = mouse_check_button_pressed(mb_left);
 if (point_in_rectangle(gui_mouse_x, gui_mouse_y, st_x + 85, st_y - 6, st_x + 85 + 6, st_y)) {

@@ -45,17 +45,18 @@ function __inv_draw_text(inv, inv_x, inv_y) {
 	if (coll >= 0) {
 		let cell = inv[| coll];
 		let item = cell.item;
+		let _name = ini_open_read("items", "DEFAULT", item.ini);
 		draw_set_font_ext(fnt_pixel, fa_left, fa_top);
-		let _w = string_width(item.name) + 10;
-		let _h = string_height(item.name);
+		let _w = string_width(_name) + 10;
+		let _h = string_height(_name) / 2;
 		let _x = inv_x + (cell.x * scell) + (cell.w * 0.75 * scell);
 		let _y = inv_y + (cell.y * scell) + (cell.h * 0.5 * scell);
 		_x = clamp(_x, 0, view_w - _w);
 		_y = clamp(_y, 0, view_h - _h);
 		let subimg = a_handler.get(spr_hud_hand);
-		draw_rect_f(_x, _y, _x + _w, _y + _h, c_black, 0, 0.6);
+		draw_rect_f(_x, _y, _x + _w, _y + _h + 6, c_black, 0, 0.6);
 		draw_sprite(spr_hud_hand, subimg, _x + 1, _y + 2);
-		draw_text(_x + 11, _y + 4, item.name);
+		draw_text(_x + 11, _y + 4 - _h + 2, _name);
 	}
 }
 
@@ -88,15 +89,19 @@ function __inv_chip_text() {
 			if (item == noone) break;
 			draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 			let _w = string_width(item.name) + 10;
-			let _h = string_height(item.name);
+			let _h = string_height(item.name) / 2;
 			let _x = coords[i * 2] + 24;
 			let _y = coords[i * 2 + 1] + 8;
 			_x = clamp(_x, 0, view_w - _w);
 			_y = clamp(_y, 0, view_h - _h);
 			let subimg = a_handler.get(spr_hud_hand);
-			draw_rect_f(_x, _y, _x + _w, _y + _h, c_black, 0, 0.6);
+			draw_rect_f(_x, _y, _x + _w, _y + _h + 6, c_black, 0, 0.6);
 			draw_sprite(spr_hud_hand, subimg, _x + 1, _y + 2);
-			draw_text(_x + 11, _y + 4, item.name);
+			let _ini = global.locale == LOCALE_ENGLISH ? "items_eng.ini" : "items_jap.ini";
+			ini_open(_ini);
+			let _name = ini_read_string("DEFAULT", item.ini, "BROKEN");
+			ini_close();
+			draw_text(_x + 11, _y + 4 - _h + 2, _name);
 			break;
 		}
 	}

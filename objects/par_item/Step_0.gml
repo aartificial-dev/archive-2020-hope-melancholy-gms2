@@ -1,7 +1,7 @@
 /// @description Insert description here
 
 if (item != noone) {
-	name = item.name;
+	name = ini_open_read("items", "DEFAULT", item.ini);
 	sprite_index = item.sprite_floor;
 }
 

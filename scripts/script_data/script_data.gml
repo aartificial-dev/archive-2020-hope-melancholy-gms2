@@ -31,6 +31,12 @@ global.__template_layers = {
 	system: "L_System"
 }
 
+#macro LOCALE_ENGLISH 0
+#macro LOCALE_JAPANESE 1
+
+global.locale = LOCALE_ENGLISH;
+
+
 function seq_effect_begin() {
 	gpu_set_blendmode(bm_add);
 }

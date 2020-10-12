@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Inactive Keycard Lock";
+ini_name = "keycard_lock";
 icon = spr_hud_gear;
 active = 0;
 signal = noone;

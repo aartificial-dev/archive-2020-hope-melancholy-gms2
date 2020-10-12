@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "PC";
+ini_name = "pc";
 icon = spr_hud_eye;
 
 note = noone;

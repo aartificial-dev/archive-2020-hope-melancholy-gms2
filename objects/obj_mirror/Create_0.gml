@@ -4,6 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Mirror";
+ini_name = "mirror";
 icon = spr_hud_eye;
 

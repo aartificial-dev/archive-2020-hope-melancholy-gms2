@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font_ext(fnt_pixel_j, fa_left, fa_top);
+draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 
 let alpha = 0.7;
 let width = obj_cam.view_width; 
 let height = obj_cam.view_height / 6;
 let vheight = obj_cam.view_height;
-let lheight = string_height("QWERTY");
+let lheight = string_height("QWERTY") ;
 let ymod = 0;
 
 if (alarm[0] != -1) {
@@ -18,8 +18,7 @@ draw_rect_f(0, -ymod, width, height - ymod, c_black, 0, alpha);
 draw_rect_f(0, vheight - height + ymod, width, vheight + ymod, c_black, 0, alpha);
 
 if (is_branch) {
-	let _answ = scene.dialog[d_current];
-	let size = array_length(_answ);
+	let size = array_length(_text);
 	let _dist = (obj_cam.view_height - height * 2) / size;
 	let _yst = height + _dist / size;
 	for (let i = 0; i < size; i++) {
@@ -36,7 +35,7 @@ if (is_branch) {
 		} else {
 			draw_rect_f(0, _yst + _dist * i, width, _yst + _dist * i + lheight, c_black, 0, alpha);
 		}
-		draw_text_ext(xst, _yst + _dist * i, _answ[i], lheight, width * 0.8);
+		draw_text_ext(xst, _yst + _dist * i, _text[i], lheight, width * 0.8);
 		
 		let keyb_key = ord(string(i + 1)); // gets 1 - 3
 		if (keyboard_check_pressed(keyb_key)) {
@@ -48,7 +47,8 @@ if (is_branch) {
 	}
 } else {
 	let xst = width * 0.1;
-	draw_text_ext(xst, vheight - height + ymod - 2, current_text, lheight, width * 0.8);
+	let _ctext = string_wordwrap_width(current_text, width * 0.8, "\n", 1);
+	draw_text(xst, vheight - height + 2 + ymod, _ctext);
 }
 
 if (d_cur_length == d_line_length && alarm[2] == -1 && !is_branch) {

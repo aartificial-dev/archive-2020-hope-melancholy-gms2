@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Cupboard";
+ini_name = "cupboard";
 icon = spr_hud_hand;
 
 item = noone;

@@ -8,7 +8,7 @@ draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 
 if (!checked) exit;
 
-let _fmod = 2;
+let _fmod = 0;
 
 if (point_in_rectangle(gui_mouse_x, gui_mouse_y, 44, 16, 282, 144)) {
 	if (mouse_check_button_pressed(mb_left)) {
@@ -39,6 +39,7 @@ for (let i = 0; i < count; i ++) {
 		draw_sprite(spr_gui_pc_mail, 1, 46, 26 + (14 * i));
 	}
 	let _t = note.notes[i].from;
+	let _h = string_height("QWERTY");
 	draw_text_color(48, 27 + (14 * i) + _fmod, _t, c_black, c_black, c_black, c_black, 1);
 }
  /// 280 51 /// 92
@@ -56,7 +57,9 @@ if (mouse_wheel_down()) {
 page_current = clamp(page_current, 0, array_length(pages) - 1);
 
 /// 47 27
-draw_text_ext_color(99, 51 + _fmod, pages[page_current], 9, 270, c_black, c_black, c_black, c_black, 1);
+let _h = string_height("QWERTY");
+let _text = pages[page_current];
+draw_text_ext_color(99, 51 + _fmod, _text, _h, 270, c_black, c_black, c_black, c_black, 1);
 
 draw_text_color(99, 26 + _fmod, "From: " + string(from), c_black, c_black, c_black, c_black, 1);
 draw_text_color(99, 38 + _fmod, "To: " + string(to), c_black, c_black, c_black, c_black, 1);

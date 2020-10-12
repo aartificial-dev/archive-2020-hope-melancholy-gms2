@@ -32,7 +32,7 @@ function scr_attack_shoot() {
 		is_attack = 0;
 		audio_play_sound(snd_pistol_ofa, 0, 0);
 		if (alarm[10] == -1) {
-			scr_message("Out of ammo");
+			scr_message("out_of_ammo");
 			alarm[10] = 15;
 		}
 		return 0;

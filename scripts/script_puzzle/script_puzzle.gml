@@ -37,6 +37,8 @@ function scr_puzzle_connect(xto, yto) {
 		let m_cell = puzzle_map[# con_mouse.x, con_mouse.y];
 		m_cell.connect = noone;
 		audio_play_sound(snd_puzzle_unplug, 0, 0);
+		scr_puzzle_check_connections();
+		scr_puzzle_power();
 	} else { 
 		let x1 = scr_puzzle_x(con_mouse.x) + 7;
 		let y1 = scr_puzzle_y(con_mouse.y) + 7;
@@ -55,8 +57,8 @@ function scr_puzzle_connect(xto, yto) {
 		instance_activate_all();
 	}
 	con_mouse = noone;
-	scr_puzzle_power();
 	scr_puzzle_check_connections();
+	scr_puzzle_power();
 }
 
 function scr_puzzle_check_connections() {

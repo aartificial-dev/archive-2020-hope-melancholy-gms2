@@ -5,7 +5,7 @@
 event_inherited();
 
 if (!active) {
-	scr_message("I need keycard");
+	scr_message("need_keycard");
 } else {
-	scr_message("It's already active");
+	scr_message("mech_active");
 }

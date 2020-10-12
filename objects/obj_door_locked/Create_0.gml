@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-name = "Door";
+ini_name = "door";
 icon = spr_hud_gear;
 image_speed = 0;
 collide = instance_create_layer(x, y, Layers.collision, obj_unwalk_door);

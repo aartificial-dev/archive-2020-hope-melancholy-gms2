@@ -3,3 +3,4 @@
 
 alarm[0] = 10;
 alpha = 0;
+al_length = 0;

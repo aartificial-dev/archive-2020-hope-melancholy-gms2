@@ -1,1 +1,1 @@
-note = "Don't overload circuit box if it's working! I'm tired of being locked out of my cabinet constantly! If it ain't broken, don't fix it. See the number? It's five. F I V E! Don't mess it up. \n -Jerry.";
+scr_note_init("notes", "DEMO_OFFICE", "note_storage_2");
