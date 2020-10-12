@@ -16,9 +16,11 @@ spr_dir = 1;
 
 image_speed = 0.00;
 
-animation_speed = 0.05;
+animation_init();
 
-entity_sprites_init(spr_pl_idle, animation_speed, spr_pl_walk, animation_speed, spr_pl_fall, animation_speed, spr_pl_hit, animation_speed, spr_pl_hit, animation_speed);
+//animation_speed = 0.05;
+
+//entity_sprites_init(spr_pl_idle, animation_speed, spr_pl_walk, animation_speed, spr_pl_fall, animation_speed, spr_pl_hit, animation_speed, spr_pl_hit, animation_speed);
 
 
 can_move = 1;

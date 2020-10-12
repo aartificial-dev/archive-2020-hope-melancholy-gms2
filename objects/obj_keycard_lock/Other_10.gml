@@ -5,7 +5,7 @@
 event_inherited();
 
 if (!active) {
-	scr_message("I need keycard", obj_pl);
+	scr_message("I need keycard");
 } else {
-	scr_message("It's already active", obj_pl);
+	scr_message("It's already active");
 }

@@ -11,7 +11,7 @@ if (image_index == 0) {
 	instance_destroy(collide);
 } else {
 	if (collision_rectangle(x - 4, y - 24, x + 4, y + 24, obj_pl, 0, 1)) {
-		scr_message("I'm standing in the way", obj_pl);
+		scr_message("I'm standing in the way");
 	} else {
 		audio_play_at(snd_wood_door_close, x, y, 150, 1, 0, 0);
 		image_index = 0;

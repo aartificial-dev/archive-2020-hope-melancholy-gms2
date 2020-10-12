@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Harm",
-    "path": "folders/Objects/Harm.yy",
+    "name": "VFX",
+    "path": "folders/Objects/VFX.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_sleeve",

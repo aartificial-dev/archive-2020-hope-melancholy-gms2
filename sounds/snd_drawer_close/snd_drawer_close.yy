@@ -13,8 +13,8 @@
   "soundFile": "snd_drawer_close.wav",
   "duration": 0.934875,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_drawer_close",

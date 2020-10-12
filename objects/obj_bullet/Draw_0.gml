@@ -10,7 +10,7 @@ if (checked == 0) {
 		let num = collision_point_list(xc, yc, par_collision, 0, 1, list, 0);
 		
 		for (let j = 0; j < num; j ++) {
-			if (instance_exists(list[| j]) && !obj_is_ancestor(list[| j], par_obsticle)) {
+			if (instance_exists(list[| j]) && !obj_is_ancestor(list[| j], par_obsticle) && list[| j] != creator) {
 				dist = i;
 				if (obj_is_ancestor(list[| j], par_unwalk)) {
 					type = 0;

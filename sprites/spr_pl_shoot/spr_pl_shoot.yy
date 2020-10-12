@@ -84,7 +84,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_pl_shoot","path":"sprites/spr_pl_shoot/spr_pl_shoot.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_pl_shoot",
     "tags": [],
     "resourceType": "GMSequence",
   },

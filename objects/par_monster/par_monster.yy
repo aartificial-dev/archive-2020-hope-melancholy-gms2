@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Objects/Meta.yy",
+    "name": "Entity",
+    "path": "folders/Objects/Entity.yy",
   },
   "resourceVersion": "1.0",
   "name": "par_monster",

@@ -10,5 +10,5 @@ if (signal_get(signal)) {
 	image_index = 1;
 	alarm[0] = 60;
 } else {
-	scr_message(error, obj_pl);
+	scr_message(error);
 }

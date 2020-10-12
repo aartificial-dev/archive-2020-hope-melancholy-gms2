@@ -13,8 +13,8 @@
   "soundFile": "snd_cardboard_open.wav",
   "duration": 1.005,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_cardboard_open",

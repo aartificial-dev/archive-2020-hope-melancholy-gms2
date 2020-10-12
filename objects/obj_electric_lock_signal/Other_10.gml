@@ -5,7 +5,7 @@
 event_inherited();
 
 if (active) {
-	scr_message("It's active.", obj_pl);
+	scr_message("It's active");
 } else {
-	scr_message("I need to fix it.", obj_pl);
+	scr_message("I need to fix it");
 }

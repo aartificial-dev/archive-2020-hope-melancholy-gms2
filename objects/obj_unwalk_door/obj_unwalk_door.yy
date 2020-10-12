@@ -1,10 +1,10 @@
 {
   "spriteId": {
-    "name": "spr_door_side",
-    "path": "sprites/spr_door_side/spr_door_side.yy",
+    "name": "spr_door_side_block",
+    "path": "sprites/spr_door_side_block/spr_door_side_block.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

@@ -1,7 +1,8 @@
-/// @description Insert description here
+/// @description Moving
 // You can write your code in this editor
 
-anim_index += anim_speed;
+
+/*anim_index += anim_speed;
 
 switch (anim_state) {
 	case AnimState.idle: {
@@ -42,6 +43,7 @@ if (anim_index >= sprite_get_number(anim_image)) {
 	}
 }
 
+*/
 
 if (move != 0) {
 	spd += vel;
@@ -56,9 +58,11 @@ v_spd = clamp(v_spd, 0, v_mspd);
 
 if (!place_meeting(x + spd * move, y, par_unwalk)) {
 	x += spd * move;
+} else {
+	spd = 0;
 }
 if (!place_meeting(x, y + v_spd, par_unwalk)) {
-	anim_state = AnimState.fall;
+//	anim_state = AnimState.fall;
 	y += v_spd;
 } else {
 	v_spd = 0;

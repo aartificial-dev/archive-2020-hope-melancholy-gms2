@@ -12,6 +12,8 @@ if (!can_move) {
 if (can_move) {
 	inv_step();
 }
+draw_set_font_ext(fnt_pixel_j, fa_left, fa_top);
+draw_text(10, 10, "馬鹿馬鹿しい");
 
 if (interact && can_move) {
 	draw_set_font_ext(fnt_pixel, fa_left, fa_top);

@@ -1,4 +1,4 @@
 scr_pc_note_init();
-scr_pc_note_add("IST_HQ", "Mayori", "Reply of: \nI heard latest news about virus breach and as Manager of IST Lane command I decided to lock off elevator door for safety of my command.\nIf HQ count this as contradiction then I'll take off my position.\n-\"IST Lane\" manager Mayori.\n\nYou're fired.");
-scr_pc_note_add("IST_TC", "Mayori", "!IMPORTANT MESSAGE!\nThis info was given to managers of the IST high commands.\nThis message counts as high secret priority.\n\nWe aquired info about big virus breach that happend near eastern substation. We highly ask You to be carefull and cancel all business trips. Thank you for your cooperation.");
+scr_pc_note_add("IST_HQ", "Mayori", "Reply of: \n\nI heard latest news about virus breach and as Manager of IST Lane command I decided to lock off elevator door for safety of my command.\nIf HQ count this as contradiction then I'll take off my position.\n-\"IST Lane\" manager Mayori.\n\nYou're fired.");
+scr_pc_note_add("IST_TC", "Mayori", "!IMPORTANT MESSAGE!\nThis info was given to managers of the IST high commands.\nThis message counts as high secret priority.\n\nWe aquired info about big virus breach that happend near eastern substation. We highly ask You to be carefull and cancel all business trips. \nThank you for your cooperation.");
 scr_pc_note_add("-------", "Mayori", "--- Message deleted ---");

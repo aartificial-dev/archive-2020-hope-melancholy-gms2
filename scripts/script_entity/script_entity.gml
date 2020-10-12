@@ -32,10 +32,10 @@ function scr_attack_shoot() {
 		is_attack = 0;
 		audio_play_sound(snd_pistol_ofa, 0, 0);
 		if (alarm[10] == -1) {
-			scr_message("Out of ammo", id);
+			scr_message("Out of ammo");
 			alarm[10] = 15;
 		}
-		exit;
+		return 0;
 	}
 	let _x = x + ((- 4) * spr_dir);
 	let _y = y - 7 - 24;
@@ -49,6 +49,7 @@ function scr_attack_shoot() {
 
 	let bullet = instance_create_layer(len_x, len_y, Layers.furniture, obj_bullet);
 	bullet.dir = dir;
+	bullet.creator = id;
 	
 	let flash = instance_create_layer(len_x, len_y, Layers.furniture, obj_muzzleflash);
 	flash.dir = dir;
@@ -62,4 +63,5 @@ function scr_attack_shoot() {
 		scr_camera_shake(cam_shake.right, 4, 3);
 	}
 	gun_ammo--;
+	return 1;
 }

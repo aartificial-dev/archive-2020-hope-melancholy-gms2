@@ -1,4 +1,4 @@
-enum AnimState {
+/*enum AnimState {
 	idle, walk, hit, die, custom, fall
 }
 

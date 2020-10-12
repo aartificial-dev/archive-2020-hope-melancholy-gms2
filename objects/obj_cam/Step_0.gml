@@ -33,3 +33,6 @@ camera_set_view_size(camera, view_width / actual_scale, view_height / actual_sca
 
 //window_mouse_set(clamp(window_mouse_get_x(),0,window_get_width()),clamp(window_mouse_get_y(),0,window_get_height()));
 
+if (mouse_check_button_pressed(mb_left)) {
+//	effect_play(seq_sparks, mouse_x, mouse_y);
+}

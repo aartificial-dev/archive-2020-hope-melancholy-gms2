@@ -1,72 +1,136 @@
-function AnimHandler() constructor {
-	_sprites = ds_map_create();
-	_speed = ds_map_create();
-	_keys = ds_list_create();
-	
-	static step = function() {
-		let l = ds_map_size(_sprites);
-		for (let i = 0; i < l; i ++) {
-			let key = _keys[| i];
-			let subimg = _sprites[? key];
-			let numb = sprite_get_number(asset_get_index(key)); 
-			subimg += _speed[? key];
-			if (subimg >= numb) {
-				subimg -= numb;
-			}
-			_sprites[? key] = subimg;
-		}
+
+#macro ANIM_IDLE            0
+#macro ANIM_WALK            1
+#macro ANIM_HURT            2
+#macro ANIM_DIE             3
+#macro ANIM_FALL            4
+#macro ANIM_ATTACK_MELEE    5
+#macro ANIM_ATTACK_RANGE    6
+#macro ANIM_WALL            7
+#macro ANIM_RELOAD					8
+
+#macro ANIM_SMOKE           20
+#macro ANIM_ATTACK_TUBE     21
+#macro ANIM_ATTACK_PUNCH    22
+#macro ANIM_ATTACK_FIREARM  23
+
+function animation_init() {
+	_animation_handler = new AnimationHandler();
+}
+
+/// @arg state
+/// @arg sprite
+/// @arg speed
+function animation_bind(_state, _sprite, _speed) {
+	_animation_handler.spr[? _state] = _sprite;
+	_animation_handler.spd[? _state] = _speed;
+}
+
+/// @arg state
+function animation_play(_state) {
+	if (_animation_handler.state != _state) {
+		_animation_handler.state = _state;
+		_animation_handler.frame = 0;
 	}
-	
-	static add = function (spr, spd) {
-		let key = sprite_get_name(spr);
-		ds_map_add(_sprites, key, 0);
-		ds_map_add(_speed, key, spd);
-		ds_list_add(_keys, key);
-		show_debug_message("Added " + string(key) + " to handler");
+}
+
+///
+function animation_step() {
+	let _sprite = animation_get_current_sprite();
+	let _speed = animation_get_current_speed();
+	let _frame = animation_get_frame();
+	let _maxframe = sprite_get_number(_sprite);
+	let _newframe = _frame + _speed;
+	if (_newframe >= _maxframe) {_newframe -= _maxframe;}
+	_animation_handler.frame = _newframe;
+}
+
+///
+function animation_draw() {
+	if (_animation_handler.state != noone) {
+		let _sprite = animation_get_current_sprite();
+		let _frame = animation_get_frame();
+		let _xscale = _animation_handler.xscale;
+		let _yscale = _animation_handler.yscale;
+		let _dir = _animation_handler.dir;
+		let _alpha = _animation_handler.alpha;
+		draw_sprite_ext(_sprite, _frame, x, y, _xscale, _yscale, _dir, c_white, _alpha);
 	}
-	
-	static set = function (spr, subimg) {
-		let key = sprite_get_name(spr);
-		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot set Image for " + string(key));
-			exit;
-		}
-		_sprites[? key] = subimg;
-	}
-	
-	static setSpeed = function (spr, subimg) {
-		let key = sprite_get_name(spr);
-		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot set Speed for " + string(key));
-			exit;
-		}
-		_speed[? key] = subimg;
-	}
-	
-	static get = function(spr) {
-		let key = sprite_get_name(spr);
-		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot get Image for " + string(key));
-			exit;
-		}
-		return _sprites[? key];
-	}
-	
-	static remove  = function (spr) {
-		let key = sprite_get_name(spr);
-		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot find " + string(key));
-			exit;
-		}
-		ds_map_delete(_sprites, key);
-		ds_map_delete(_speed, key);
-		let pos = ds_list_find_index(_keys, key);
-		ds_list_delete(_keys, pos);
-	}
-	
-	static destroy  = function () {
-		ds_map_destroy(_sprites);
-		ds_map_destroy(_speed);
-		ds_list_destroy(_keys);
-	}
+}
+
+/// @arg frame
+function animation_set_frame(_fr) {
+	_animation_handler.frame = _fr;
+}
+
+/// @arg xscale
+function animation_set_xscale(_xsc) {
+	_animation_handler.xscale = _xsc;
+}
+
+/// @arg yscale
+function animation_set_yscale(_ysc) {
+	_animation_handler.yscale = _ysc;
+}
+
+/// @arg direction
+function animation_set_direction(_dir) {
+	_animation_handler.dir = _dir;
+}
+/// @arg alpha
+function animation_set_alpha(_alpha) {
+		_animation_handler.alpha = _alpha;
+}
+
+///
+function animation_get_frame() {
+	return _animation_handler.frame;
+}
+
+/// @arg state
+function animation_get_sprite(_state) {
+	return _animation_handler.spr[? _state];
+}
+
+/// @arg state
+function animation_get_speed(_state) {
+	return _animation_handler.spd[? _state];
+}
+
+/// @arg state
+function animation_get_length(_state) {
+	let _sprite = animation_get_sprite(_state);
+	let _maxframe = sprite_get_number(_sprite);
+	let _spd = animation_get_speed(_state);
+	return _maxframe / _spd;
+}
+
+///
+function animation_get_current_speed() {
+	let _state = animation_get_current_state();
+	return animation_get_speed(_state);
+}
+
+///
+function animation_get_current_sprite() {
+	let _state = animation_get_current_state();
+	return animation_get_sprite(_state);
+}
+
+///
+function animation_get_current_state() {
+	return _animation_handler.state;
+}
+
+
+///
+function AnimationHandler() constructor {
+	state = noone;
+	spr = ds_map_create();
+	spd = ds_map_create();
+	frame = 0;
+	xscale = 1;
+	yscale = 1;
+	dir = 0;
+	alpha = 1;
 }

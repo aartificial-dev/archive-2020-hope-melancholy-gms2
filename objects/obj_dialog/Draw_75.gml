@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font_ext(fnt_message, fa_left, fa_top);
+draw_set_font_ext(fnt_pixel_j, fa_left, fa_top);
 
 let alpha = 0.7;
 let width = obj_cam.view_width; 

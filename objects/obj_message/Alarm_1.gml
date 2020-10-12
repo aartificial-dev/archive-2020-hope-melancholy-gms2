@@ -1,4 +1,3 @@
-/// @description Insert description here
+/// @description Pop Out
 // You can write your code in this editor
-
-alarm[2] = 7;
+instance_destroy();
