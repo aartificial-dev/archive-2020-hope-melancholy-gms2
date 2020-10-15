@@ -13,8 +13,8 @@
   "soundFile": "snd_pistol_reload.wav",
   "duration": 2.434388,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sounds",
+    "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_pistol_reload",

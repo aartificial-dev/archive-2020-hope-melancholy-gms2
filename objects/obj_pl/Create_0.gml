@@ -3,7 +3,7 @@
 event_inherited();
 if (instance_exists(obj_pl) && instance_number(obj_pl) > 1) {instance_destroy();}
 show_debug_message(" ");
-mspd = 1.5;
+mspd = 1;
 
 cam = instance_create_layer(x, y, Layers.system, obj_cam);
 cam.target = id;
@@ -39,7 +39,7 @@ spr_pl_hit, animation_speed,
 spr_pl_hit, animation_speed);
 */
 animation_bind(ANIM_IDLE           , spr_pl_idle   , 0.05);
-animation_bind(ANIM_WALK           , spr_pl_walk   , 0.05 * 2);
+animation_bind(ANIM_WALK           , spr_pl_walk   , 0.05 * 2.5);
 animation_bind(ANIM_FALL           , spr_pl_fall   , 0.05);
 animation_bind(ANIM_HURT           , spr_pl_hit    , 0.05);
 animation_bind(ANIM_DIE            , spr_pl_hit    , 0.05);

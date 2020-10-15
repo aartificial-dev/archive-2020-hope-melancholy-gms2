@@ -10,10 +10,10 @@ if (!can_move) {
 if (move != 0 || v_spd != 0) {
 	if (spd != 0 && v_spd == 0) {
 		animation_play(ANIM_WALK);
-	}
-	if (spd == 0 && v_spd == 0) {
+	} else 
+	if (ceil(spd) == 0 && v_spd == 0) {
 		animation_play(ANIM_WALL);
-	}
+	} else
 	if (v_spd != 0) {
 		animation_play(ANIM_FALL);
 	}
@@ -60,6 +60,11 @@ if (standing_time > 300 && floor(im_index) == 0) {
 	is_smoke = 1;
 	standing_time = 0;
 	alarm[8] = animation_get_length(ANIM_SMOKE);
+}
+
+if (is_attack || is_reload || move || v_spd != 0) {
+	is_smoke = 0;
+	standing_time = 0;
 }
 
 /// add smoke here

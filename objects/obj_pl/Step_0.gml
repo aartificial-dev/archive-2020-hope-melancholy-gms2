@@ -1,7 +1,6 @@
 /// @description Move
 // You can write your code in this editor
 
-event_inherited();
 
 move = 0;
 if (can_move) {
@@ -45,6 +44,10 @@ if (can_move) {
 			} else {
 				audio_play_sound(snd_pistol_ofa, 0, 0);
 			}
+		} else {
+			is_attack = 1;
+			let state = scr_pl_weapon_state(weap_current);
+			alarm[8] = animation_get_length(state);
 		}
 	} else if (!is_attack && !is_reload) {
 		let _x = x + ((- 4) * spr_dir);
@@ -55,7 +58,9 @@ if (can_move) {
 		let im_index = animation_get_frame();
 		if (ceil(im_index) == 3) {
 			/// BEAT HERE
-			if (weap_current == "Tube") {
+			if (weap_current == "Firearm") {
+				// ignore
+			} else if (weap_current == "Tube") {
 				scr_attack_swoosh(x, y - 24);
 			} else {
 				scr_attack_punch(x, y - 24);
@@ -63,7 +68,7 @@ if (can_move) {
 		}
 	}
 
-	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack) {
+	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack && gun_ammo != gun_ammo_max) {
 		// DO RELOAD
 		//let sound = choose(snd_pistol_cock_1, snd_pistol_cock_2, snd_pistol_cock_3);
 		let count = min(gun_ammo_max - gun_ammo, gun_ammo_inv);
@@ -81,3 +86,6 @@ if (can_move) {
 		}
 	}
 }
+
+
+event_inherited();
