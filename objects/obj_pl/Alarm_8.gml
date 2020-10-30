@@ -6,5 +6,6 @@ is_smoke = 0;
 is_attack = 0;
 is_reload = 0;
 standing_time = 0;
+alarm[9] = -1;
 //is_prepare = 0;
 //show_debug_message("IM SHOOT")

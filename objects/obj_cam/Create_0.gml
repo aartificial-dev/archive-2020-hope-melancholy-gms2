@@ -26,6 +26,12 @@ show_debug = 0;
 
 b_back_st_x = 0;
 
+menu_opened = 0;
+blur_size = 0;
+blur_size_m = 37;
+
+game_surface = noone;
+
 if (!gpu_get_alphatestenable()) {
 	//gpu_set_alphatestenable(true);
 	//gpu_set_alphatestref(128);

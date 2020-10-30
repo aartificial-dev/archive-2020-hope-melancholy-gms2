@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "par_interactive",
-    "path": "objects/par_interactive/par_interactive.yy",
+    "name": "par_door",
+    "path": "objects/par_door/par_door.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

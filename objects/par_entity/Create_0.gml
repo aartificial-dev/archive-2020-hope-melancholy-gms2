@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 spd = 0;
-mspd = 2;
+mspd = 1;
 vel = 0.2;
 move = 0;
 v_vel = 0.2;
@@ -12,7 +12,10 @@ v_mspd = 9;
 hp = 10;
 mhp = 10;
 
-spr_dir = 1;
+spr_dir = sign(image_xscale);
+if (spr_dir = 0) {
+	spr_dir = 1;
+}
 
 image_speed = 0.00;
 
@@ -24,3 +27,6 @@ animation_init();
 
 
 can_move = 1;
+
+is_attack = 0;
+is_hurt = 0;

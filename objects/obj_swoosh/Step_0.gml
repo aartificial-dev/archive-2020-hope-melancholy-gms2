@@ -4,15 +4,16 @@
 if (alarm[0] == -1) {
 	var sound = snd_pl_whoosh;
 	var list = ds_list_create();
-	var num = collision_line_list(x, y, stx, sty  - 12, par_collision, 0, 1, list, 0);
+	var num = instance_place_list(x, y, par_collision, list, 0);
 	if (num) {
 		for (var i = 0; i < ds_list_size(list); i ++) {
-			if (list[| i] == creator) {continue;}
-			if (obj_is_ancestor(list[| i], par_obsticle)) {continue;}
-			with (list[| i]) {
-				hit_object_x = other.stx; 
-				hit_object_y = other.sty;
-				hit_object_dmod = 2;
+			let ins = list[| i];
+			if (ins == creator) {continue;}
+			if (obj_is_ancestor(ins, par_obsticle)) {continue;}
+			ins.hit_object_x = creator.x; 
+			ins.hit_object_y = y;
+			ins.hit_object_dmod = 1;
+			with (ins) {
 				event_user(15);
 			}
 			sound = snd_pl_punch;

@@ -7,8 +7,8 @@ function scr_dialog(_obj) {
 	}
 	
 	if (instanceof(_dia) != "Dialog") {
-		show_debug_message("Cannot set dialog.")
-		exit;
+		console_log("Cannot set dialog.");
+		return;
 	}
 	let dbox = instance_create_layer(0, 0, Layers.gui, obj_dialog);
 	dbox.scene = _dia;

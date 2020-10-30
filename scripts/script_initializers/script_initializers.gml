@@ -18,6 +18,7 @@ function scr_door_init(_room, _id, _dest) {
 	let _y = y + sprite_height - sprite_yoffset;
 	let marker = instance_create_layer(x, _y, Layers.system, obj_pl_marker);
 	marker.mid = _id; // id of this door's marker (marker id)
+	marker.door = id;
 }
 
 /// @arg room
@@ -32,6 +33,7 @@ function scr_door_signal_init(_room, _id, _dest, _signal) {
 	let _y = y + sprite_height - sprite_yoffset;
 	let marker = instance_create_layer(x, _y, Layers.system, obj_pl_marker);
 	marker.mid = _id; // id of this door's marker (marker id)
+	marker.door = id;
 }
 
 /// @arg signal

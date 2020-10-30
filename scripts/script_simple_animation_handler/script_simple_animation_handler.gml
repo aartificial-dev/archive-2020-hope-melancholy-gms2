@@ -22,13 +22,13 @@ function AnimHandler() constructor {
 		ds_map_add(_sprites, key, 0);
 		ds_map_add(_speed, key, spd);
 		ds_list_add(_keys, key);
-		show_debug_message("Added " + string(key) + " to handler");
+		console_log("Added " + string(key) + " to handler");
 	}
 	
 	static set = function (spr, subimg) {
 		let key = sprite_get_name(spr);
 		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot set Image for " + string(key));
+			console_log("Cannot set Image for " + string(key));
 			exit;
 		}
 		_sprites[? key] = subimg;
@@ -37,7 +37,7 @@ function AnimHandler() constructor {
 	static setSpeed = function (spr, subimg) {
 		let key = sprite_get_name(spr);
 		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot set Speed for " + string(key));
+			console_log("Cannot set Speed for " + string(key));
 			exit;
 		}
 		_speed[? key] = subimg;
@@ -46,7 +46,7 @@ function AnimHandler() constructor {
 	static get = function(spr) {
 		let key = sprite_get_name(spr);
 		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot get Image for " + string(key));
+			console_log("Cannot get Image for " + string(key));
 			exit;
 		}
 		return _sprites[? key];
@@ -55,7 +55,7 @@ function AnimHandler() constructor {
 	static remove  = function (spr) {
 		let key = sprite_get_name(spr);
 		if (ds_list_find_index(_keys, key) == -1) {
-			show_debug_message("Cannot find " + string(key));
+			console_log("Cannot find " + string(key));
 			exit;
 		}
 		ds_map_delete(_sprites, key);

@@ -37,7 +37,7 @@ function scr_puzzle_add_connection(_x, _y, xto, yto) {
 		cell.connect_def = new vec2(xto, yto);
 		scr_puzzle_reset();
 	} else {
-		show_debug_message("Puzzle connection failed. Empty cell at [" + string(_x) + "," + string(_y) + "].");
+		console_log("Puzzle connection failed. Empty cell at [" + string(_x) + "," + string(_y) + "].");
 	}
 }
 

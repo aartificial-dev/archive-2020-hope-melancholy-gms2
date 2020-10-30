@@ -28,6 +28,10 @@ function animation_bind(_state, _sprite, _speed) {
 
 /// @arg state
 function animation_play(_state) {
+	if (!animation_is_bind(_state)) {
+		console_log("Cannot play '" + string(_state) + "' animation.");
+		return;
+	}
 	if (_animation_handler.state != _state) {
 		_animation_handler.state = _state;
 		_animation_handler.frame = 0;
@@ -89,16 +93,28 @@ function animation_get_frame() {
 
 /// @arg state
 function animation_get_sprite(_state) {
+	if (!animation_is_bind(_state)) {
+		console_log("Cannot get sprite of '" + string(_state) + "' animation.");
+		return 0;
+	}
 	return _animation_handler.spr[? _state];
 }
 
 /// @arg state
 function animation_get_speed(_state) {
+	if (!animation_is_bind(_state)) {
+		console_log("Cannot get speed of '" + string(_state) + "' animation.");
+		return 0;
+	}
 	return _animation_handler.spd[? _state];
 }
 
 /// @arg state
 function animation_get_length(_state) {
+	if (!animation_is_bind(_state)) {
+		console_log("Cannot get length of '" + string(_state) + "' animation.");
+		return 0;
+	}
 	let _sprite = animation_get_sprite(_state);
 	let _maxframe = sprite_get_number(_sprite);
 	let _spd = animation_get_speed(_state);
@@ -122,6 +138,17 @@ function animation_get_current_state() {
 	return _animation_handler.state;
 }
 
+function animation_get_current_number() {
+	let _state = animation_get_current_state();
+	let _sprite = animation_get_sprite(_state);
+	let _maxframe = sprite_get_number(_sprite);
+	return _maxframe;
+}
+
+/// @arg state
+function animation_is_bind(_state) {
+	return ds_map_exists(_animation_handler.spr, _state);
+}
 
 ///
 function AnimationHandler() constructor {
@@ -133,4 +160,9 @@ function AnimationHandler() constructor {
 	yscale = 1;
 	dir = 0;
 	alpha = 1;
+	
+	destroy = function () {
+		ds_map_destroy(spr);
+		ds_map_destroy(spd);
+	}
 }

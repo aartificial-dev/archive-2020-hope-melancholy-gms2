@@ -27,12 +27,30 @@ if (instance_exists(target)) {
 
 actual_scale = lerp(actual_scale, view_scale, 0.15);
 
-//camera_set_view_pos(camera, floor(x - (view_width / 2)), y);
+if (keyboard_check_pressed(vk_up)) {
+	view_scale += 0.1;
+}
+if (keyboard_check_pressed(vk_down)) {
+	view_scale -= 0.1;
+}
+if (keyboard_check_pressed(vk_right)) {
+	view_scale = 1;
+}
+view_scale = clamp(view_scale, 0.1, 2)
 camera_set_view_pos(camera, round(x - (view_w / 2)), round(y - (view_h / 2)));
 camera_set_view_size(camera, view_width / actual_scale, view_height / actual_scale);
 
-//window_mouse_set(clamp(window_mouse_get_x(),0,window_get_width()),clamp(window_mouse_get_y(),0,window_get_height()));
+if (keyboard_check_pressed(vk_escape) && !instance_exists(par_gui_menu)) {
+	if (instance_exists(obj_game_menu)) {
+		instance_destroy(obj_game_menu);
+	} else {
+		instance_create_layer(0, 0, Layers.system, obj_game_menu);
+	}
+	menu_opened = 1 - menu_opened;
+}
 
-if (mouse_check_button_pressed(mb_left)) {
-//	effect_play(seq_sparks, mouse_x, mouse_y);
+if (!menu_opened) {
+	blur_size = clamp(blur_size - 3, 0, blur_size_m);
+} else {
+	blur_size = clamp(blur_size + 3, 0, blur_size_m);
 }

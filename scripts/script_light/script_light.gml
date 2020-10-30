@@ -39,6 +39,9 @@ function draw_raycast() {
 	let _b = y + (sprite_get_height(sprite_index)  - sprite_get_yoffset(sprite_index))  * image_yscale - cam_y;
 	let _u = y - (sprite_get_height(sprite_index)  - sprite_get_yoffset(sprite_index))  * image_yscale - cam_y;
 
+	//let collide = rectangle_in_rectangle(_l, _u, _r, _b, cam_x, cam_y, cam_x + view_w, cam_y + view_h);
+	//if (collide == 0) {return;}
+	
 	//draw_circle_color(_l, _b, 2, c_white, c_white, 1);
 	//draw_circle_color(_r, _b, 2, c_white, c_white, 1);
 	//draw_circle_color(_l, _u, 2, c_white, c_white, 1);

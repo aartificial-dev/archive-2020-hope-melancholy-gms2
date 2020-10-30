@@ -12,3 +12,5 @@ signal = noone;
 error = "locked";
 
 image_speed = 0;
+
+opened = 0;

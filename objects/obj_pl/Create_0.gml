@@ -21,8 +21,8 @@ a_handler.add(spr_hud_mouth, 0.1);
 
 inv_create();
 weap_select = 0;
-weap_current = noone;
-hand_length = 50;
+weap_current = "noone";
+hand_length = 25;
 
 // weapons stuff
 gun_ammo_inv = 15;
@@ -30,21 +30,13 @@ gun_ammo = 10;
 gun_ammo_max = 10;
 // pretty useless
 
-// add die event
-/*entity_sprites_init(
-spr_pl_idle, animation_speed, 
-spr_pl_walk, animation_speed * 2, 
-spr_pl_fall, animation_speed, 
-spr_pl_hit, animation_speed, 
-spr_pl_hit, animation_speed);
-*/
 animation_bind(ANIM_IDLE           , spr_pl_idle   , 0.05);
 animation_bind(ANIM_WALK           , spr_pl_walk   , 0.05 * 2.5);
 animation_bind(ANIM_FALL           , spr_pl_fall   , 0.05);
 animation_bind(ANIM_HURT           , spr_pl_hit    , 0.05);
 animation_bind(ANIM_DIE            , spr_pl_hit    , 0.05);
 animation_bind(ANIM_WALL 					 , spr_pl_wall   , 0.05)
-animation_bind(ANIM_SMOKE          , spr_pl_smoke  , 0.05);
+animation_bind(ANIM_SMOKE          , spr_pl_smoke  , 0.05 * 1.5);
 animation_bind(ANIM_ATTACK_PUNCH   , spr_pl_punch  , 0.05 * 3);
 animation_bind(ANIM_ATTACK_TUBE    , spr_pl_tube   , 0.05 * 3);
 animation_bind(ANIM_ATTACK_FIREARM , spr_pl_shoot  , 0.05 * 8);
@@ -69,3 +61,5 @@ mhp = 20;
 
 hud_offset = 0;
 hud_offset_m = 37;
+
+last_used = noone;

@@ -40,6 +40,9 @@ if (move != 0 || v_spd != 0) {
 		let state = scr_pl_weapon_state(weap_current);
 		animation_play(state);
 	}
+	if (is_hurt) {
+		animation_play(ANIM_HURT);
+	}
 }
 animation_set_xscale(spr_dir);
 
@@ -53,7 +56,16 @@ if (move != 0) {
 		alarm[9] = 14;
 	}
 } else {
-	standing_time ++;
+	if (is_smoke && floor(im_index = 6) && alarm[9] == -1) {
+		if (spr_dir == 1) {
+			effect_play(seq_smoke_right, x + 6, y - 39);
+		} else {
+			effect_play(seq_smoke_left, x - 6, y - 39);
+		}
+		alarm[9] = 20;
+	} else {
+		standing_time ++;
+	}
 }
 
 if (standing_time > 300 && floor(im_index) == 0) {
@@ -62,70 +74,11 @@ if (standing_time > 300 && floor(im_index) == 0) {
 	alarm[8] = animation_get_length(ANIM_SMOKE);
 }
 
-if (is_attack || is_reload || move || v_spd != 0) {
+if (is_attack || is_reload || move || v_spd != 0 || !can_move || is_hurt) {
 	is_smoke = 0;
 	standing_time = 0;
 }
 
-/// add smoke here
-
-/*
-if (anim_state == AnimState.custom && !is_smoke) {
-	if (a_image_index > 0) {
-			if (weap_current == "Firearm") {
-				a_image_index += animation_speed * 8;
-				if (a_image_index >= 7) {
-					a_image_index = 0;
-					is_attack = 0;
-				}
-			} else {
-				a_image_index += animation_speed * 3;
-				if (ceil(a_image_index) == 3) {
-					/// BEAT HERE
-					if (weap_current == "Tube") {
-						scr_attack_swoosh(x, y - 24);
-					} else {
-						scr_attack_punch(x, y - 24);
-					}
-				}
-				if (a_image_index >= 5) {
-					a_image_index = 0; 
-					is_attack = 0;
-				}
-			}
-	}
-}
-
-if (move != 0) {
-	is_smoke = 0;
-	standing_time = 0;
-	if ((floor(anim_index) == 4 || floor(anim_index) == 0) && alarm[9] == -1 && spd = mspd) {
-		let foot = choose(snd_foot_1, snd_foot_2 , snd_foot_3, snd_foot_4);
-		audio_play_sound(foot, 0, 0);
-		alarm[9] = 14;
-	}
-} else {
-	standing_time ++;
-}
-
-// smoking
-if (is_smoke == 0) {
-	a_smoke_index = 0;
-} else {
-	anim_index = 0;
-}
-
-if (standing_time > 300 && floor(anim_index) == 0) {
-	is_smoke = 1;
-	anim_state = AnimState.custom;
-	a_smoke_index += animation_speed;
-	if (a_smoke_index >= 10) {
-		a_smoke_index = 0;
-		standing_time = 0;
-		is_smoke = 0;
-	}
-}
-*/
 
 // sanity stuff
 if (instance_exists(par_monster)) {

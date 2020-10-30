@@ -86,7 +86,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_monster_idle","path":"sprites/spr_monster_idle/spr_monster_idle.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_monster_idle",
     "tags": [],
     "resourceType": "GMSequence",
   },

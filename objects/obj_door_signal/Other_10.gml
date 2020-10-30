@@ -4,11 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
-if (signal_get(signal)) {
-	scr_room_trans(target_room, 60, target);
+if (opened) {
+	scr_room_trans(target_room, 30, target);
 	audio_play_sound(door_sound, 0, 0);
 	image_index = 1;
-	alarm[0] = 60;
+	alarm[0] = 30;
 } else {
 	scr_message(error);
 }

@@ -41,13 +41,16 @@ if (interact && can_move) {
 
 let _icon_x = gui_w - 2;
 let _icon_y = gui_h - 5;
-if (weap_current == "Firearm") {
+if (weap_current == "noone") {
 	draw_sprite(spr_hud_weapon, 0, _icon_x, _icon_y + hud_offset);
-	let _hbar = (gun_ammo / gun_ammo_max) * 100;
-	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
 }
 if (weap_current == "Tube") {
 	draw_sprite(spr_hud_weapon, 1, _icon_x, _icon_y + hud_offset);
+}
+if (weap_current == "Firearm") {
+	draw_sprite(spr_hud_weapon, 2, _icon_x, _icon_y + hud_offset);
+	let _hbar = (gun_ammo / gun_ammo_max) * 100;
+	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
 }
 
 draw_sprite(spr_bars, 0, 0, gui_h - 18 + hud_offset );

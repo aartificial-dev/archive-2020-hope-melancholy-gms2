@@ -52,4 +52,7 @@ draw_clear_alpha(c_black, 0);
 with (par_unwalk) {
 	draw_raycast();
 }
+with (par_raycast) {
+	draw_raycast();
+}
 surface_reset_target();

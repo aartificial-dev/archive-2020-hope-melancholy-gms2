@@ -19,6 +19,10 @@ if (animstate = ANIM_ATTACK_FIREARM) {
 	draw_sprite_ext(spr_pl_shoot_hands_front, animframe, _x, _y, 1, _flip, weap_ang, c_white, 1);
 }
 
+if (animstate == ANIM_SMOKE) {
+	draw_sprite_bloom_ext(spr_pl_smoke_bloom, animframe, x, y, spr_dir, 1, 0, c_white, 1);
+}
+
 ///custom here
 /*if (anim_state == AnimState.custom) {
 	if (is_attack || keyboard_check(vk_shift)) {

@@ -29,6 +29,6 @@ draw_set_alpha(alpha);
 draw_text(_x + _w / 2, _y + 3 - _h + 2, _text);
 draw_set_alpha(1);
 
-if (keyboard_check_pressed(key) || mouse_check_button_pressed(mouse)) {
+if (keyboard_check_pressed(key) || mouse_check_button_pressed(mouse) || instance_exists(par_gui_menu) && alarm[1] == -1) {
 	alarm[1] = 10;
 }

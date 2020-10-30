@@ -44,3 +44,10 @@ function seq_effect_begin() {
 function seq_effect_end() {
 	gpu_set_blendmode(bm_normal);
 }
+
+/// @arg str
+function console_log(str) {
+	show_debug_message("-----------------------------------------------");
+	show_debug_message(str);
+	show_debug_message("-----------------------------------------------");
+}

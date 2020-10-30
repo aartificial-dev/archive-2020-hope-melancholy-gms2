@@ -10,21 +10,22 @@ if (checked == 0) {
 		let num = collision_point_list(xc, yc, par_collision, 0, 1, list, 0);
 		
 		for (let j = 0; j < num; j ++) {
-			if (instance_exists(list[| j]) && !obj_is_ancestor(list[| j], par_obsticle) && list[| j] != creator) {
+			let ins = list[| j];
+			if (instance_exists(ins) && !obj_is_ancestor(ins, par_obsticle) && ins != creator) {
 				dist = i;
-				if (obj_is_ancestor(list[| j], par_unwalk)) {
+				if (obj_is_ancestor(ins, par_unwalk)) {
 					type = 0;
 				}
-				if (obj_is_ancestor(list[| j], par_entity)) {
+				if (obj_is_ancestor(ins, par_entity)) {
 					type = 1;
 				}
-				if (obj_is_ancestor(list[| j], par_monster)) {
+				if (obj_is_ancestor(ins, par_monster)) {
 					type = 2;
 				}
-				with (list[| j]) {
-					hit_object_x = xc; 
-					hit_object_y = yc;
-					hit_object_dmod = 3;
+				ins.hit_object_x = creator.x; 
+				ins.hit_object_y = yc;
+				ins.hit_object_dmod = 3;
+				with (ins) {
 					event_user(15);
 				}
 				//let splash = instance_create_layer(xc, yc, Layers.effect, obj_splash);

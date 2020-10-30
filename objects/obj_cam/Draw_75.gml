@@ -18,7 +18,7 @@ if (global.r_trans_state == global.r_trans_spd) {
 		room_goto(global.r_trans_room);
 	}
 	if (instance_exists(target)) {
-		target.alarm[11] = 2;
+		target.alarm[6] = 2;
 	}
 }
 

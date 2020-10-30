@@ -75,6 +75,10 @@ function Item(_sprite, _fsprite, _w, _h, _name, _ini, _type, _modif) constructor
 	ini = _ini;
 	type = _type;
 	modif = _modif;
+	
+	save = function() {
+		return ;
+	}
 }
 
 /// @func ICell

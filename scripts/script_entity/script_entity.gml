@@ -6,10 +6,9 @@
 /// @arg y
 function scr_attack_swoosh(_x, _y) {
 	if (!instance_exists(obj_swoosh)) {
-		let swoosh = instance_create_layer(_x + (21 * spr_dir), _y - 5, Layers.entity, obj_swoosh);
+		let swoosh = instance_create_layer(_x + (15 * spr_dir), _y, Layers.entity, obj_swoosh);
 		swoosh.creator = id;
-		swoosh.stx = _x;
-		swoosh.sty = _y;
+		swoosh.image_xscale = spr_dir;
 	}
 }
 
@@ -18,10 +17,9 @@ function scr_attack_swoosh(_x, _y) {
 /// @arg y
 function scr_attack_punch(_x, _y) {
 	if (!instance_exists(obj_punch)) {
-		let punch = instance_create_layer(_x + (15 * spr_dir), _y - 5, Layers.entity, obj_punch);
+		let punch = instance_create_layer(_x + (15 * spr_dir), _y - 6, Layers.entity, obj_punch);
 		punch.creator = id;
-		punch.stx = _x;
-		punch.sty = _y;
+		punch.image_xscale = spr_dir;
 	}
 }
 

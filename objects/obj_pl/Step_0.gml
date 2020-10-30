@@ -18,7 +18,7 @@ if (can_move) {
 		standing_time = 0;
 		if (!is_attack) {	spr_dir = sign(mouse_x - x); }
 	}
-	if (is_reload) {
+	if (is_reload || is_hurt) {
 		move = 0;
 		is_smoke = 0;
 		standing_time = 0;
@@ -60,9 +60,11 @@ if (can_move) {
 			/// BEAT HERE
 			if (weap_current == "Firearm") {
 				// ignore
-			} else if (weap_current == "Tube") {
+			}
+			if (weap_current == "Tube") {
 				scr_attack_swoosh(x, y - 24);
-			} else {
+			}
+			if (weap_current == "noone") {
 				scr_attack_punch(x, y - 24);
 			}
 		}
