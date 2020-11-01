@@ -1,0 +1,1 @@
+scr_audio_ambience_init(snd_ambience_creepy_noise, 1);

@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "misc",
+    "path": "folders/Objects/Interact/misc.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_chair",

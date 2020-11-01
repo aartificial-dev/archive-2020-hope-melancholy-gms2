@@ -13,6 +13,7 @@
 #macro ANIM_ATTACK_TUBE     21
 #macro ANIM_ATTACK_PUNCH    22
 #macro ANIM_ATTACK_FIREARM  23
+#macro ANIM_FLASHLIGHT			24
 
 function animation_init() {
 	_animation_handler = new AnimationHandler();

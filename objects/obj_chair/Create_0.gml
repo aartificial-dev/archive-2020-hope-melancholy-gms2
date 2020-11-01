@@ -11,3 +11,5 @@ icon = spr_hud_gear;
 vel = 0;
 
 _sound = noone;
+
+impulse = 0;

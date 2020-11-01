@@ -13,6 +13,7 @@ animation_play(ANIM_IDLE);
 
 xmove = 0;
 state = AI_IDLE;
+prevstate = AI_IDLE;
 
 pl_last_x = x;
 pl_last_y = y;
@@ -20,3 +21,5 @@ wander_x = x;
 door_id = noone;
 
 mspd = 0.8;
+
+

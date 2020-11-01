@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "puzzles",
+    "path": "folders/Objects/Interact/puzzles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_pc_note",

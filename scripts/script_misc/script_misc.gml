@@ -18,6 +18,17 @@ function scr_tutorial(arg) {
 	ins.text = arg[0];
 	ins.key = arg[1];
 	ins.mouse = arg[2];
+
+	with (obj_tutorial) {
+		if (self.id != ins && alarm[1] == -1) {
+			alarm[2] = 1;
+		}
+	}
+	with (obj_message) {
+		if (alarm[1] == -1) {
+			alarm[2] = 1;
+		}
+	}
 }
 
 /// @desc Small ingame message
@@ -28,6 +39,11 @@ function scr_message(_text) {
 
 	with (obj_message) {
 		if (self.id != mbox && alarm[1] == -1) {
+			alarm[2] = 1;
+		}
+	}
+	with (obj_tutorial) {
+		if (alarm[1] == -1) {
 			alarm[2] = 1;
 		}
 	}

@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d44e7ebd-5ecf-4630-8ef1-132e159f72e1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "Collider",
+    "path": "folders/Sprites/Meta/Collider.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_red",

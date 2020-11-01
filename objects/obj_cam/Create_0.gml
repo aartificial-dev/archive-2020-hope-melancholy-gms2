@@ -31,8 +31,16 @@ blur_size = 0;
 blur_size_m = 37;
 
 game_surface = noone;
+gui_surface = noone;
+game_surface_grain = noone;
+
+target = obj_pl;
 
 if (!gpu_get_alphatestenable()) {
 	//gpu_set_alphatestenable(true);
 	//gpu_set_alphatestref(128);
 }
+
+grain_time = 0;
+
+ds_amount = 0;

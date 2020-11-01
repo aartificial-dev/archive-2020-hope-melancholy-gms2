@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_bulb",
-    "path": "sprites/spr_bulb/spr_bulb.yy",
+    "name": "spr_bulb_circle",
+    "path": "sprites/spr_bulb_circle/spr_bulb_circle.yy",
   },
   "solid": false,
   "visible": true,

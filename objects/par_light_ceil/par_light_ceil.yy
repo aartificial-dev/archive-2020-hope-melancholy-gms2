@@ -1,13 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_bulb",
-    "path": "sprites/spr_bulb/spr_bulb.yy",
+    "name": "spr_bulb_point",
+    "path": "sprites/spr_bulb_point/spr_bulb_point.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": {
-    "name": "spr_bulb",
-    "path": "sprites/spr_bulb/spr_bulb.yy",
+    "name": "spr_bulb_circle",
+    "path": "sprites/spr_bulb_circle/spr_bulb_circle.yy",
   },
   "persistent": false,
   "parentObjectId": {

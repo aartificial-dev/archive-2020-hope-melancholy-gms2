@@ -4,7 +4,7 @@ if (!ds_exists(puzzle_map, ds_type_grid)) {
 	exit;
 }
 if (!ds_exists(puzzle_input, ds_type_list)) {
-	puzzle_input = ds_list_create();
+	puzzle_input = ds_list_init();
 	for (let _y = 0; _y < 10; _y ++) {
 		for (let _x = 0; _x < 10; _x ++) {
 			let cell = puzzle_map[# _x, _y];
@@ -32,6 +32,8 @@ for (let i = 0; i < s; i ++) {
 if (play && !collision_line(x, y, obj_pl.x, obj_pl.y - 20, par_unwalk, 0, 1)) {
 	if (!audio_is_playing(__sound_id)) {
 		__sound_id = audio_play_at(snd_wirebox_bzz, x, y, 100, 1, 1, 0);
+	} else {
+		audio_gain(__sound_id, 100);
 	}
 } else {
 	if (audio_is_playing(__sound_id)) {

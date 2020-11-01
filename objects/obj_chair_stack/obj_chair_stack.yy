@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "par_furniture",
+    "path": "objects/par_furniture/par_furniture.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

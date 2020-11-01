@@ -54,6 +54,7 @@ if (move != 0) {
 		let foot = choose(snd_foot_1, snd_foot_2 , snd_foot_3, snd_foot_4);
 		audio_play_sound(foot, 0, 0);
 		alarm[9] = 14;
+		signal_sound_emit(x + (4 * spr_dir), y - 2, 30, obj_pl, 0.1, 8);
 	}
 } else {
 	if (is_smoke && floor(im_index = 6) && alarm[9] == -1) {
@@ -110,3 +111,13 @@ if (sanity < 30) {
 // sound
 audio_listener_position(x, y, 0);
 audio_listener_orientation(0, 0, 1000, 0, -1, 0);
+
+if (!instance_exists(cam)) {
+	if (instance_exists(obj_cam)) {
+		cam = instance_find(obj_cam, 0);
+		cam.target = id;
+	} else {
+		cam = instance_create_layer(x, y, Layers.system, obj_cam);
+		cam.target = id;
+	}
+}

@@ -4,6 +4,4 @@
 event_inherited();
 
 ini_name = "elevator";
-door_sound = snd_door_open;
-
-image_speed = 0;
+//door_sound = snd_door_open;

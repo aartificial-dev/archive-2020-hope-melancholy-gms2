@@ -1,27 +1,3 @@
-
-/// @arg x
-/// @arg y
-/// @arg obj
-/// @arg prec
-/// @arg notme
-function collision_point_depth(_x, _y, _obj, _prec, _notme) {
-	let list = ds_list_create();
-	let col = collision_point_list(_x, _y, _obj, _prec, _notme, list, 0);
-	let dep = 100000;
-	let _id = noone;
-	for (let i = 0; i < col; i ++) {
-		let d = object_get_depth(list[| i]);
-		if (d < dep) {
-			dep = d;
-			_id = list[| i];
-		}
-	}
-	ds_list_destroy(list);
-	return _id;
-}
-
-
-
 /// @arg object
 /// @arg parent
 function obj_is_ancestor(obj, par) {
@@ -34,6 +10,28 @@ function object_get_index(obj) {
 	with (obj) {
 		return object_index;
 	}
+}
+
+
+/// @arg x
+/// @arg y
+/// @arg obj
+/// @arg prec
+/// @arg notme
+function collision_point_depth(_x, _y, _obj, _prec, _notme) {
+	let list = ds_list_init();
+	let col = collision_point_list(_x, _y, _obj, _prec, _notme, list, 0);
+	let dep = 100000;
+	let _id = noone;
+	for (let i = 0; i < col; i ++) {
+		let d = object_get_depth(list[| i]);
+		if (d < dep) {
+			dep = d;
+			_id = list[| i];
+		}
+	}
+	ds_list_purge(list);
+	return _id;
 }
 
 

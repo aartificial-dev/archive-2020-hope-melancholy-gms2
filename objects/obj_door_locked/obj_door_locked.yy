@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "doors",
+    "path": "folders/Objects/Interact/doors.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_door_locked",

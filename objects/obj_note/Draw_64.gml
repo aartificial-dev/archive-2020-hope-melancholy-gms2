@@ -4,9 +4,13 @@
 /// 103 18 // 9 sep 117 w
 /// 221 3 /// 229 11
 
+surface_set_target(obj_cam.gui_surface);
 draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 
-if (!checked) exit;
+if (!checked) {
+	surface_reset_target();
+	exit;
+}
 
 switch (type) {
 	case note_type.book:
@@ -55,3 +59,5 @@ draw_text_ext_color(gui_w / 2 - 57, 18 + _fmod, _text, _h, 117, c_black, c_black
 //draw_text(10, 10, string_height_ext(pages[page_current], 9, 117));
 ///120 max height
 //show_debug_message(string_height_ext(pages[page_current], 9, 177));
+
+surface_reset_target();

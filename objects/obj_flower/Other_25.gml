@@ -3,4 +3,6 @@
 
 event_inherited();
 
+instance_create_layer(x, y, Layers.furniture, obj_flower_break);
+
 instance_destroy();

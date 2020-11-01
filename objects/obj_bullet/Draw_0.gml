@@ -3,7 +3,7 @@
 
 
 if (checked == 0) {
-	let list = ds_list_create();
+	let list = ds_list_init();
 	for (let i = 0; i < dist; i ++) {
 		let xc = x + lendir_x(i, 0, dir + d);
 		let yc  = y + lendir_y(i, 0, dir + d);
@@ -34,7 +34,7 @@ if (checked == 0) {
 		ds_list_clear(list);
 	}
 	checked = 1;
-	ds_list_destroy(list);
+	ds_list_purge(list);
 }
 
 draw_set_alpha(0.3);

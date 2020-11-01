@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5461bd71-b8ae-4a6e-a9cd-9f5483723496","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "Collider",
+    "path": "folders/Sprites/Meta/Collider.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_puzzle_obj_block",

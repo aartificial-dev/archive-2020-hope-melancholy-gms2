@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "locks",
+    "path": "folders/Objects/Interact/locks.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_keypad",

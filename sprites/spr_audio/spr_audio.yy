@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ecc4ac03-e562-44c7-8f73-a021aac1d62c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "Icons",
+    "path": "folders/Sprites/Meta/Icons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_audio",

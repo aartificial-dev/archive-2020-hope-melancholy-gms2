@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+surface_set_target(obj_cam.gui_surface);
 draw_set_font_ext(fnt_pixel, fa_center, fa_top);
 
 _text = ini_open_read("messages", "GENERAL", text);
@@ -27,3 +28,4 @@ draw_rect_f(_x, _y, _x + _w, _y + _h + 6, c_black, 0, 0.6 * alpha);
 draw_set_alpha(alpha);
 draw_text(_x + _w / 2, _y + 3 - _h + 2, _text);
 draw_set_alpha(1);
+surface_reset_target();

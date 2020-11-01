@@ -6,9 +6,9 @@ if (instance_exists(target)) {
 	let _h = ( view_h / 2) * 0.75;
 	x = lerp(x, target.xprevious, 0.05);
 	x = lerp(x, mouse_x, 0.005);
-	x = clamp(x, 0 +  (view_w / 2), room_width -  (view_w / 2));
+	//x = clamp(x, 0 +  (view_w / 2), room_width -  (view_w / 2));
 	y = target.y - _h;
-	y = clamp(y, 0 +  (view_h / 2), room_height -  (view_h / 2));
+	//y = clamp(y, 0 +  (view_h / 2), room_height -  (view_h / 2));
 
 	if (shake_amount) {
 		switch (shake_type) {

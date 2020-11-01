@@ -1,7 +1,7 @@
 function AnimHandler() constructor {
 	_sprites = ds_map_create();
 	_speed = ds_map_create();
-	_keys = ds_list_create();
+	_keys = ds_list_init();
 	
 	static step = function() {
 		let l = ds_map_size(_sprites);
@@ -67,6 +67,6 @@ function AnimHandler() constructor {
 	static destroy  = function () {
 		ds_map_destroy(_sprites);
 		ds_map_destroy(_speed);
-		ds_list_destroy(_keys);
+		ds_list_purge(_keys);
 	}
 }

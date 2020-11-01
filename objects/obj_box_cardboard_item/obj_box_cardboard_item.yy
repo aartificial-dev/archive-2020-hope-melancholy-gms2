@@ -26,12 +26,13 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_box_cardboard_item","path":"objects/obj_box_cardboard_item/obj_box_cardboard_item.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "boxes",
+    "path": "folders/Objects/Interact/boxes.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_box_cardboard_item",

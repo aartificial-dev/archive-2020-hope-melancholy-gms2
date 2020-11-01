@@ -24,11 +24,21 @@ if (keyboard_check_pressed(vk_f3)) {
 }
 
 if (show_debug) {
+	// left region
 	draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 	draw_text(10, 10, "fps: " + string(fps) + ", fps_real: " + string(fps_real));
 	if (global.locale = LOCALE_ENGLISH) {
 		draw_text(10, 25, "Locale: English");
 	} else {
 		draw_text(10, 25, "Locale: Japanese");
+	}
+	draw_text(10, 40, "ds_list: " + string(ds_amount));
+	
+	// right region
+	draw_set_font_ext(fnt_pixel, fa_right, fa_top);
+	draw_text(gui_w, 10, "Signals: ");
+	let num = ds_list_size(global.signals);
+	for (let i = 0; i < num; i ++) {
+		draw_text(gui_w, 25 + (i * 15), string(global.signals[| i]) + " ")
 	}
 }

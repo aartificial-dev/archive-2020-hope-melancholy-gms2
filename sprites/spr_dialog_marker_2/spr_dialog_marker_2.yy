@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7c09be18-1958-49f8-a9a2-be924dd6bf47","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "Markers",
+    "path": "folders/Sprites/Meta/Markers.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_dialog_marker_2",

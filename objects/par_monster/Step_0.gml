@@ -9,10 +9,14 @@ let im_index = animation_get_frame();
 let im_max = animation_get_current_number();
 let im_anim = animation_get_current_state();
 
+hear_sound = signal_sound_hear(x, y - 30, 0.2, obj_pl);
+
 let dis_player = distance_to_object(obj_pl);
-let see_player = (!collision_line(x, y - 30, obj_pl.x, obj_pl.y - 30, par_unwalk, 0, 1)
-									&& dis_player < 120 
-									&& (spr_dir == sign(obj_pl.x - x) || obj_pl.is_attack || state == AI_ALERT || state == AI_CHASE));
+let see_collision = collision_line(x, y - 30, obj_pl.x, obj_pl.y - 30, par_unwalk, 0, 1);
+let see_player = !see_collision 
+									&& ((dis_player < 160 && (dis_player < 5 || (spr_dir == sign(obj_pl.x - x)))) 
+								  || hear_sound || state == AI_ALERT || state == AI_CHASE);
+
 
 if (can_move) {
 	// state machine
@@ -36,14 +40,14 @@ if (can_move) {
 		case AI_ALERT:
 			if (alarm[0] == -1) {state = AI_IDLE;}
 			if (see_player) {state = AI_CHASE;}
-			if (dis_player < 15) {state = AI_ATTACK;}
+			if (dis_player < 30) {state = AI_ATTACK;}
 		break;
 		case AI_CHASE: 
 			if (!see_player) {state = AI_ALERT;}
-			if (dis_player < 15) {state = AI_ATTACK;}
+			if (dis_player < 30) {state = AI_ATTACK;}
 		break;
 		case AI_ATTACK:
-			if (!see_player || dis_player > 15) {state = AI_ALERT;}
+			if (!see_player || dis_player > 30) {state = AI_ALERT;}
 		break;
 		case AI_HURT: break;
 		case AI_DIE: break;
@@ -99,6 +103,12 @@ if (can_move) {
 		if (ceil(im_index) == 3 && alarm[2] == 0) {
 			alarm[2] = 15;
 			// attack here;
+		}
+		move = 0;
+		let tmove = -sign(obj_pl.x - x);
+		spr_dir = -tmove;
+		if (!place_meeting(x + tmove * mspd , y, par_unwalk) && dis_player < 20) {
+			x += tmove * mspd;
 		}
 	} else if (move != 0) {
 		animation_play(ANIM_WALK);

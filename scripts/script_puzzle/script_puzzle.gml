@@ -148,8 +148,8 @@ function scr_puzzle_draw_connections() {
 }
 
 function scr_puzzle_power() {
-	let ds_power = ds_list_create();
-	let ds_input = ds_list_create();
+	let ds_power = ds_list_init();
+	let ds_input = ds_list_init();
 	for (let _y = 0; _y < 10; _y ++) {
 		for (let _x = 0; _x < 10; _x ++) {
 			let cell = puzzle_map[# _x, _y];
@@ -209,6 +209,8 @@ function scr_puzzle_power() {
 		scr_puzzle_reset();
 		instance_destroy();
 	}
+	ds_list_purge(ds_power);
+	ds_list_purge(ds_input);
 }
 
 /// @arg cell

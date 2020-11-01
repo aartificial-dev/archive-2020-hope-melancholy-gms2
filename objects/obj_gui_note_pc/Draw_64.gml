@@ -4,10 +4,14 @@
 /// 103 18 // 9 sep 117 w
 /// 221 3 /// 229 11
 
+surface_set_target(obj_cam.gui_surface);
 draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 
-if (!checked) exit;
 
+if (!checked) {
+	surface_reset_target();
+	exit;
+}
 let _fmod = 0;
 
 if (point_in_rectangle(gui_mouse_x, gui_mouse_y, 44, 16, 282, 144)) {
@@ -63,3 +67,5 @@ draw_text_ext_color(99, 51 + _fmod, _text, _h, 270, c_black, c_black, c_black, c
 
 draw_text_color(99, 26 + _fmod, "From: " + string(from), c_black, c_black, c_black, c_black, 1);
 draw_text_color(99, 38 + _fmod, "To: " + string(to), c_black, c_black, c_black, c_black, 1);
+
+surface_reset_target();

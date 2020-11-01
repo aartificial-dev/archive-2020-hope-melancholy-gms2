@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Interact",
-    "path": "folders/Objects/Interact.yy",
+    "name": "boxes",
+    "path": "folders/Objects/Interact/boxes.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_cupboard",

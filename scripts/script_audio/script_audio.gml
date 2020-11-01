@@ -18,8 +18,22 @@ function audio_play_at(argument0, argument1, argument2, argument3, argument4, ar
 }
 
 /// @arg soundid
+/// @arg faloff
+function audio_gain(_sound, _falloff) {
+	let _dist = distance_to_object(obj_pl);
+	audio_sound_gain(_sound, 1 - min(1, _dist / _falloff), 0);
+}
+
+/// @arg soundid
 /// @arg falloff=150
 function scr_audio_init(_a, _f) {
 	audio = _a;
 	faloff = _f;
+}
+
+/// @arg soundid
+/// @arg volume
+function scr_audio_ambience_init(_a, _v) {
+	audio = _a;
+	volume = _v;
 }

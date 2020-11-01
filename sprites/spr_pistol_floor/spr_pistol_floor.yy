@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_pistol_floor","path":"sprites/spr_pistol_floor/spr_pistol_floor.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_pistol_floor",
     "tags": [],
     "resourceType": "GMSequence",
   },

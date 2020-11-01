@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+surface_set_target(obj_cam.gui_surface);
 draw_set_font_ext(fnt_pixel, fa_center, fa_top);
 
-let _text = ini_open_read("messages", "TUTORIAL", text);
+_text = ini_open_read("messages", "TUTORIAL", text);
 
 let _y;
 let _w = string_width(_text) + 10;
@@ -32,3 +32,4 @@ draw_set_alpha(1);
 if (keyboard_check_pressed(key) || mouse_check_button_pressed(mouse) || instance_exists(par_gui_menu) && alarm[1] == -1) {
 	alarm[1] = 10;
 }
+surface_reset_target();

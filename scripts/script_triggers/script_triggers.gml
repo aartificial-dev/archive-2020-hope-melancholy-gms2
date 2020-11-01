@@ -45,3 +45,14 @@ function scr_get_marker_id(_id) {
 	
 	return noone;
 }
+
+/// @arg time
+/// @arg script
+/// @arg is_fade_id
+function scr_create_fadeout(_time, _scr, _fade_in) {
+	let ins = instance_create_layer(0, 0, Layers.system, obj_fadeout);
+	ins.alarm[0] = _time;
+	ins.alarm_max = _time;
+	ins.al_script = _scr;
+	ins.is_fade_in = _fade_in;
+}

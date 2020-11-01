@@ -11,7 +11,8 @@ uniform float abb_size;
 
 void main(){
   vec2 cord = v_vTexcoord;
-  vec4 col = texture2D( gm_BaseTexture, cord);
+	
+  /*vec4 col = texture2D( gm_BaseTexture, cord);
 	//vec4 bloom = texture2D( gm_BaseTexture, cord);
   
 	//bloom = max(vec4(bloom.rgb-0.4, 1), 0.);
@@ -19,7 +20,7 @@ void main(){
 	//abberaton
   col.r += texture2D( gm_BaseTexture, cord + clamp(vec2(1., 5.), cord, res) ).r/2.;
   col.b += texture2D( gm_BaseTexture, cord - clamp(vec2(1., 5.), cord, res) ).b/2.;
-  
+  */
   
   vec2 uv = cord;
   uv *= 1.0 - uv.xy;
@@ -32,7 +33,7 @@ void main(){
   
   vec4 newCol = (v_vColour/**col*/);
   
-  float dis = distance(v_vTexcoord , vec2(0.35)) * abb_size;
+  float dis = distance(v_vTexcoord , vec2(0.5)) * abb_size;
     
   newCol.r = texture2D(gm_BaseTexture,cord + (dis*0.005)).r;
   newCol.g = texture2D(gm_BaseTexture,cord).g;

@@ -19,6 +19,16 @@ if (!surface_exists(surface_shadow)) {
 
 var camera = view_camera[0];
 
+surface_set_target(surface_shadow);
+draw_clear_alpha(c_black, 0);
+with (par_unwalk) {
+	draw_raycast();
+}
+with (par_raycast) {
+	draw_raycast();
+}
+surface_reset_target();
+
 
 surface_set_target(surface_light);
 draw_clear_alpha(c_black, 1);
@@ -45,14 +55,5 @@ with (par_light) {
 	draw_sprite_ext(light, image_index, _x, _y, w, h, angle, image_blend, alpha_sub);
 }
 gpu_set_blendmode(bm_normal);
-surface_reset_target();
-
-surface_set_target(surface_shadow);
-draw_clear_alpha(c_black, 0);
-with (par_unwalk) {
-	draw_raycast();
-}
-with (par_raycast) {
-	draw_raycast();
-}
+draw_surface(surface_shadow, 0, 0);
 surface_reset_target();

@@ -1,8 +1,8 @@
 /// @description Item hover && Inventory
 // You can write your code in this editor
 
-
 //if (!can_move) {exit;}
+surface_set_target(obj_cam.gui_surface);
 
 if (!can_move) {
 	hud_offset = clamp(hud_offset + 3, 0, hud_offset_m);
@@ -52,6 +52,9 @@ if (weap_current == "Firearm") {
 	let _hbar = (gun_ammo / gun_ammo_max) * 100;
 	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
 }
+if (weap_current == "Flashlight") {
+	draw_sprite(spr_hud_weapon, 3, _icon_x, _icon_y + hud_offset);
+}
 
 draw_sprite(spr_bars, 0, 0, gui_h - 18 + hud_offset );
 
@@ -72,3 +75,4 @@ inv_draw();
 inv_draw_hand();
 
 ///draw_circle(gui_mouse_x, gui_mouse_y, 5, 1);
+surface_reset_target();

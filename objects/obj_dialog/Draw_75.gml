@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+surface_set_target(obj_cam.gui_surface);
 draw_set_font_ext(fnt_pixel, fa_left, fa_top);
 
 let alpha = 0.7;
@@ -54,3 +55,4 @@ if (is_branch) {
 if (d_cur_length == d_line_length && alarm[2] == -1 && !is_branch) {
 	draw_sprite(sprite_index, image_index, width - 15, vheight + ymod - 15);
 }
+surface_reset_target();

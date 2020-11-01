@@ -3,7 +3,7 @@
 
 if (alarm[0] == -1) {
 	var sound = snd_pl_whoosh;
-	var list = ds_list_create();
+	var list = ds_list_init();
 	var num = instance_place_list(x, y, par_collision, list, 0);
 	if (num) {
 		for (var i = 0; i < ds_list_size(list); i ++) {
@@ -20,6 +20,6 @@ if (alarm[0] == -1) {
 		}
 	}
 	audio_play_at(sound, x, y, 150, 1, 0, 0);
-	ds_list_destroy(list);
+	ds_list_purge(list);
 	alarm[0] = 10;
 }

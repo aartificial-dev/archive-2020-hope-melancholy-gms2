@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 
+surface_set_target(obj_cam.gui_surface);
 let cent_x = gui_w / 2;
 let cent_y = gui_h / 2;
 
@@ -104,3 +105,4 @@ draw_sprite(spr_gui_keypad, 2, cent_x, cent_y);
 //keypad_key
 //keypad
 //active
+surface_reset_target();

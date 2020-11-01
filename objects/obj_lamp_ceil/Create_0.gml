@@ -2,4 +2,4 @@
 // You can write your code in this editor
 
 light = instance_create_layer(x, y, Layers.light, par_light_ceil);
-light.width = 200;
+light.width = 64;

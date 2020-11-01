@@ -3,4 +3,8 @@
 
 alarm[0] = 10;
 alpha = 0;
-al_length = 0;
+
+if (audio_is_playing(snd_message)) {
+	audio_stop_sound(snd_message);
+}
+audio_play_sound(snd_message, 0, 0);

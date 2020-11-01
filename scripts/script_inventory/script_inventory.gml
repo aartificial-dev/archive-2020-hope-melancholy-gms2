@@ -12,9 +12,9 @@ enum item_type {
 
 /// @func inv_create
 function inv_create() {
-	inv_items = ds_list_create(); // accepts Item
-	inv_weap1 = ds_list_create();
-	inv_weap2 = ds_list_create();
+	inv_items = ds_list_init(); // accepts Item
+	inv_weap1 = ds_list_init();
+	inv_weap2 = ds_list_init();
 	
 	inv_chips = [noone, noone, noone, noone];
 	

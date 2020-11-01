@@ -1,6 +1,8 @@
 /// @description Move
 // You can write your code in this editor
 
+let animstate = animation_get_current_state();
+let animframe = animation_get_frame();
 
 move = 0;
 if (can_move) {
@@ -44,7 +46,7 @@ if (can_move) {
 			} else {
 				audio_play_sound(snd_pistol_ofa, 0, 0);
 			}
-		} else {
+		} else if (weap_current != "Flashlight") {
 			is_attack = 1;
 			let state = scr_pl_weapon_state(weap_current);
 			alarm[8] = animation_get_length(state);
@@ -69,6 +71,21 @@ if (can_move) {
 			}
 		}
 	}
+	
+	if (keyboard_check(vk_shift) && weap_current == "Flashlight") {
+		let _x = x + ((- 4) * spr_dir);
+		let _y = y - 7 - 24;
+		let _flip = (weap_ang > 90 && weap_ang < 270) ? -1 : 1;
+		let len_x = _x + lendir_x(20, _flip, weap_ang);
+		let len_y = _y + lendir_y(20, _flip, weap_ang);
+		if (!instance_exists(flash_light)) {
+			flash_light = instance_create_layer(len_x, len_y, Layers.light, par_light_flash);
+			flash_light.angle = weap_ang;
+		}
+		flash_light.angle = weap_ang;
+		flash_light.x = len_x;
+		flash_light.y = len_y;
+	}
 
 	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack && gun_ammo != gun_ammo_max) {
 		// DO RELOAD
@@ -83,10 +100,15 @@ if (can_move) {
 			let _x = x + (4 * spr_dir);
 			let _y = y - 7 - 20;
 			instance_create_layer(_x, _y, Layers.effect, obj_empmag);
+			signal_sound_emit(_x, _y, 45, obj_pl, 0.35, 35);
 		} else {
 			scr_message("not_enough_ammo");
 		}
 	}
+}
+
+if (instance_exists(flash_light) && (weap_current != "Flashlight" || can_move == 0 || !keyboard_check(vk_shift) || animstate != ANIM_FLASHLIGHT)) {
+	instance_destroy(flash_light);
 }
 
 

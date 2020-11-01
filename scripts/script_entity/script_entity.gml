@@ -9,6 +9,7 @@ function scr_attack_swoosh(_x, _y) {
 		let swoosh = instance_create_layer(_x + (15 * spr_dir), _y, Layers.entity, obj_swoosh);
 		swoosh.creator = id;
 		swoosh.image_xscale = spr_dir;
+		signal_sound_emit(_x + (15 * spr_dir), _y, 45, obj_pl, 0.4, 15);
 	}
 }
 
@@ -20,13 +21,13 @@ function scr_attack_punch(_x, _y) {
 		let punch = instance_create_layer(_x + (15 * spr_dir), _y - 6, Layers.entity, obj_punch);
 		punch.creator = id;
 		punch.image_xscale = spr_dir;
+		signal_sound_emit(_x + (15 * spr_dir), _y - 6, 15, obj_pl, 0.3, 10);
 	}
 }
 
 /// @func scr_attack_shoot
 function scr_attack_shoot() {
 	if (gun_ammo <= 0) {
-		a_image_index = 0;
 		is_attack = 0;
 		audio_play_sound(snd_pistol_ofa, 0, 0);
 		if (alarm[10] == -1) {
@@ -54,6 +55,7 @@ function scr_attack_shoot() {
 
 	let sound = choose(snd_pistol_shot_1, snd_pistol_shot_2, snd_pistol_shot_3);
 	audio_play_sound(sound, 0, 0);
+	signal_sound_emit(len_x, len_y, 300, obj_pl, 1, 20);
 
 	if (spr_dir = 1) {
 		scr_camera_shake(cam_shake.left, 4, 3);

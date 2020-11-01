@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f07aaec0-09a8-4285-bf2a-66c04c5af821","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Sprites/Meta.yy",
+    "name": "Collider",
+    "path": "folders/Sprites/Meta/Collider.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pink",

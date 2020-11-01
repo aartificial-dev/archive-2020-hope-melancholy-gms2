@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+surface_set_target(obj_cam.gui_surface);
 if (block_init = 0) {
 	scr_puzzle_block();
 	block_init = 1;
@@ -18,15 +19,12 @@ if (puzzle_map != noone) {
 		for (let _x = 0; _x < 10; _x ++) {
 			let _l = scr_puzzle_x(_x);
 			let _u = scr_puzzle_y(_y);
-			if ( (_x + _y) % 2 == 0) {
-				draw_rect_f(_l + 1, _u + 1, _l + 14, _u + 14, c_dkgray, 0, 0.25);
-			}
 			let cell = puzzle_map[# _x, _y];
 			// drawing cells
 			if (cell != noone) {
 				let _spr = scr_puzzle_sprite(cell.type);
-				let _alpha = cell.active ? 1: 0.5;
-				draw_sprite_ext(_spr, 0, _l + 1, _u + 1, 1, 1, 0, c_white, _alpha);
+				let _active = cell.active ? 0: 1;
+				draw_sprite_ext(_spr, _active, _l + 1, _u + 1, 1, 1, 0, c_white, 1);
 				// connections make
 				if (point_in_rectangle(gui_mouse_x, gui_mouse_y, _l + 1, _u + 1, _l + 14, _u + 14)) {
 					label_x = _x;
@@ -35,6 +33,7 @@ if (puzzle_map != noone) {
 						if (con_mouse == noone && cell.type != puzzle_node.n_input) {
 							con_mouse = new vec2(_x, _y);
 							cell.connect = noone;
+							scr_puzzle_check_connections();
 							audio_play_sound(snd_puzzle_take, 0, 0);
 						} else if (con_mouse != noone) {
 							scr_puzzle_connect(_x, _y);
@@ -83,3 +82,4 @@ draw_sprite(spr_puzzle, 1, gui_w / 2, gui_h / 2);
 		instance_destroy();
 	}
 }
+surface_reset_target();

@@ -11,4 +11,4 @@ if (x > obj_pl.x) {
 } else {
 	vel -= 4;
 } 
-audio_play_at(snd_chair_move, x, y, 150, 1, 0, 0);
+impulse = 1;
