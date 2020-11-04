@@ -13,8 +13,8 @@
   "soundFile": "snd_wood_door_open",
   "duration": 0.393231,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_wood_door_open",

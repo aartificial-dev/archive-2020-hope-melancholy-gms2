@@ -13,8 +13,8 @@
   "soundFile": "snd_wirebox_bzz.wav",
   "duration": 69.43173,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_wirebox_bzz",

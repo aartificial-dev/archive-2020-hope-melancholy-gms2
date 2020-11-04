@@ -90,8 +90,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"beb95a11-d2ca-4cf7-9479-4fe1fc4cc86b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Entity/Player.yy",
+    "name": "melee",
+    "path": "folders/Sprites/Entity/Player/melee.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pl_punch",

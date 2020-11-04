@@ -3,4 +3,4 @@
 // Inherit the parent event
 event_inherited();
 
-item = new Item(spr_ammo_inv, spr_ammo_floor, 1, 1, "Pistol Ammo", "pistol_ammo", item_type.ammo, 0);
+item = inv_item_template(TEMPLATE_ITEM_GUN_AMMO);

@@ -27,6 +27,8 @@ function scr_attack_punch(_x, _y) {
 
 /// @func scr_attack_shoot
 function scr_attack_shoot() {
+	let cur_weap = weap_select ? inv_weap2 : inv_weap1;
+	let gun_ammo = inv_item_modif(cur_weap, 0, 0);
 	if (gun_ammo <= 0) {
 		is_attack = 0;
 		audio_play_sound(snd_pistol_ofa, 0, 0);
@@ -62,6 +64,7 @@ function scr_attack_shoot() {
 	} else {
 		scr_camera_shake(cam_shake.right, 4, 3);
 	}
-	gun_ammo--;
+	//gun_ammo--;
+	inv_item_modif(cur_weap, 0, -1);
 	return 1;
 }

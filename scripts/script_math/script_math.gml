@@ -27,6 +27,30 @@ function real_in(argument0, argument1, argument2) {
 	return (argument0 >= argument1 && argument0 <= argument2);
 }
 
+/// @arg dir1
+/// @arg dir2
+/// @arg spd
+/// @arg acc
+function angle_rotate(_dir1, _dir2, _spd, _acc) {
+	let angleDiff = _dir1 - _dir2;
+	let accuracy = abs(clamp(_acc, 0.05, 0.95) - 1.0);    // Don't want perfect accuracy or perfect inaccuracy
+	
+	if(abs(angleDiff) > 180) {
+		if(_dir1 > _dir2) {
+			angleDiff = -1 * ((360 - _dir1) + _dir2);
+		}	else {
+			angleDiff = (360 - _dir2) + _dir1;
+		}
+	}
+
+	let leastAccurateAim = 30;
+	if(angleDiff > leastAccurateAim * accuracy) {
+		return _dir1 - _spd;
+	} else if(angleDiff < leastAccurateAim * accuracy) {
+		return _dir1 + _spd;
+	}
+}
+
 
 /// @func dir_diff
 /// @arg dir1

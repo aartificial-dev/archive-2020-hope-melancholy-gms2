@@ -13,8 +13,8 @@
   "soundFile": "snd_drawer_close.wav",
   "duration": 0.934875,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_drawer_close",

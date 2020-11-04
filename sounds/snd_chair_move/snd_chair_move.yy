@@ -13,8 +13,8 @@
   "soundFile": "snd_chair_move.wav",
   "duration": 0.418271,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_chair_move",

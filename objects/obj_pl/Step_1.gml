@@ -44,6 +44,15 @@ if (move != 0 || v_spd != 0) {
 		animation_play(ANIM_HURT);
 	}
 }
+
+if (weap_current == "Flashlight") {
+	animation_bind(ANIM_IDLE           , spr_pl_idle_flash  , 0.05);
+	animation_bind(ANIM_WALK           , spr_pl_walk_flash  , 0.05 * 2.5);
+} else {
+	animation_bind(ANIM_IDLE           , spr_pl_idle			  , 0.05);
+	animation_bind(ANIM_WALK           , spr_pl_walk			  , 0.05 * 2.5);
+}
+
 animation_set_xscale(spr_dir);
 
 let im_index = animation_get_frame();
@@ -116,8 +125,12 @@ if (!instance_exists(cam)) {
 	if (instance_exists(obj_cam)) {
 		cam = instance_find(obj_cam, 0);
 		cam.target = id;
+		cam.x = x;
+		cam.y = y;
 	} else {
 		cam = instance_create_layer(x, y, Layers.system, obj_cam);
 		cam.target = id;
+		cam.x = x;
+		cam.y = y;
 	}
 }

@@ -13,8 +13,8 @@
   "soundFile": "snd_pistol_reload.wav",
   "duration": 2.434388,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Weapons",
+    "path": "folders/Sounds/Weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_pistol_reload",

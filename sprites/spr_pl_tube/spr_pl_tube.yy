@@ -90,8 +90,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9de73bb6-c49f-43e6-8ad9-89bbacf99e42","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Entity/Player.yy",
+    "name": "melee",
+    "path": "folders/Sprites/Entity/Player/melee.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pl_tube",

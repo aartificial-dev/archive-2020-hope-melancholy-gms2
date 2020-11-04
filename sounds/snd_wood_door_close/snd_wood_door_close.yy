@@ -13,8 +13,8 @@
   "soundFile": "snd_wood_door_close",
   "duration": 0.424977,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_wood_door_close",

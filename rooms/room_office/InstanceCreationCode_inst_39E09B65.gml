@@ -1,1 +1,1 @@
-item = new Item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Manager's Keycard", "keycard_manager", item_type.keycard, 328);
+item = new Item(spr_keycard_inv, spr_keycard_floor, 1, 1, "Manager's Keycard", "keycard_manager", item_type.keycard, 328, TEMPLATE_ITEM_NONE);

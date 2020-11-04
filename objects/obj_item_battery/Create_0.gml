@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-item = new Item(spr_battery_inv, spr_battery_floor, 1, 1, "Battery", "battery", item_type.garbage, 0);
+item = inv_item_template(TEMPLATE_ITEM_BATTERY);

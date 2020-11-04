@@ -13,8 +13,8 @@
   "soundFile": "snd_veh_taxi.wav",
   "duration": 3.500374,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_veh_taxi",

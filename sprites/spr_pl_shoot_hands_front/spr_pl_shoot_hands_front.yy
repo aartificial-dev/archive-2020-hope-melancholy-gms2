@@ -92,8 +92,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Entity/Player.yy",
+    "name": "range",
+    "path": "folders/Sprites/Entity/Player/range.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pl_shoot_hands_front",

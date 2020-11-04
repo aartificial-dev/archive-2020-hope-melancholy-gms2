@@ -8,6 +8,7 @@
 #macro ANIM_ATTACK_RANGE    6
 #macro ANIM_WALL            7
 #macro ANIM_RELOAD					8
+#macro ANIM_STANCE					9
 
 #macro ANIM_SMOKE           20
 #macro ANIM_ATTACK_TUBE     21

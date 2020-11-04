@@ -25,5 +25,5 @@ if (col == $A7D1B2) {
 	ini = "chip_smart";
 }
 
-item = new Item(spr, spr_chip_floor, 1, 1, tag, ini, item_type.chip, col);
+item = new Item(spr, spr_chip_floor, 1, 1, tag, ini, item_type.chip, col, TEMPLATE_ITEM_NONE);
 

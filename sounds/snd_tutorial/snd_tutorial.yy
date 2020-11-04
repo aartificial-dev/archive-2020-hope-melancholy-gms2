@@ -13,8 +13,8 @@
   "soundFile": "snd_tutorial.wav",
   "duration": 1.164388,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "GUI",
+    "path": "folders/Sounds/GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_tutorial",

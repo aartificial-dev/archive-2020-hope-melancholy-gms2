@@ -11,8 +11,8 @@
       ],"resourceVersion":"1.0","name":"flash","tags":[],"resourceType":"GMAnimCurveChannel",},
   ],
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "Sequences",
+    "path": "folders/Sequences.yy",
   },
   "resourceVersion": "1.1",
   "name": "acur_flash",

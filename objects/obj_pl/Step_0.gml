@@ -3,6 +3,7 @@
 
 let animstate = animation_get_current_state();
 let animframe = animation_get_frame();
+let cur_weap = weap_select ? inv_weap2 : inv_weap1;
 
 move = 0;
 if (can_move) {
@@ -13,7 +14,6 @@ if (can_move) {
 	if ((mouse_wheel_up() || mouse_wheel_down()) && !is_attack && !is_reload) {
 		weap_select = 1 - weap_select;
 	}
-	
 	if (keyboard_check(vk_shift)) {
 		move = 0;
 		is_smoke = 0;
@@ -22,6 +22,10 @@ if (can_move) {
 	}
 	if (is_reload || is_hurt) {
 		move = 0;
+		is_smoke = 0;
+		standing_time = 0;
+	}
+	if (weap_current == "Flashlight") {
 		is_smoke = 0;
 		standing_time = 0;
 	}
@@ -59,10 +63,6 @@ if (can_move) {
 	if (is_attack) {
 		let im_index = animation_get_frame();
 		if (ceil(im_index) == 3) {
-			/// BEAT HERE
-			if (weap_current == "Firearm") {
-				// ignore
-			}
 			if (weap_current == "Tube") {
 				scr_attack_swoosh(x, y - 24);
 			}
@@ -72,43 +72,46 @@ if (can_move) {
 		}
 	}
 	
-	if (keyboard_check(vk_shift) && weap_current == "Flashlight") {
-		let _x = x + ((- 4) * spr_dir);
-		let _y = y - 7 - 24;
-		let _flip = (weap_ang > 90 && weap_ang < 270) ? -1 : 1;
-		let len_x = _x + lendir_x(20, _flip, weap_ang);
-		let len_y = _y + lendir_y(20, _flip, weap_ang);
-		if (!instance_exists(flash_light)) {
-			flash_light = instance_create_layer(len_x, len_y, Layers.light, par_light_flash);
-			flash_light.angle = weap_ang;
+	if (!is_reload &&	weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) > 0) {
+		if (mouse_check_button_pressed(mb_left) && alarm[5] == -1) {
+			flash_on = !flash_on;
+			audio_play_sound(snd_flash_toggle, 0, 0);
+			alarm[5] = 10;
 		}
-		flash_light.angle = weap_ang;
-		flash_light.x = len_x;
-		flash_light.y = len_y;
+		if (flash_on) {
+			inv_item_modif(cur_weap, 0, -0.005);
+			let _an_fix = 0;
+			let _ind = floor(animframe);
+			if (animstate == ANIM_IDLE) {
+				_an_fix = (_ind == 2) ? 1 : 0;
+			}
+			if (animstate == ANIM_WALK) {
+				_an_fix = (_ind == 1 || _ind == 5) ? 1 : ((_ind == 3 || _ind == 7) ? -1 : 0);
+			}
+			let _x = x + (10 * spr_dir);
+			let _y = y - 23 - _an_fix;
+			if (!instance_exists(flash_light)) {
+				flash_light = instance_create_layer(_x, _y, Layers.light, par_light_flash);
+			}
+			flash_light.angle = spr_dir ? 0 : 180;
+			flash_light.x = _x;
+			flash_light.y = _y;
+		}
 	}
-
-	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack && gun_ammo != gun_ammo_max) {
-		// DO RELOAD
-		//let sound = choose(snd_pistol_cock_1, snd_pistol_cock_2, snd_pistol_cock_3);
-		let count = min(gun_ammo_max - gun_ammo, gun_ammo_inv);
-		if (count > 0) {
-			audio_play_sound(snd_pistol_reload, 0, 0);
-			gun_ammo_inv -= count;
-			gun_ammo += count;
-			is_reload = 1;
-			alarm[8] = animation_get_length(ANIM_RELOAD);
-			let _x = x + (4 * spr_dir);
-			let _y = y - 7 - 20;
-			instance_create_layer(_x, _y, Layers.effect, obj_empmag);
-			signal_sound_emit(_x, _y, 45, obj_pl, 0.35, 35);
-		} else {
-			scr_message("not_enough_ammo");
-		}
+	
+	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack) {
+		scr_pl_reload();
 	}
 }
 
-if (instance_exists(flash_light) && (weap_current != "Flashlight" || can_move == 0 || !keyboard_check(vk_shift) || animstate != ANIM_FLASHLIGHT)) {
+if (instance_exists(flash_light) 
+		&& (weap_current != "Flashlight"// || can_move == 0
+		|| (weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) == 0) || flash_on == 0)) {
 	instance_destroy(flash_light);
+	flash_on = 0;
+	if (alarm[5] == -1) {
+		audio_play_sound(snd_flash_toggle, 0, 0);
+	}
 }
 
 

@@ -13,8 +13,8 @@
   "soundFile": "snd_cardboard_open.wav",
   "duration": 1.005,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Furniture",
+    "path": "folders/Sounds/Furniture.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_cardboard_open",

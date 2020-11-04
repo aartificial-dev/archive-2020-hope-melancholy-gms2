@@ -25,6 +25,13 @@ if (instance_exists(target)) {
 	}	
 }
 
+if (room = room_menu) {
+	view_scale = 1;
+	actual_scale = 1;
+	x = view_width / 2;
+	y = view_height / 2;
+}
+
 actual_scale = lerp(actual_scale, view_scale, 0.15);
 
 if (keyboard_check_pressed(vk_up)) {
@@ -36,17 +43,21 @@ if (keyboard_check_pressed(vk_down)) {
 if (keyboard_check_pressed(vk_right)) {
 	view_scale = 1;
 }
-view_scale = clamp(view_scale, 0.1, 2)
+view_scale = clamp(view_scale, 0.1, 2);
 camera_set_view_pos(camera, round(x - (view_w / 2)), round(y - (view_h / 2)));
 camera_set_view_size(camera, view_width / actual_scale, view_height / actual_scale);
 
-if (keyboard_check_pressed(vk_escape) && !instance_exists(par_gui_menu)) {
+if (keyboard_check_pressed(vk_escape) && !instance_exists(par_gui_menu) && room != room_menu) {
 	if (instance_exists(obj_game_menu)) {
 		instance_destroy(obj_game_menu);
 	} else {
 		instance_create_layer(0, 0, Layers.system, obj_game_menu);
 	}
 	menu_opened = 1 - menu_opened;
+}
+
+if (!instance_exists(obj_game_menu)) {
+	menu_opened = 0;
 }
 
 if (!menu_opened) {

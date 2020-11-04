@@ -8,20 +8,38 @@ function inv_step() {
 	}
 	if (inv_hand && gui_mouse_y > inv_height && mouse_check_button_pressed(mb_left)) {
 		inv_drop(inv_hand);
+		if (inv_hand.name == "Toolkit") {
+			inv_drop_all(inv_toolkit);
+				if (inv_toolkit_open) {
+					audio_play_sound(snd_toolkit_close, 0, 0);
+				}
+			inv_toolkit_open = false;
+		}
 		inv_hand = noone;
 	} 
 	if (inv_height != inv_mheight) exit;
 	
-	__inv_act_step(inv_items, 117, 2, 12, 3, item_type.any);
-	__inv_act_step(inv_weap1, 3, 13, 5, 2, item_type.weapon);
-	__inv_act_step(inv_weap2, 60, 13, 5, 2, item_type.weapon);
-	
-	__inv_chip_step();
+	__inv_act_step(inv_items, 117, 2, 12, 3, item_type.any, 999);
+	__inv_act_step(inv_weap1, 3, 13, 5, 2, item_type.weapon, 1);
+	__inv_act_step(inv_weap2, 60, 13, 5, 2, item_type.weapon, 1);
+	if (inv_toolkit_open) {
+		__inv_act_step(inv_toolkit, 262, 2, 5, 3, item_type.any, 999);
+		let in_button = point_in_rectangle(gui_mouse_x, gui_mouse_y, 250, 2, 260, 34);
+		let is_pressed = (mouse_check_button(mb_left) && inv_hand == noone);
+		if (in_button && is_pressed && mouse_check_button_pressed(mb_left)) {
+			let comb = scr_items_combine();
+			if (comb) {
+				audio_play_sound(snd_toolkit_combine, 0, 0);
+			}
+		}
+	} else {
+		__inv_chip_step();
+	}
 	
 }
 
 /// @func __inv_act_step
-function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
+function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type, _amount) {
 	let _allow = inv_hand ? inv_hand.type : item_type.any; // checks for item type
 	if ( _allow_type != item_type.any && _allow_type != _allow && _allow != item_type.any ) return; // maybe play sound?
 	if (_allow == item_type.chip) return;
@@ -43,17 +61,6 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 		let _take = mouse_check_button_pressed(mb_left);
 		let _use = mouse_check_button_pressed(mb_right);
 		
-		if (item_col >= 0 && inv_hand && _take) {
-			// swap items
-			let temp = inv[| item_col];
-			let new_item = temp.item;
-			let new_cell = new ICell(mousex, mousey, inv_hand);
-			inv_hand = new_item;
-			ds_list_add(inv, new_cell);
-			ds_list_delete(inv, item_col);
-			audio_play_sound(snd_inv_pickup, 0, 0);
-			return;
-		}
 		if (item_col >= 0 && !inv_hand && _take) {
 			// pick item
 			let temp = inv[| item_col];
@@ -63,11 +70,37 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 			audio_play_sound(snd_inv_pickup, 0, 0);
 			return;
 		}
+		let force_swap = 0;
 		if (item_col == -1 && inv_hand && _take) {
 			// place item
+			let _size = ds_list_size(inv);
+			if (_size + 1 > _amount) { // if cannot fit more items then swap
+				force_swap = 1;
+			} else { // else place item normally
+				let new_cell = new ICell(mousex, mousey, inv_hand);
+				ds_list_add(inv, new_cell);
+				inv_hand = noone;
+				audio_play_sound(snd_inv_pickup, 0, 0);
+				return;
+			}
+		}
+		if ((item_col >= 0 && inv_hand && _take) || force_swap) {
+			// swap items
+			let temp;
+			if (force_swap) {
+				temp = inv[| _amount - 1];
+			} else {
+				temp = inv[| item_col];
+			}
+			let new_item = temp.item;
 			let new_cell = new ICell(mousex, mousey, inv_hand);
+			inv_hand = new_item;
 			ds_list_add(inv, new_cell);
-			inv_hand = noone;
+			if (force_swap) {
+			ds_list_delete(inv, _amount - 1);
+			} else {
+			ds_list_delete(inv, item_col);
+			}
 			audio_play_sound(snd_inv_pickup, 0, 0);
 			return;
 		}
@@ -80,7 +113,7 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 				ds_list_delete(inv, item_col);
 			}
 		}
-		if (item_col >= 0 && inv_hand && _use) {
+		/*if (item_col >= 0 && inv_hand && _use) {
 			// combine items
 			let temp = inv[| item_col];
 			let item = temp.item;
@@ -89,7 +122,7 @@ function __inv_act_step(inv, inv_x, inv_y, inv_w, inv_h, _allow_type) {
 				ds_list_delete(inv, item_col);
 				inv_hand = check;
 			}
-		}
+		}*/
 	}
 }
 

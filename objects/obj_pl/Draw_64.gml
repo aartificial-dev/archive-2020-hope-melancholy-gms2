@@ -1,7 +1,7 @@
 /// @description Item hover && Inventory
 // You can write your code in this editor
 
-//if (!can_move) {exit;}
+if (!instance_exists(cam)) {exit;}
 surface_set_target(obj_cam.gui_surface);
 
 if (!can_move) {
@@ -38,9 +38,11 @@ if (interact && can_move) {
 		//event_perform_object(interact, ev_user0, 0);
 	}
 }
-
+let _cur_weap = weap_select ? inv_weap2 : inv_weap1;
+let _weap_ammo = inv_item_modif(_cur_weap, 0, 0);
 let _icon_x = gui_w - 2;
 let _icon_y = gui_h - 5;
+let _max_ammo = 0;
 if (weap_current == "noone") {
 	draw_sprite(spr_hud_weapon, 0, _icon_x, _icon_y + hud_offset);
 }
@@ -49,11 +51,16 @@ if (weap_current == "Tube") {
 }
 if (weap_current == "Firearm") {
 	draw_sprite(spr_hud_weapon, 2, _icon_x, _icon_y + hud_offset);
-	let _hbar = (gun_ammo / gun_ammo_max) * 100;
-	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
+	_max_ammo = gun_ammo_max;
 }
 if (weap_current == "Flashlight") {
 	draw_sprite(spr_hud_weapon, 3, _icon_x, _icon_y + hud_offset);
+	_max_ammo = flash_bat_max;
+}
+
+if (_max_ammo) {
+	let _hbar = (_weap_ammo / _max_ammo) * 100;
+	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
 }
 
 draw_sprite(spr_bars, 0, 0, gui_h - 18 + hud_offset );

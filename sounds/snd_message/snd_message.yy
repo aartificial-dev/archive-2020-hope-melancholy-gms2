@@ -13,8 +13,8 @@
   "soundFile": "snd_message.wav",
   "duration": 0.479195,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "GUI",
+    "path": "folders/Sounds/GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_message",

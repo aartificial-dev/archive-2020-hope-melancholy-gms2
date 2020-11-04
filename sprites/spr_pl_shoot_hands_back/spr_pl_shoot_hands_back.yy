@@ -92,8 +92,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"4d8fde0c-9f22-42b0-956f-a578d99bf674","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Entity/Player.yy",
+    "name": "range",
+    "path": "folders/Sprites/Entity/Player/range.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pl_shoot_hands_back",

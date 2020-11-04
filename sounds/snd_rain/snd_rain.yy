@@ -13,8 +13,8 @@
   "soundFile": "snd_rain.wav",
   "duration": 6.441145,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "World",
+    "path": "folders/Sounds/World.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_rain",

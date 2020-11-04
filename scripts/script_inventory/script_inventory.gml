@@ -7,7 +7,8 @@ enum item_type {
 	ammo,
 	medicine,
 	keycard,
-	notes
+	notes,
+	tool
 }
 
 /// @func inv_create
@@ -15,16 +16,24 @@ function inv_create() {
 	inv_items = ds_list_init(); // accepts Item
 	inv_weap1 = ds_list_init();
 	inv_weap2 = ds_list_init();
+	inv_toolkit = ds_list_init();
 	
 	inv_chips = [noone, noone, noone, noone];
 	
 	inv_height = 0; //37;
 	inv_mheight = 37;
 	inv_open = 0;
+	inv_toolkit_open = 0;
 	
 	inv_hand = noone;
 }
 
+function inv_destroy() {
+	ds_list_destroy(inv_items);
+	ds_list_destroy(inv_weap1);
+	ds_list_destroy(inv_weap2);
+	ds_list_destroy(inv_toolkit);
+}
 
 /// @func inv_pickup
 /// @arg item
@@ -57,6 +66,47 @@ function scr_item_summon(_item, _x, _y) {
 	audio_play_sound(snd_inv_drop, 0, 0);
 }
 
+/// @arg inv
+function inv_drop_all(_inv) {
+	// drop all items from inventory
+	let size = ds_list_size(_inv);
+	for (let i = 0; i < size; i ++) {
+		let cell = _inv[| i];
+		let item = cell.item;
+		let _x = - (hand_length / 2) + (i * (hand_length / size));
+		scr_item_summon(item, x + _x, y - 20);
+	}
+	ds_list_clear(_inv);
+}
+
+/// @arg inv
+/// @arg item
+/// @arg x
+/// @arg y
+function inv_item_add_at(_inv, _item, _x, _y) {
+	// add item to certain point of inventory
+	let cell = new ICell(_x, _y, _item);
+	ds_list_add(_inv, cell);
+}
+
+/// @arg inv
+/// @arg inv_name
+function inv_save(_inv, _name) {
+	let _str = "";
+	let size = ds_list_size(_inv);
+	_str += "[" + string(_name) + "]\n";
+	_str += "item_count = " + string(size) + "\n\n";
+	for (let i = 0; i < size; i ++) {
+		let cell = _inv[| i];
+		_str += "[" + string(_name) + "~" + string(i) + "]\n";
+		_str += "x = " + string(cell.x) + "\n";
+		_str += "y = " + string(cell.y) + "\n";
+		_str += string(cell.item.save());
+		_str += "\n\n";
+	}
+	return _str;
+}
+
 /// @func Item
 /// @arg sprite
 /// @arg sprite_floor
@@ -66,7 +116,8 @@ function scr_item_summon(_item, _x, _y) {
 /// @arg ini_name
 /// @arg type
 /// @arg modif
-function Item(_sprite, _fsprite, _w, _h, _name, _ini, _type, _modif) constructor {
+/// @arg UID
+function Item(_sprite, _fsprite, _w, _h, _name, _ini, _type, _modif, _uid) constructor {
 	sprite = _sprite;
 	sprite_floor = _fsprite;
 	w = _w;
@@ -75,9 +126,20 @@ function Item(_sprite, _fsprite, _w, _h, _name, _ini, _type, _modif) constructor
 	ini = _ini;
 	type = _type;
 	modif = _modif;
+	uid = _uid;
 	
 	save = function() {
-		return ;
+		let _str = "";
+		_str += "sprite = \"" + string(sprite_get_name(sprite)) + "\"\n";
+		_str += "sprite_floor = \"" + string(sprite_get_name(sprite_floor)) + "\"\n";
+		_str += "w = " + string(w) + "\n";
+		_str += "h = " + string(h) + "\n";
+		_str += "name = \"" + string(name) + "\"\n";
+		_str += "ini = \"" + string(ini) + "\"\n";
+		_str += "type = " + string(type) + "\n";
+		_str += "modif = " + string(modif) + "\n";
+		_str += "uid = " + string(uid);
+		return _str;
 	}
 }
 

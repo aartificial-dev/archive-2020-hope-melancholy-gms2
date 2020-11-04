@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_battery_floor","path":"sprites/spr_battery_floor/spr_battery_floor.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_battery_floor",
     "tags": [],
     "resourceType": "GMSequence",
   },

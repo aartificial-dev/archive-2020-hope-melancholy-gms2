@@ -61,7 +61,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_battery_inv","path":"sprites/spr_battery_inv/spr_battery_inv.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_battery_inv",
     "tags": [],
     "resourceType": "GMSequence",
   },

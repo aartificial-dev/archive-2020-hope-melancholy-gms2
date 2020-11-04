@@ -13,8 +13,8 @@
   "soundFile": "snd_ambience_creepy_noise.wav",
   "duration": 20.949398,
   "parent": {
-    "name": "hope_melancholy",
-    "path": "hope_melancholy.yyp",
+    "name": "World",
+    "path": "folders/Sounds/World.yy",
   },
   "resourceVersion": "1.0",
   "name": "snd_ambience_creepy_noise",

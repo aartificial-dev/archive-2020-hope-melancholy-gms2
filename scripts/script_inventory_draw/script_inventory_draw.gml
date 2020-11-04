@@ -7,17 +7,33 @@ function inv_draw() {
 	let _x = weap_select ? 59 : 2;
 	let _y = 12;
 	draw_sprite(spr_inventory, 1, _x, _y + _my);
+	if (inv_toolkit_open) {
+		draw_sprite(spr_inventory, 3, 0, _my);
+		let in_button = point_in_rectangle(gui_mouse_x, gui_mouse_y, 250, 2, 260, 34);
+		let is_pressed = (mouse_check_button(mb_left) && inv_hand == noone);
+		draw_sprite(spr_inventory, 4 + in_button + (is_pressed && in_button), 0,  _my);
+	} else {
+		draw_sprite(spr_inventory, 2, 0, _my);
+	}
 	
-	__inv_chip_draw();
 	
 	__inv_act_draw(inv_items, 117, 2);
 	__inv_act_draw(inv_weap1, 3, 13);
 	__inv_act_draw(inv_weap2, 60, 13);
+	if (inv_toolkit_open) {
+		__inv_act_draw(inv_toolkit, 262, 2);
+	} else {
+		__inv_chip_draw();
+	}
 	
 	__inv_draw_text(inv_items, 117, 2);
 	__inv_draw_text(inv_weap1, 3, 13);
 	__inv_draw_text(inv_weap2, 60, 13);
-	__inv_chip_text();
+	if (inv_toolkit_open) {
+		__inv_draw_text(inv_toolkit, 262, 2);
+	} else {
+		__inv_chip_text();
+	}
 	
 	
 }
@@ -32,7 +48,7 @@ function __inv_act_draw(inv, _x, _y) {
 		let x_off = sprite_get_xoffset(cell.sprite);
 		let y_off = sprite_get_yoffset(cell.sprite);
 		draw_sprite(cell.sprite, 0, _x + cell.x * scell + x_off, _y + cell.y * scell + y_off + _my);
-		draw_sprite_ext(cell.sprite, 0, _x + cell.x * scell + x_off + 1, _y + cell.y * scell + y_off + 1 + _my, 1.1, 1.1, 0, c_black, 0.3);
+		//draw_sprite_ext(cell.sprite, 0, _x + cell.x * scell + x_off + 1, _y + cell.y * scell + y_off + 1 + _my, 1.1, 1.1, 0, c_black, 0.3);
 	}
 }
 
@@ -111,6 +127,6 @@ function __inv_chip_text() {
 function inv_draw_hand() {
 	if (inv_hand) {
 		draw_sprite_ext(inv_hand.sprite, 0, gui_mouse_x, gui_mouse_y, 1.1, 1.1, 0, c_white, 1);
-		draw_sprite_ext(inv_hand.sprite, 0, gui_mouse_x + 1, gui_mouse_y + 1, 1.1, 1.1, 0, c_black, 0.3);
+		//draw_sprite_ext(inv_hand.sprite, 0, gui_mouse_x + 1, gui_mouse_y + 1, 1.1, 1.1, 0, c_black, 0.3);
 	}
 }
