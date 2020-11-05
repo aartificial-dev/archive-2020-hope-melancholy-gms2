@@ -7,7 +7,9 @@ if (instance_exists(target)) {
 	x = lerp(x, target.xprevious, 0.05);
 	x = lerp(x, mouse_x, 0.005);
 	//x = clamp(x, 0 +  (view_w / 2), room_width -  (view_w / 2));
-	y = target.y - _h;
+	
+	y = lerp(y, target.y - _h, 0.05);
+	//y = target.y - _h;
 	//y = clamp(y, 0 +  (view_h / 2), room_height -  (view_h / 2));
 
 	if (shake_amount) {
@@ -35,13 +37,13 @@ if (room = room_menu) {
 actual_scale = lerp(actual_scale, view_scale, 0.15);
 
 if (keyboard_check_pressed(vk_up)) {
-	view_scale += 0.1;
+//	view_scale += 0.1;
 }
 if (keyboard_check_pressed(vk_down)) {
-	view_scale -= 0.1;
+//	view_scale -= 0.1;
 }
 if (keyboard_check_pressed(vk_right)) {
-	view_scale = 1;
+//	view_scale = 1;
 }
 view_scale = clamp(view_scale, 0.1, 2);
 camera_set_view_pos(camera, round(x - (view_w / 2)), round(y - (view_h / 2)));

@@ -1,5 +1,7 @@
 function script_game_save() {
 	let save = "";
+	save += "[game]\n";
+	save += "version = \"" + string(GM_version) + "\"\n\n";
 	
 	save += "[player]\n";
 	save += "room = " + string(room) + "\n";
@@ -8,6 +10,7 @@ function script_game_save() {
 	save += "hp = " + string(obj_pl.hp) + "\n";
 	save += "sanity = " + string(obj_pl.sanity) + "\n";
 	// add weapons ammo
+	
 	
 	save += "\n";
 	save += string(inv_save(obj_pl.inv_items, "inv_items"));

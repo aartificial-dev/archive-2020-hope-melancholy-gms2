@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3b30b1b0-7ed3-467f-b6e3-8c1b6782ec6b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "decor",
+    "path": "folders/Sprites/Furniture/decor.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_fence",

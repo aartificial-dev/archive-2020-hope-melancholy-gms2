@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3e03ab11-da58-43a1-ad96-1d8586cbe498","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "decor",
+    "path": "folders/Sprites/Furniture/decor.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_flower",

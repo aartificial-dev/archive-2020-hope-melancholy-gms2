@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6bd4d8c1-4e9d-4dc9-97f1-b51ef09d76f2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "light",
+    "path": "folders/Sprites/Furniture/light.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_lamp_ceil_long_dark",

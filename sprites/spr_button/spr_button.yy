@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"16ad8990-ae0e-44d4-8080-a69dbc1be0c7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "buttons",
+    "path": "folders/Sprites/Furniture/buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_button",

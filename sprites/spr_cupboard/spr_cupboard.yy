@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"1841bd31-bf39-4199-95ac-1b123b6d60fb","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "container",
+    "path": "folders/Sprites/Furniture/container.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_cupboard",

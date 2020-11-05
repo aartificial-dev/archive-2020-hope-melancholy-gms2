@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f42dea3c-3c3f-4e2d-9991-45561b367128","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "decor",
+    "path": "folders/Sprites/Furniture/decor.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_tv",

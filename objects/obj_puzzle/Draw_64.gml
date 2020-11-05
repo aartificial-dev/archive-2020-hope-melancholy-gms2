@@ -31,7 +31,7 @@ if (puzzle_map != noone) {
 					label_y = _y;
 					if (mouse_check_button_pressed(mb_left) && cell.type != puzzle_node.n_block && cell.active) {
 						if (con_mouse == noone && cell.type != puzzle_node.n_input) {
-							con_mouse = new vec2(_x, _y);
+							con_mouse = new Vec2(_x, _y);
 							cell.connect = noone;
 							scr_puzzle_check_connections();
 							audio_play_sound(snd_puzzle_take, 0, 0);

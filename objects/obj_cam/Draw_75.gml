@@ -1,7 +1,6 @@
 /// @description Room transitions
 // You can write your code in this editor
 
-
 if (real_in(global.r_trans_state, 1, global.r_trans_spd)) {
 	draw_set_alpha(global.r_trans_state / global.r_trans_spd);
 	draw_rectangle_color(0, 0, 320, 180, c_black, c_black, c_black, c_black, 0);

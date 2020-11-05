@@ -1,4 +1,4 @@
-/// @description light & effects
+/// @description application surface
 application_surface_draw_enable(0);
 
 if (!surface_exists(game_surface)) {
@@ -25,11 +25,17 @@ surface_set_target(application_surface); {
 	
 	draw_surface_stretched(gui_surface, 0, 0, view_width * window_scale, view_height * window_scale);
 	
+	//let cur_angle = point_direction(window_mouse_get_x(), window_mouse_get_y(), view_width * window_scale / 2, view_height * window_scale / 2)
+	if (blur_size != blur_size_m) {
+		draw_sprite_ext(spr_cursor, 0, window_mouse_get_x(), window_mouse_get_y(), 1.15, 1.15, 0, c_white, 1);
+	}
+
+	
 } surface_reset_target();
 
 surface_set_target(game_surface);
 draw_clear(c_black);
-shader_set_vigchrom(display_get_width(), display_get_height(), 0.5, 1);
+shader_set_vigchrom(display_get_width(), display_get_height(), 0.5 * chrom_add, 1);
 draw_surface(application_surface, 0, 0);
 shader_reset();
 surface_reset_target();
@@ -55,6 +61,9 @@ draw_surface(application_surface, 0, 0);
 
 if (blur_size != 0) {
 	shader_reset();
+	window_set_cursor(cr_default);
+} else {
+	window_set_cursor(cr_none);
 }
 
 surface_set_target(gui_surface);

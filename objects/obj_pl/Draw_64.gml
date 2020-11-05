@@ -40,9 +40,10 @@ if (interact && can_move) {
 }
 let _cur_weap = weap_select ? inv_weap2 : inv_weap1;
 let _weap_ammo = inv_item_modif(_cur_weap, 0, 0);
-let _icon_x = gui_w - 2;
-let _icon_y = gui_h - 5;
+let _icon_x = gui_w - 1;
+let _icon_y = gui_h - 1;//5;
 let _max_ammo = 0;
+let _inv_ammo = 0;
 if (weap_current == "noone") {
 	draw_sprite(spr_hud_weapon, 0, _icon_x, _icon_y + hud_offset);
 }
@@ -51,22 +52,29 @@ if (weap_current == "Tube") {
 }
 if (weap_current == "Firearm") {
 	draw_sprite(spr_hud_weapon, 2, _icon_x, _icon_y + hud_offset);
+	_inv_ammo = gun_ammo_inv;
 	_max_ammo = gun_ammo_max;
 }
 if (weap_current == "Flashlight") {
 	draw_sprite(spr_hud_weapon, 3, _icon_x, _icon_y + hud_offset);
+	_inv_ammo = flash_bat_inv;
 	_max_ammo = flash_bat_max;
 }
 
 if (_max_ammo) {
-	let _hbar = (_weap_ammo / _max_ammo) * 100;
-	draw_healthbar(gui_w - 18, gui_h - 4 + hud_offset, gui_w - 2, gui_h - 2 + hud_offset, _hbar, c_black, c_white, c_white, 0, 1, 1);
+	_weap_ammo = clamp(ceil(_weap_ammo), 0, 99);
+	_inv_ammo = clamp(ceil(_inv_ammo), 0, 99);
+	_weap_ammo = (string_length(_weap_ammo) == 1) ? ("0" + string(_weap_ammo)) : _weap_ammo;
+	_inv_ammo = (string_length(_inv_ammo) == 1) ? ("0" + string(_inv_ammo)) : _inv_ammo;
+	let text = string(_weap_ammo) + "/" + string(_inv_ammo);
+	draw_set_font_ext(fnt_pixel, fa_right, fa_middle);
+	draw_text( _icon_x - 18, _icon_y + hud_offset - 8, text);
 }
 
 draw_sprite(spr_bars, 0, 0, gui_h - 18 + hud_offset );
 
-draw_healthbar(18, gui_h - 16 + hud_offset, 61, gui_h - 12 + hud_offset, (hp / mhp) * 100, c_black, $a1a1ed, $a1a1ed, 0, 0, 0);
-draw_healthbar(18, gui_h - 8 + hud_offset, 61, gui_h - 4 + hud_offset, (sanity / msanity) * 100, c_black, $ddb8d8, $ddb8d8, 0, 0, 0);
+draw_healthbar(18, gui_h - 16 + hud_offset, 61, gui_h - 12 + hud_offset, (hp / mhp) * 100, c_dkgray, $a1a1ed, $a1a1ed, 0, 1, 0);
+draw_healthbar(18, gui_h - 8 + hud_offset, 61, gui_h - 4 + hud_offset, (sanity / msanity) * 100, c_dkgray, $ddb8d8, $ddb8d8, 0, 1, 0);
 
 if (sanity >= 30) {
 	draw_sprite(spr_face_calm, 0, 0, gui_h - 18 + hud_offset);

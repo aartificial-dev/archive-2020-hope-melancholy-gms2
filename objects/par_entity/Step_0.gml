@@ -17,7 +17,7 @@ if (!place_meeting(x + spd * move, y, par_unwalk)) {
 } else {
 	spd = 0;
 }
-if (!place_meeting(x, y + v_spd, par_unwalk)) {
+if (!place_meeting(x, y + v_spd, par_unwalk) && !place_meeting(x, y + v_spd, obj_ladder_top) && !on_ladder) {
 //	anim_state = AnimState.fall;
 	y += v_spd;
 } else {

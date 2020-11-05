@@ -1,6 +1,13 @@
 
 #macro Layers global.__template_layers
 #macro let var
+#macro class function
+
+gml_pragma("global", "game_init()");
+
+function game_init() {
+	// global code here
+}
 
 global.__template_layers = {
 	b_back: "B_Back",
@@ -18,6 +25,7 @@ global.__template_layers = {
 	furniture: "L_Furniture",
 	items: "L_Item",
 	entity: "L_Entity",
+	furniture_front: "L_Furniture_Front",
 	
 	s_effect: "S_Effect",
 	

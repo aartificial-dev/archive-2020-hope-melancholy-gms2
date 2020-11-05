@@ -44,3 +44,8 @@ if (!gpu_get_alphatestenable()) {
 grain_time = 0;
 
 ds_amount = 0;
+
+chrom_add = 1;
+
+window_set_cursor(cr_none);
+//cursor_sprite = spr_cursor;

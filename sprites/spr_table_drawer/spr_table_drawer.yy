@@ -73,8 +73,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"692c71d8-e8ab-4eb4-b798-f0d0713c302c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "container",
+    "path": "folders/Sprites/Furniture/container.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_table_drawer",

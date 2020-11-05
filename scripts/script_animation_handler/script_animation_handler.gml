@@ -8,7 +8,7 @@
 #macro ANIM_ATTACK_RANGE    6
 #macro ANIM_WALL            7
 #macro ANIM_RELOAD					8
-#macro ANIM_STANCE					9
+#macro ANIM_LADDER					9
 
 #macro ANIM_SMOKE           20
 #macro ANIM_ATTACK_TUBE     21
@@ -150,21 +150,4 @@ function animation_get_current_number() {
 /// @arg state
 function animation_is_bind(_state) {
 	return ds_map_exists(_animation_handler.spr, _state);
-}
-
-///
-function AnimationHandler() constructor {
-	state = noone;
-	spr = ds_map_create();
-	spd = ds_map_create();
-	frame = 0;
-	xscale = 1;
-	yscale = 1;
-	dir = 0;
-	alpha = 1;
-	
-	destroy = function () {
-		ds_map_destroy(spr);
-		ds_map_destroy(spd);
-	}
 }

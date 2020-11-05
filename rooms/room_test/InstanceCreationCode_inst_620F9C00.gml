@@ -1,1 +1,0 @@
-scr_door_init(room_office, 555, 331);

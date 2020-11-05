@@ -118,8 +118,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"4f2a7018-fcfc-41ab-a140-34239a89b66b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "container",
+    "path": "folders/Sprites/Furniture/container.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_box_cardboard_break",

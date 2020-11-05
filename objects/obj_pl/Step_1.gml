@@ -18,7 +18,13 @@ if (move != 0 || v_spd != 0) {
 		animation_play(ANIM_FALL);
 	}
 } else if (can_move) {
-	if (!is_attack && !is_reload) {
+	if (on_ladder) {
+		animation_play(ANIM_LADDER);
+		if (!ladder_move) {
+			animation_set_frame(ladder_im);
+		}
+	}
+	if (!is_attack && !is_reload && !on_ladder) {
 		if (!keyboard_check(vk_shift)) {
 			if (!is_smoke) {
 				animation_play(ANIM_IDLE);
@@ -66,6 +72,12 @@ if (move != 0) {
 		signal_sound_emit(x + (4 * spr_dir), y - 2, 30, obj_pl, 0.1, 8);
 	}
 } else {
+	if (ladder_move && (floor(im_index) == 0 || floor(im_index) == 4) && alarm[9] == -1) {
+		let foot = choose(snd_ladder_0, snd_ladder_1 , snd_ladder_2, snd_ladder_3);
+		audio_play_sound(foot, 0, 0);
+		alarm[9] = 25;
+		signal_sound_emit(x, y - 24, 30, obj_pl, 0.1, 8);
+	}
 	if (is_smoke && floor(im_index = 6) && alarm[9] == -1) {
 		if (spr_dir == 1) {
 			effect_play(seq_smoke_right, x + 6, y - 39);
@@ -91,11 +103,15 @@ if (is_attack || is_reload || move || v_spd != 0 || !can_move || is_hurt) {
 
 
 // sanity stuff
+obj_cam.chrom_add = 1;
 if (instance_exists(par_monster)) {
-	if (distance_to_object(par_monster) < 30) {
-		sanity -= 0.01;
-	}
-}
+	if (distance_to_object(par_monster) < 120) {
+		sanity -= 0.05 * (1 - (distance_to_object(par_monster) / 120));
+		obj_cam.chrom_add = 1 + (5 * (1 - (distance_to_object(par_monster) / 120)));
+		if (!audio_is_playing(monster_sound)) {monster_sound = audio_play_sound(snd_monster_near, 0, 1);}
+		audio_sound_gain(monster_sound, 1 - (distance_to_object(par_monster) / 120), 0);
+	} else {audio_stop_sound(monster_sound);}
+} else {audio_stop_sound(monster_sound);}
 
 image_face_index += 1/60;
 if (image_face_index >= 4) {
@@ -124,13 +140,10 @@ audio_listener_orientation(0, 0, 1000, 0, -1, 0);
 if (!instance_exists(cam)) {
 	if (instance_exists(obj_cam)) {
 		cam = instance_find(obj_cam, 0);
-		cam.target = id;
-		cam.x = x;
-		cam.y = y;
 	} else {
 		cam = instance_create_layer(x, y, Layers.system, obj_cam);
-		cam.target = id;
-		cam.x = x;
-		cam.y = y;
 	}
+	cam.target = id;
+	cam.x = x;
+	cam.y = y;
 }

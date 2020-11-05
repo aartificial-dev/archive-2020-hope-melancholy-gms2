@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"20646e11-c94f-4b77-8941-1cfd5051c059","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Sprites/Items/Weapons.yy",
+    "name": "Items",
+    "path": "folders/Sprites/Items.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_flashlight_floor",

@@ -1,7 +1,7 @@
 {
   "option_windows_display_name": "h.o.p.e. melancholy",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "1.0.0.0",
+  "option_windows_version": "0.0.5.1",
   "option_windows_company_info": "al1-ce",
   "option_windows_product_info": "",
   "option_windows_copyright_info": "",

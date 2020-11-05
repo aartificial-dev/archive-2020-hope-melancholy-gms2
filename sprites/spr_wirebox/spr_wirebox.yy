@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cd39172f-0051-42c8-bb32-acbe861219fd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "buttons",
+    "path": "folders/Sprites/Furniture/buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_wirebox",

@@ -37,23 +37,5 @@ function scr_pc_note_add(_from, _to, _pref, _section, _key) {
 	note.add(_from, _to, _pref, _section, _key);
 }
 
-function NotePC() constructor {
-	notes = [];
-	count = 0;
-	
-	add = function(from, to, _pref, _section, _key) {
-		notes[count] = new NotePCMail(from, to, _pref, _section, _key);
-		count ++;
-	}
-}
 
-/// @arg from
-/// @arg to
-/// @arg text
-function NotePCMail(_from, _to, _pref, _section, _key) constructor {
-	from = _from;
-	to = _to;
-	pref = _pref;
-	section = _section;
-	key = _key;
-}
+

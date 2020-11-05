@@ -1,4 +1,4 @@
-function AnimHandler() constructor {
+class AnimHandler() constructor {
 	_sprites = ds_map_create();
 	_speed = ds_map_create();
 	_keys = ds_list_init();

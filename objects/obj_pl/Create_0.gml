@@ -42,6 +42,7 @@ animation_bind(ANIM_FALL           , spr_pl_fall			  , 0.05);
 animation_bind(ANIM_HURT           , spr_pl_hit				  , 0.05);
 animation_bind(ANIM_DIE            , spr_pl_hit				  , 0.05);
 animation_bind(ANIM_WALL 					 , spr_pl_wall			  , 0.05);
+animation_bind(ANIM_LADDER 				 , spr_pl_ladder_u	  , 0.05 * 2);
 animation_bind(ANIM_SMOKE          , spr_pl_smoke			  , 0.05 * 1.5);
 animation_bind(ANIM_ATTACK_PUNCH   , spr_pl_punch			  , 0.05 * 3);
 animation_bind(ANIM_ATTACK_TUBE    , spr_pl_tube			  , 0.05 * 3);
@@ -60,8 +61,13 @@ msanity = sanity;
 sanity_index = 0;
 
 is_attack = 0;
+is_hurt = 0;
 is_smoke = 0;
 is_reload = 0;
+
+on_ladder = 0;
+ladder_im = 0;
+ladder_move = 0;
 
 hp = 20;
 mhp = 20;
@@ -73,3 +79,5 @@ last_used = noone;
 
 flash_light = noone;
 flash_on = 0;
+
+monster_sound = noone;

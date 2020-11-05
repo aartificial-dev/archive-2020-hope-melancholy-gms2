@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"49a5fa1c-ab76-495a-91c5-d657487c847b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "buttons",
+    "path": "folders/Sprites/Furniture/buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_keycard_lock",

@@ -30,3 +30,6 @@ can_move = 1;
 
 is_attack = 0;
 is_hurt = 0;
+is_reload = 0;
+
+on_ladder = 0;

@@ -10,7 +10,7 @@ if (!ds_exists(puzzle_input, ds_type_list)) {
 			let cell = puzzle_map[# _x, _y];
 			if (cell != noone) {
 				if (cell.type = puzzle_node.n_input) {
-					ds_list_add(puzzle_input, new vec2(_x, _y));
+					ds_list_add(puzzle_input, new Vec2(_x, _y));
 				}
 			}
 		}

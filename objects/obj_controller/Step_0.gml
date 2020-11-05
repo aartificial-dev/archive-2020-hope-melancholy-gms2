@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if (room == room_load) {
-	room_goto(room_menu);
+	room_goto(room_test);
 	exit;
 }
 

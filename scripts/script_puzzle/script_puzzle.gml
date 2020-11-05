@@ -49,7 +49,7 @@ function scr_puzzle_connect(xto, yto) {
 		let _line = collision_line(x1, y1, x2, y2, obj_puzzle_block, 0, 1);
 		if (!_line) {
 			let m_cell = puzzle_map[# con_mouse.x, con_mouse.y];
-			m_cell.connect = new vec2(xto, yto);
+			m_cell.connect = new Vec2(xto, yto);
 			audio_play_sound(snd_puzzle_plug, 0, 0);
 		} else {
 			audio_play_sound(snd_puzzle_unplug, 0, 0);
@@ -156,10 +156,10 @@ function scr_puzzle_power() {
 			if (cell != noone) {
 				cell.cur_power = 0;
 				if (cell.type = puzzle_node.n_input) {
-					ds_list_add(ds_input, new vec2(_x, _y));
+					ds_list_add(ds_input, new Vec2(_x, _y));
 				}
 				if (cell.type = puzzle_node.n_power) {
-					ds_list_add(ds_power, new vec2(_x, _y));
+					ds_list_add(ds_power, new Vec2(_x, _y));
 				}
 			}
 		}

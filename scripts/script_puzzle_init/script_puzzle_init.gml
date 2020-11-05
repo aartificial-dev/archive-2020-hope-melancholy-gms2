@@ -34,7 +34,7 @@ function scr_puzzle_add_block(_x, _y, _type) {
 function scr_puzzle_add_connection(_x, _y, xto, yto) {
 	let cell = puzzle_map[# _x, _y];
 	if (cell != noone) {
-		cell.connect_def = new vec2(xto, yto);
+		cell.connect_def = new Vec2(xto, yto);
 		scr_puzzle_reset();
 	} else {
 		console_log("Puzzle connection failed. Empty cell at [" + string(_x) + "," + string(_y) + "].");
@@ -53,23 +53,6 @@ function scr_puzzle_reset() {
 		}
 	}
 	con_mouse = noone;
-}
-
-/// @arg type
-/// @arg out_power
-/// @arg max_power
-/// @arg signal
-/// @arg signal_over
-function PuzzleCell(_type, _pow_out, _pow_max, _signal, _signal_ov) constructor {
-	type = _type;
-	out_power = _pow_out;
-	max_power = _pow_max;
-	signal = _signal;
-	signal_overload = _signal_ov;
-	connect = noone;
-	connect_def = noone;
-	cur_power = 0;
-	active = 1;
 }
 
 enum puzzle_node {

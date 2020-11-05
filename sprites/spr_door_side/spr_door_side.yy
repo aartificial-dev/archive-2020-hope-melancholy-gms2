@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2553927b-8d0c-471f-b054-c81a619c00cc","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "doors",
+    "path": "folders/Sprites/Furniture/doors.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_door_side",

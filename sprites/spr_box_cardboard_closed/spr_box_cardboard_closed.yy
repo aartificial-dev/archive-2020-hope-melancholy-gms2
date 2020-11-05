@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"af4b5a8e-474f-48ab-a0c1-fc32f115dc6f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "container",
+    "path": "folders/Sprites/Furniture/container.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_box_cardboard_closed",

@@ -32,6 +32,7 @@ function draw_sprite_bloom_self() {
 function draw_raycast() {
 	if (!instance_exists(obj_pl)) {return;}
 	if (!visible) {return;}
+	if (object_index == par_wall_noshadow) {return;}
 	var camera = view_camera[0];
 	let cam_x = camera_get_view_x(camera);
 	let cam_y = camera_get_view_y(camera);

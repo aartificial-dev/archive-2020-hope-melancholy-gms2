@@ -18,9 +18,46 @@ if (can_move) {
 		move = 0;
 		is_smoke = 0;
 		standing_time = 0;
-		if (!is_attack) {	spr_dir = sign(mouse_x - x); }
+		if (!is_attack && !is_reload && !on_ladder) {	spr_dir = sign(mouse_x - x); }
 	}
-	if (is_reload || is_hurt) {
+	
+	let ladder_b = instance_place(x, y, obj_ladder);
+	let ladder_t = instance_place(x, y - 16, obj_ladder);
+	if (ladder_b) {
+		if (!on_ladder) {
+			let key = (ladder_b.object_index == obj_ladder) ? ord("W") : ord("S"); // check which key need to get on ladder
+			if (keyboard_check_pressed(key) && abs(x - ladder_b.x) < 4) {	on_ladder = 1; } else {	on_ladder = 0; } // check if can go on ladder
+		}
+		if (on_ladder && !keyboard_check(ord("W"))) {
+			if (keyboard_check(ord("S"))) { // if on ladder && pressing right key
+				if ( !instance_place(x, y + 0.5, par_unwalk)) { // if no obsticle at bottom
+					y += 0.5;
+					if (animation_get_current_sprite() == spr_pl_ladder_u) { animation_set_frame(animation_get_current_number() - animframe); } // swap frames if before goes up
+					animation_bind(ANIM_LADDER, spr_pl_ladder_d, 0.05 * 2);
+					ladder_im = animframe; ladder_move = 1; // set frame for animation
+				} else { on_ladder = 0; ladder_move = 0; } // if obsticle on botton then get out
+			} else {ladder_move = 0;} // if key not pressed -> do not move animation
+		}
+	} else {
+		if (keyboard_check(ord("S")) && !keyboard_check(ord("W"))) {	on_ladder = 0; ladder_move = 0;	} // if no ladder and key pressed get out
+	}
+	if (ladder_t && !keyboard_check(ord("S"))) {
+		if (on_ladder) {
+			if (keyboard_check(ord("W"))) { // if on ladder and key pressed
+				if (!instance_place(x, y - 0.5, par_unwalk)) { // if no obsticle up
+					y -= 0.5; 
+					if (animation_get_current_sprite() == spr_pl_ladder_d) { animation_set_frame(animation_get_current_number() - animframe); } // swap frames if before goes down
+					animation_bind(ANIM_LADDER, spr_pl_ladder_u, 0.05 * 2);
+					ladder_im = animframe; ladder_move = 1; // set frame for animation
+				} else { ladder_move = 0;	} // if obsticle do not move
+			} else { ladder_move = 0; } // if not pressing key do not move
+		} else { ladder_move = 0; } // if not on ladder then don't move
+	} else {
+		if (keyboard_check(ord("W")) && !keyboard_check(ord("S")) ) { on_ladder = 0; ladder_move = 0; } // if no ladder and key pressed get out
+	}
+	if (on_ladder && keyboard_check(ord("W")) && keyboard_check(ord("S"))) { ladder_move = 0; } // if on ladder and both keys pressed then do not move
+	
+	if (is_reload || is_hurt || on_ladder) {
 		move = 0;
 		is_smoke = 0;
 		standing_time = 0;
@@ -32,7 +69,7 @@ if (can_move) {
 	
 	// if item {in hand: block} else if inv open {if mouse {in inv: block} else not}
 	let _inv_check = inv_hand ? false : (inv_open ? gui_mouse_y > inv_mheight : true);
-	if (mouse_check_button_pressed(mb_left) && keyboard_check(vk_shift) && !is_attack && !is_reload && _inv_check) {
+	if (mouse_check_button_pressed(mb_left) && keyboard_check(vk_shift) && !is_attack && !is_reload && !on_ladder && _inv_check) {
 		// SHOOT or PUNCH
 		//show_debug_message(animation_get_length(state));
 		if (weap_current == "Firearm") {
@@ -72,46 +109,45 @@ if (can_move) {
 		}
 	}
 	
-	if (!is_reload &&	weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) > 0) {
+	if (!is_reload &&	weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) > 0 && _inv_check) {
 		if (mouse_check_button_pressed(mb_left) && alarm[5] == -1) {
 			flash_on = !flash_on;
 			audio_play_sound(snd_flash_toggle, 0, 0);
 			alarm[5] = 10;
 		}
-		if (flash_on) {
-			inv_item_modif(cur_weap, 0, -0.005);
-			let _an_fix = 0;
-			let _ind = floor(animframe);
-			if (animstate == ANIM_IDLE) {
-				_an_fix = (_ind == 2) ? 1 : 0;
-			}
-			if (animstate == ANIM_WALK) {
-				_an_fix = (_ind == 1 || _ind == 5) ? 1 : ((_ind == 3 || _ind == 7) ? -1 : 0);
-			}
-			let _x = x + (10 * spr_dir);
-			let _y = y - 23 - _an_fix;
-			if (!instance_exists(flash_light)) {
-				flash_light = instance_create_layer(_x, _y, Layers.light, par_light_flash);
-			}
-			flash_light.angle = spr_dir ? 0 : 180;
-			flash_light.x = _x;
-			flash_light.y = _y;
-		}
 	}
 	
-	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack) {
+	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack && !on_ladder) {
 		scr_pl_reload();
 	}
 }
 
-if (instance_exists(flash_light) 
-		&& (weap_current != "Flashlight"// || can_move == 0
+if (instance_exists(flash_light) && (weap_current != "Flashlight" || on_ladder// || can_move == 0
 		|| (weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) == 0) || flash_on == 0)) {
 	instance_destroy(flash_light);
 	flash_on = 0;
 	if (alarm[5] == -1) {
 		audio_play_sound(snd_flash_toggle, 0, 0);
 	}
+}
+if (flash_on) {
+	inv_item_modif(cur_weap, 0, -0.005);
+	let _an_fix = 0;
+	let _ind = floor(animframe);
+	if (animstate == ANIM_IDLE) {
+		_an_fix = (_ind == 2) ? 1 : 0;
+	}
+	if (animstate == ANIM_WALK) {
+		_an_fix = (_ind == 1 || _ind == 5) ? 1 : ((_ind == 3 || _ind == 7) ? -1 : 0);
+	}
+	let _x = x + (10 * spr_dir);
+	let _y = y - 23 - _an_fix;
+	if (!instance_exists(flash_light)) {
+		flash_light = instance_create_layer(_x, _y, Layers.light, par_light_flash);
+	}
+	flash_light.angle = spr_dir ? 0 : 180;
+	flash_light.x = _x;
+	flash_light.y = _y;
 }
 
 

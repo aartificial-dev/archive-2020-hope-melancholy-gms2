@@ -78,8 +78,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"3300d92b-7d3b-4dc3-bac9-9b5983383df8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Furniture",
-    "path": "folders/Sprites/Furniture.yy",
+    "name": "doors",
+    "path": "folders/Sprites/Furniture/doors.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_elevator",

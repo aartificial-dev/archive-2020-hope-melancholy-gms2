@@ -7,8 +7,15 @@ if (item != noone) {
 
 let item_meet = instance_place(x, y + yvel, par_item);
 let check = item_meet ? (y >= item_meet.y) : 1;
-if (!place_meeting(x, y + yvel, par_obsticle) && !place_meeting(x, y + yvel, par_unwalk) && check) {
+if (place_meeting(x, y, par_obsticle) && !place_meeting(x, y + yvel, par_unwalk) && check) {
 	y += yvel;
 	yvel += 0.2;
 	yvel = min(yvel, 1);
+}
+if (!place_meeting(x, y + yvel, par_obsticle) && !place_meeting(x, y + yvel, par_unwalk) && check) {
+	if (!place_meeting(x, y + yvel, par_obsticle) || place_meeting(x, y, par_obsticle)) {
+		y += yvel;
+		yvel += 0.2;
+		yvel = min(yvel, 1);
+	}
 }
