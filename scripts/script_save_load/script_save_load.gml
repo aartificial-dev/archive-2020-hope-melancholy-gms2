@@ -10,6 +10,8 @@ function script_game_save() {
 	save += "hp = " + string(obj_pl.hp) + "\n";
 	save += "sanity = " + string(obj_pl.sanity) + "\n";
 	// add weapons ammo
+	save += "gun_ammo = " + string(obj_pl.gun_ammo_inv) + "\n";
+	save += "flash_bat = " + string(obj_pl.flash_bat_inv) + "\n";
 	
 	
 	save += "\n";
@@ -64,11 +66,15 @@ function script_game_load() {
 			let _y = ini_read_real("player", "y", obj_pl_start_marker.x);
 			let _hp = ini_read_real("player", "hp", obj_pl.mhp);
 			let _sanity = ini_read_real("player", "sanity", obj_pl.msanity);
+			let _gun_ammo = ini_read_real("player", "gun_ammo", 0);
+			let _flash_bat = ini_read_real("player", "flash_bat", 0);
 		
 			obj_pl.x = _x;
 			obj_pl.y = _y;
 			obj_pl.hp = _hp;
 			obj_pl.sanity = _sanity;
+			obj_pl.gun_ammo_inv = _gun_ammo;
+			obj_pl.flash_bat_inv = _flash_bat;
 		
 			scr_game_load_inv(obj_pl.inv_items, "inv_items");
 			scr_game_load_inv(obj_pl.inv_weap1, "inv_weap1");

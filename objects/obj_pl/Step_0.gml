@@ -123,7 +123,8 @@ if (can_move) {
 }
 
 if (instance_exists(flash_light) && (weap_current != "Flashlight" || on_ladder// || can_move == 0
-		|| (weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) == 0) || flash_on == 0)) {
+		|| (weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) == 0) || flash_on == 0
+		|| (animstate != ANIM_IDLE && animstate != ANIM_WALK))) {
 	instance_destroy(flash_light);
 	flash_on = 0;
 	if (alarm[5] == -1) {
@@ -140,8 +141,8 @@ if (flash_on) {
 	if (animstate == ANIM_WALK) {
 		_an_fix = (_ind == 1 || _ind == 5) ? 1 : ((_ind == 3 || _ind == 7) ? -1 : 0);
 	}
-	let _x = x + (10 * spr_dir);
-	let _y = y - 23 - _an_fix;
+	let _x = x + (6 * spr_dir);
+	let _y = y - 32 - _an_fix;
 	if (!instance_exists(flash_light)) {
 		flash_light = instance_create_layer(_x, _y, Layers.light, par_light_flash);
 	}

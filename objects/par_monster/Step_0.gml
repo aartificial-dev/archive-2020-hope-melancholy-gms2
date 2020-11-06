@@ -110,7 +110,7 @@ if (can_move) {
 		if (!place_meeting(x + tmove * mspd , y, par_unwalk) && dis_player < 20) {
 			x += tmove * mspd;
 		}
-	} else if (move != 0) {
+	} else if (x != xprevious) {
 		animation_play(ANIM_WALK);
 	} else {
 		animation_play(ANIM_IDLE);

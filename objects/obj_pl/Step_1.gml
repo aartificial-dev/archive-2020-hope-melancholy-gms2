@@ -52,8 +52,8 @@ if (move != 0 || v_spd != 0) {
 }
 
 if (weap_current == "Flashlight") {
-	animation_bind(ANIM_IDLE           , spr_pl_idle_flash  , 0.05);
-	animation_bind(ANIM_WALK           , spr_pl_walk_flash  , 0.05 * 2.5);
+	animation_bind(ANIM_IDLE           , spr_pl_idle_item   , 0.05);
+	animation_bind(ANIM_WALK           , spr_pl_walk_item   , 0.05 * 2.5);
 } else {
 	animation_bind(ANIM_IDLE           , spr_pl_idle			  , 0.05);
 	animation_bind(ANIM_WALK           , spr_pl_walk			  , 0.05 * 2.5);

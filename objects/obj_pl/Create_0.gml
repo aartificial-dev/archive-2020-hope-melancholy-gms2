@@ -47,7 +47,7 @@ animation_bind(ANIM_SMOKE          , spr_pl_smoke			  , 0.05 * 1.5);
 animation_bind(ANIM_ATTACK_PUNCH   , spr_pl_punch			  , 0.05 * 3);
 animation_bind(ANIM_ATTACK_TUBE    , spr_pl_tube			  , 0.05 * 3);
 animation_bind(ANIM_ATTACK_FIREARM , spr_pl_shoot			  , 0.05 * 8);
-animation_bind(ANIM_FLASHLIGHT		 , spr_pl_idle_flash  , 0);
+animation_bind(ANIM_FLASHLIGHT		 , spr_pl_idle_item   , 0.05);
 animation_bind(ANIM_RELOAD				 , spr_pl_reload_gun  , 0.05 * 1.25);
 animation_play(ANIM_IDLE);
 
@@ -81,3 +81,4 @@ flash_light = noone;
 flash_on = 0;
 
 monster_sound = noone;
+monster_mumbl = noone;
