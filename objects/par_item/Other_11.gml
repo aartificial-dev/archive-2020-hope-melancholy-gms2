@@ -4,8 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-let comb = scr_items_combine(item, obj_pl.inv_hand);
-if (comb != noone) {
-	obj_pl.inv_hand = comb;
-	instance_destroy();
-}
+scr_message("cant_use");

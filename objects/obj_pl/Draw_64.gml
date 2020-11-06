@@ -60,6 +60,11 @@ if (weap_current == "Flashlight") {
 	_inv_ammo = flash_bat_inv;
 	_max_ammo = flash_bat_max;
 }
+if (weap_current == "Lamp") {
+	draw_sprite(spr_hud_weapon, 4, _icon_x, _icon_y + hud_offset);
+	_inv_ammo = flash_bat_inv;
+	_max_ammo = flash_bat_max;
+}
 
 if (_max_ammo) {
 	_weap_ammo = clamp(ceil(_weap_ammo), 0, 99);

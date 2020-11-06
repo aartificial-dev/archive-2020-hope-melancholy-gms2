@@ -62,10 +62,6 @@ if (can_move) {
 		is_smoke = 0;
 		standing_time = 0;
 	}
-	if (weap_current == "Flashlight") {
-		is_smoke = 0;
-		standing_time = 0;
-	}
 	
 	// if item {in hand: block} else if inv open {if mouse {in inv: block} else not}
 	let _inv_check = inv_hand ? false : (inv_open ? gui_mouse_y > inv_mheight : true);
@@ -109,47 +105,12 @@ if (can_move) {
 		}
 	}
 	
-	if (!is_reload &&	weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) > 0 && _inv_check) {
-		if (mouse_check_button_pressed(mb_left) && alarm[5] == -1) {
-			flash_on = !flash_on;
-			audio_play_sound(snd_flash_toggle, 0, 0);
-			alarm[5] = 10;
-		}
-	}
-	
 	if (keyboard_check_pressed(ord("R")) && !is_reload && !is_attack && !on_ladder) {
 		scr_pl_reload();
 	}
 }
 
-if (instance_exists(flash_light) && (weap_current != "Flashlight" || on_ladder// || can_move == 0
-		|| (weap_current == "Flashlight" && inv_item_modif(cur_weap, 0, 0) == 0) || flash_on == 0
-		|| (animstate != ANIM_IDLE && animstate != ANIM_WALK))) {
-	instance_destroy(flash_light);
-	flash_on = 0;
-	if (alarm[5] == -1) {
-		audio_play_sound(snd_flash_toggle, 0, 0);
-	}
-}
-if (flash_on) {
-	inv_item_modif(cur_weap, 0, -0.005);
-	let _an_fix = 0;
-	let _ind = floor(animframe);
-	if (animstate == ANIM_IDLE) {
-		_an_fix = (_ind == 2) ? 1 : 0;
-	}
-	if (animstate == ANIM_WALK) {
-		_an_fix = (_ind == 1 || _ind == 5) ? 1 : ((_ind == 3 || _ind == 7) ? -1 : 0);
-	}
-	let _x = x + (6 * spr_dir);
-	let _y = y - 32 - _an_fix;
-	if (!instance_exists(flash_light)) {
-		flash_light = instance_create_layer(_x, _y, Layers.light, par_light_flash);
-	}
-	flash_light.angle = spr_dir ? 0 : 180;
-	flash_light.x = _x;
-	flash_light.y = _y;
-}
+scr_pl_lamp();
 
 
 event_inherited();

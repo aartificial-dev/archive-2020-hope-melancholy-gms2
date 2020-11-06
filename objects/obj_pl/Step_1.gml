@@ -51,7 +51,7 @@ if (move != 0 || v_spd != 0) {
 	}
 }
 
-if (weap_current == "Flashlight") {
+if (weap_current != "noone") {
 	animation_bind(ANIM_IDLE           , spr_pl_idle_item   , 0.05);
 	animation_bind(ANIM_WALK           , spr_pl_walk_item   , 0.05 * 2.5);
 } else {
@@ -96,7 +96,7 @@ if (standing_time > 300 && floor(im_index) == 0) {
 	alarm[8] = animation_get_length(ANIM_SMOKE);
 }
 
-if (is_attack || is_reload || move || v_spd != 0 || !can_move || is_hurt) {
+if (is_attack || is_reload || move || v_spd != 0 || !can_move || is_hurt || weap_current != "noone") {
 	is_smoke = 0;
 	standing_time = 0;
 }

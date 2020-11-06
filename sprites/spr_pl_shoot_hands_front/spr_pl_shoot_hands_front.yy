@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 7,
+  "bbox_left": 8,
   "bbox_right": 31,
-  "bbox_top": 8,
-  "bbox_bottom": 21,
+  "bbox_top": 10,
+  "bbox_bottom": 23,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,24 +26,38 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"0a6ab60b-2298-4604-8398-ed363d507466","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"0a6ab60b-2298-4604-8398-ed363d507466","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"0a6ab60b-2298-4604-8398-ed363d507466","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"0a6ab60b-2298-4604-8398-ed363d507466","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"0a6ab60b-2298-4604-8398-ed363d507466","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"42b53587-83f6-47d1-a7ed-369e60ac50f2","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"42b53587-83f6-47d1-a7ed-369e60ac50f2","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"42b53587-83f6-47d1-a7ed-369e60ac50f2","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"42b53587-83f6-47d1-a7ed-369e60ac50f2","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"42b53587-83f6-47d1-a7ed-369e60ac50f2","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"9a510091-ba84-47bb-9a91-3a5f44db02a7","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"9a510091-ba84-47bb-9a91-3a5f44db02a7","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9a510091-ba84-47bb-9a91-3a5f44db02a7","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9a510091-ba84-47bb-9a91-3a5f44db02a7","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"9a510091-ba84-47bb-9a91-3a5f44db02a7","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"36e3d68c-2635-460a-9f48-10dfc51cad68","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"36e3d68c-2635-460a-9f48-10dfc51cad68","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"36e3d68c-2635-460a-9f48-10dfc51cad68","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"36e3d68c-2635-460a-9f48-10dfc51cad68","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"36e3d68c-2635-460a-9f48-10dfc51cad68","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"3fa7ba22-00d4-4ea3-b2ba-7db075b501be","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"3fa7ba22-00d4-4ea3-b2ba-7db075b501be","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"3fa7ba22-00d4-4ea3-b2ba-7db075b501be","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"3fa7ba22-00d4-4ea3-b2ba-7db075b501be","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"3fa7ba22-00d4-4ea3-b2ba-7db075b501be","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"7c8bb8ed-b371-4062-9889-88105da42cd5","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"7c8bb8ed-b371-4062-9889-88105da42cd5","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7c8bb8ed-b371-4062-9889-88105da42cd5","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7c8bb8ed-b371-4062-9889-88105da42cd5","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"7c8bb8ed-b371-4062-9889-88105da42cd5","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"4d628b0e-fc5f-4de1-b209-92d77c641736","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"4d628b0e-fc5f-4de1-b209-92d77c641736","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"4d628b0e-fc5f-4de1-b209-92d77c641736","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"62c161af-3745-459a-b6de-12279c99f6c1","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"4d628b0e-fc5f-4de1-b209-92d77c641736","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"LayerId":{"name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_pl_shoot_hands_front","path":"sprites/spr_pl_shoot_hands_front/spr_pl_shoot_hands_front.yy",},"resourceVersion":"1.0","name":"4d628b0e-fc5f-4de1-b209-92d77c641736","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -89,7 +103,9 @@
     "resourceType": "GMSequence",
   },
   "layers": [
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":38.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"15475bcf-fd0b-469c-862f-98a8a1a507d0","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1 (2)","resourceVersion":"1.0","name":"bad00b0f-ee17-453f-9dd0-5f3376b50f61","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":false,"isLocked":false,"blendMode":0,"opacity":48.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"62c161af-3745-459a-b6de-12279c99f6c1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "range",

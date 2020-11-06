@@ -79,6 +79,8 @@ last_used = noone;
 
 flash_light = noone;
 flash_on = 0;
+lamp_light = noone;
+lamp_on = 0;
 
 monster_sound = noone;
 monster_mumbl = noone;
