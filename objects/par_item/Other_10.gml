@@ -6,7 +6,7 @@ event_inherited();
 
 if (item.type == item_type.ammo) {
 	switch(item.name) {
-		case "Pistol Ammo": {
+		case "Pistol Ammo": { // item.modif
 			obj_pl.gun_ammo_inv += obj_pl.gun_ammo_max;
 		} break;
 		case "Shotgun Shells": {
